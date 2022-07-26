@@ -138,25 +138,26 @@ sword <user.word>:
 bird <user.word>:
 	user.insert_formatted(word, 'hammer')
 
-method <user.prose>$: 
+method <user.prose>$:
 	user.insert_formatted('.' + prose, 'camel')
-	insert('()')
-	edit.left()
+	user.generic_programming_insert_function_call_parentheses()
+	user.generic_programming_enter_function_call_parentheses_from_right()
 
 method <user.prose> over:
 	user.insert_formatted('.' + prose, 'camel')
-	insert('()')
-	edit.left()
+	user.generic_programming_insert_function_call_parentheses()
+	user.generic_programming_enter_function_call_parentheses_from_right()
 
-perform <user.prose>$: 
+perform <user.prose>$:
 	user.insert_formatted('.' + prose, 'snake')
-	insert('()')
-	edit.left()
+	user.generic_programming_insert_function_call_parentheses()
+	user.generic_programming_enter_function_call_parentheses_from_right()
 
 perform <user.prose> over:
 	user.insert_formatted('.' + prose, 'snake')
-	insert('()')
-	edit.left()
+	user.generic_programming_insert_function_call_parentheses()
+	user.generic_programming_enter_function_call_parentheses_from_right()
+
 
 selfie <user.prose>$:
 	user.generic_programming_self_dot()

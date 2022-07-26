@@ -17,10 +17,10 @@ mod.tag(
 )
 
 clipboard_operation_delay = mod.setting(
-	'generic_programming_clipboard_operation_delay',
-	type = int,
-	default = 250,
-	desc = 'How long in milliseconds commands will pause when using the clipboard to ensure that they do not restore the clipboard too quickly.'
+    'generic_programming_clipboard_operation_delay',
+    type = int,
+    default = 250,
+    desc = 'How long in milliseconds commands will pause when using the clipboard to ensure that they do not restore the clipboard too quickly.'
 )
 
 word_movement_delay = mod.setting(
@@ -37,6 +37,21 @@ flow_control_parentheses_style = mod.setting(
     default = 'left',
     desc = 'The spacing style to use for flow control parentheses',
 )
+
+function_parentheses_style = mod.setting(
+    'generic_function_parentheses_style',
+    type = str,
+    default = '',
+    desc = 'The spacing style to use for function parentheses',
+)
+
+function_call_parentheses_style = mod.setting(
+    'generic_function_call_parentheses_style',
+    type = str,
+    default = '',
+    desc = 'The spacing style to use for function call parentheses',
+)
+
 
 def apply_spacing_style_to(style, target):
     space_before = ''
@@ -61,11 +76,19 @@ def apply_spacing_style_to_container_inside(style, container):
     if 'pad' in style:
         middle = '  '
     return start + middle + ending
-   
+
+def generic_programming_enter_parentheses_from_right(stylized_parentheses: str):
+    actions.edit.left()
+    #If padding within the parentheses, go left a second time
+    if '(  )' in stylized_parentheses:
+        actions.edit.left()
+    #If the parentheses are followed by a space, go left again
+    if stylized_parentheses.endswith(' '):
+       actions.edit.left()
 
 @mod.action_class
 class Actions:
-    def generic_programming_get_line() -> str: 
+    def generic_programming_get_line() -> str:
         '''Returns the current line'''
         with clip.revert():
             actions.edit.select_line()
@@ -96,14 +119,34 @@ class Actions:
         actions.insert(actions.user.generic_programming_get_flow_control_parentheses())
     def generic_programming_enter_flow_control_parentheses_from_right():
         '''enters the flow control parentheses if called after inserting them'''
-        flow_control_parentheses = actions.user.generic_programming_get_flow_control_parentheses()
-        actions.edit.left()
-        #If padding within the parentheses, go left a second time
-        if '(  )' in flow_control_parentheses:
-            actions.edit.left()
-        #If the parentheses are followed by a space, go left again
-        if flow_control_parentheses.endswith(' '):
-            actions.edit.left()
+        generic_programming_enter_parentheses_from_right(actions.user.generic_programming_get_flow_control_parentheses())
+
+ 
+    def generic_programming_get_function_parentheses() -> str:
+        '''returns parentheses with the function parentheses style'''
+        parentheses_container = get_parentheses_container()
+        stylized_parentheses = apply_spacing_style_to_container(function_parentheses_style.get(), parentheses_container)
+        return stylized_parentheses
+    def generic_programming_insert_function_parentheses():
+        '''inserts parentheses with the function parentheses style'''
+        actions.insert(actions.user.generic_programming_get_function_parentheses())
+    def generic_programming_enter_function_parentheses_from_right():
+        '''enters the function parentheses if called after inserting them'''
+        generic_programming_enter_parentheses_from_right(actions.user.generic_programming_get_function_parentheses())
+
+    def generic_programming_get_function_call_parentheses() -> str:
+        '''returns parentheses with the function call parentheses style'''
+        parentheses_container = get_parentheses_container()
+        stylized_parentheses = apply_spacing_style_to_container(function_call_parentheses_style.get(), parentheses_container)
+        return stylized_parentheses
+    def generic_programming_insert_function_call_parentheses():
+        '''inserts parentheses with the function call parentheses style'''
+        actions.insert(actions.user.generic_programming_get_function_call_parentheses())
+    def generic_programming_enter_function_call_parentheses_from_right():
+        '''enters the function call parentheses if called after inserting them'''
+        generic_programming_enter_parentheses_from_right(actions.user.generic_programming_get_function_call_parentheses())
+ 
+ 
 
     def generic_programming_build_for(beginning: str, separator_after_initialization: str, separator_after_condition: str, ending: str ):
         '''Builds a for loop using the code written on the current line'''
@@ -127,11 +170,11 @@ class Actions:
         '''For each constructor argument, does the equivalent of self.argument = argument'''
         current_line = actions.user.generic_programming_get_line()
         if start_prefix not in current_line or ending_prefix not in current_line:
-            return 
+            return
         starting_index = current_line.find(start_prefix) + len(start_prefix)
         ending_index = current_line.rfind(ending_prefix)
         if starting_index >= ending_index:
-            return 
+            return
         constructor_arguments_string = current_line[starting_index : ending_index]
         print(constructor_arguments_string)
         arguments = split_string_ignoring_containers(constructor_arguments_string, ',', construct_standard_programming_containers())
@@ -139,9 +182,9 @@ class Actions:
         actions.user.generic_programming_create_line_below()
         for argument in arguments:
             handle_argument(argument)
-            
-            
-    def fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument: str, get_variable: Callable[[str], None]):           
+           
+           
+    def fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument: str, get_variable: Callable[[str], None]):          
         '''Self references the argument variable'''
         variable = get_variable(argument)
         actions.user.fire_chicken_programming_self_reference_variable(variable)

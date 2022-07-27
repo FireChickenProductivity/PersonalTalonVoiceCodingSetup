@@ -55,7 +55,7 @@ def self_reference_argument(argument):
 
 def get_argument_variable(argument):
     stripped_argument = argument.strip()
-    space_separated_argument_parts = stripped_argument.split(' ')
+    space_separated_argument_parts = actions.user.generic_programming_split_string_ignoring_standard_containers(stripped_argument, ' ')
     print(space_separated_argument_parts)
     #to deal with multiple spaces creating empty splits, return 
     #the first part after the initial part (the datatype) that is not empty

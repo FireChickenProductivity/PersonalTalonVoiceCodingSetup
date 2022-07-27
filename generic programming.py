@@ -188,7 +188,6 @@ class Actions:
         print(constructor_arguments_string)
         arguments = split_string_ignoring_containers(constructor_arguments_string, ',', construct_standard_programming_containers())
         print(arguments)
-        actions.user.generic_programming_create_line_below()
         for argument in arguments:
             handle_argument(argument)
     def generic_programming_create_line_below():
@@ -198,18 +197,19 @@ class Actions:
         actions.key('esc')
         actions.key('enter')
            
-    def fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument: str, get_variable: Callable[[str], None]):          
+    def fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument: str, get_variable: Callable[[str], None], statement_ending: str = ''):          
         '''Self references the argument variable'''
-        variable = get_variable(argument)
-        actions.user.fire_chicken_programming_self_reference_variable(variable)
         actions.user.generic_programming_create_line_below()
-    def fire_chicken_programming_self_reference_variable(variable: str):
+        variable = get_variable(argument)
+        actions.user.fire_chicken_programming_self_reference_variable(variable, statement_ending)
+
+    def fire_chicken_programming_self_reference_variable(variable: str, statement_ending: str = ''):
         '''Tries to do language equivalent of self.variable = variable'''
         actions.user.code_self()
         actions.user.code_operator_object_accessor()
         actions.insert(variable)
         actions.user.code_operator_assignment()
-        actions.insert(variable)
+        actions.insert(variable + statement_ending)
     
 
     def fire_chicken_programming_build_count_loop():

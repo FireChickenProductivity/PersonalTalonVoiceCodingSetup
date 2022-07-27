@@ -182,7 +182,11 @@ class Actions:
         actions.user.generic_programming_create_line_below()
         for argument in arguments:
             handle_argument(argument)
-           
+    def generic_programming_create_line_below():
+        '''Tries to create a line below while exiting out of pop up stuff like code suggestions'''
+        actions.edit.line_end()
+        actions.key('esc')
+        actions.key('enter')
            
     def fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument: str, get_variable: Callable[[str], None]):          
         '''Self references the argument variable'''
@@ -196,11 +200,7 @@ class Actions:
         actions.insert(variable)
         actions.user.code_operator_assignment()
         actions.insert(variable)
-    def generic_programming_create_line_below():
-        '''Tries to create a line below while exiting out of pop up stuff like code suggestions'''
-        actions.edit.line_end()
-        actions.key('esc')
-        actions.key('enter')
+    
 
     def fire_chicken_programming_build_count_loop():
         '''Does nothing intended to be overridden'''

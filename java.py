@@ -51,7 +51,7 @@ class UserActions:
 
 
 def self_reference_argument(argument):
-    actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)
+    actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable, statement_ending = ';')
 
 def get_argument_variable(argument):
     stripped_argument = argument.strip()

@@ -30,6 +30,15 @@ word_movement_delay = mod.setting(
     desc = 'How long commands should pause after word movement. Needed to get desired behavior in some editors.'
 )
 
+suggestion_closing_delay = mod.setting(
+    'generic_programming_suggestion_closing_delay',
+    type = int,
+    default = 100,
+    desc = 'How long commands should pause when closing code suggestions in milliseconds',
+)
+def wait_suggestion_closing_delay():
+    actions.sleep(f'{suggestion_closing_delay.get()}ms')
+
 
 flow_control_parentheses_style = mod.setting(
     'generic_programming_flow_control_parentheses_style',
@@ -185,6 +194,7 @@ class Actions:
     def generic_programming_create_line_below():
         '''Tries to create a line below while exiting out of pop up stuff like code suggestions'''
         actions.edit.line_end()
+        wait_suggestion_closing_delay()
         actions.key('esc')
         actions.key('enter')
            

@@ -6,8 +6,17 @@ class StylizedContainer(TextContainer):
     def __init__(self, start, end, style_setting, invalid_left_boundary = '', invalid_right_boundary = ''):
         super().__init__(start, end, invalid_left_boundary, invalid_right_boundary)
         self.style = style_setting.get()
-    
-
+    def get_text(self):
+        text = apply_spacing_style_to_container(self.style, self)
+        return text
+    def enter_from_right(self):
+        enter_stylized_container_from_right(self.get_text())
+    def insert(self):
+        text = self.get_text()
+        actions.insert(text)
+    def insert_empty(self):
+        empty_container_text = apply_spacing_style_to_empty_container(self.style, self)
+        actions.insert(empty_container_text)
 
 
 module = Module()

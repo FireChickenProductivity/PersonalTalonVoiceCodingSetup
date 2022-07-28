@@ -86,13 +86,13 @@ def apply_spacing_style_to_container_inside(style, container):
         middle = '  '
     return start + middle + ending
 
-def generic_programming_enter_parentheses_from_right(stylized_parentheses: str):
+def enter_stylized_container_from_right(container: str):
     actions.edit.left()
-    #If padding within the parentheses, go left a second time
-    if '(  )' in stylized_parentheses:
+    #If padding within the container, go left a second time
+    if '  ' in container:
         actions.edit.left()
-    #If the parentheses are followed by a space, go left again
-    if stylized_parentheses.endswith(' '):
+    #If the container are followed by a space, go left again
+    if container.endswith(' '):
        actions.edit.left()
 
 @mod.action_class
@@ -128,7 +128,7 @@ class Actions:
         actions.insert(actions.user.generic_programming_get_flow_control_parentheses())
     def generic_programming_enter_flow_control_parentheses_from_right():
         '''enters the flow control parentheses if called after inserting them'''
-        generic_programming_enter_parentheses_from_right(actions.user.generic_programming_get_flow_control_parentheses())
+        enter_stylized_container_from_right(actions.user.generic_programming_get_flow_control_parentheses())
 
  
     def generic_programming_get_function_parentheses() -> str:
@@ -141,7 +141,7 @@ class Actions:
         actions.insert(actions.user.generic_programming_get_function_parentheses())
     def generic_programming_enter_function_parentheses_from_right():
         '''enters the function parentheses if called after inserting them'''
-        generic_programming_enter_parentheses_from_right(actions.user.generic_programming_get_function_parentheses())
+        enter_stylized_container_from_right(actions.user.generic_programming_get_function_parentheses())
 
     def generic_programming_get_function_call_parentheses() -> str:
         '''returns parentheses with the function call parentheses style'''
@@ -153,7 +153,7 @@ class Actions:
         actions.insert(actions.user.generic_programming_get_function_call_parentheses())
     def generic_programming_enter_function_call_parentheses_from_right():
         '''enters the function call parentheses if called after inserting them'''
-        generic_programming_enter_parentheses_from_right(actions.user.generic_programming_get_function_call_parentheses())
+        enter_stylized_container_from_right(actions.user.generic_programming_get_function_call_parentheses())
  
  
 

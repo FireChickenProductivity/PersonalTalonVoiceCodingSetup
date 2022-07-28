@@ -78,6 +78,15 @@ def apply_spacing_style_to_container(style, container):
     result = apply_spacing_style_to_container_inside(style, container)
     result = apply_spacing_style_to(style, result)
     return result
+
+def apply_spacing_style_to_empty_container(style, container):
+    result = apply_spacing_style_to_container(style, container)
+    if 'pad' in style:
+        result = get_container_with_padding_reduced_to_single_space(result)
+    return result
+def get_container_with_padding_reduced_to_single_space(container):
+    return container.replace('  ', ' ')
+
 def apply_spacing_style_to_container_inside(style, container):
     start = container.get_start()
     ending = container.get_end()

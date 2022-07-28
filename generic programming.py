@@ -2,7 +2,7 @@ from talon import Module, actions, clip
 
 from typing import Callable, List
 
-from .modified_string_split import TextContainer, split_string_ignoring_containers
+from .text_containers import TextContainer, split_string_ignoring_containers
 
 mod = Module()
 

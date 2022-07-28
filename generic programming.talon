@@ -44,7 +44,7 @@ keep:
 minus: ' - '
 times: ' * '
 divide: ' / '
-(ad|add): ' += '
+adding: ' += '
 increase: '+='
 subtract: ' -= '
 decrease: '-='

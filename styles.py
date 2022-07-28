@@ -134,6 +134,9 @@ class Actions:
     def generic_programming_enter_function_call_parentheses_from_right():
         '''enters the function call parentheses if called after inserting them'''
         enter_stylized_container_from_right(actions.user.generic_programming_get_function_call_parentheses())
- 
+    def generic_programming_insert_empty_declaration_squares():
+        '''inserts empty declaration squares'''
+        get_declaration_squares().insert_empty()
+        
 def get_parentheses_container():
     return TextContainer('(', ')')

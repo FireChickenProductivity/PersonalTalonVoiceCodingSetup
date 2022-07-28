@@ -14,8 +14,11 @@ class StylizedContainer(TextContainer):
     def insert(self):
         text = self.get_text()
         actions.insert(text)
-    def insert_empty(self):
+    def get_empty_text(self):
         empty_container_text = apply_spacing_style_to_empty_container(self.style, self)
+        return empty_container_text
+    def insert_empty(self):
+        empty_container_text = self.get_empty_text()
         actions.insert(empty_container_text)
 
 
@@ -41,6 +44,15 @@ function_call_parentheses_style = module.setting(
     default = '',
     desc = 'The spacing style to use for function call parentheses',
 )
+
+declaration_squares_style = module.setting(
+    'generic_programming_declaration_squares_style',
+    type = str,
+    default = '',
+    desc = 'The spacing style for declaration square brackets'
+)
+def get_declaration_squares():
+    return StylizedContainer('[', ']', declaration_squares_style)
 
 
 def apply_spacing_style_to(style, target):

@@ -54,7 +54,7 @@ state var: 'var '
 state implements: 'implements '
 state extends: 'extends '
 
-op ray: '[]'
+op ray: user.generic_programming_insert_empty_declaration_squares()
 
 
 #Short for declare

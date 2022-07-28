@@ -1,4 +1,5 @@
 from talon import Module, actions, Context
+from .styles import get_declaration_squares
 
 module = Module()
 context = Context()
@@ -27,7 +28,7 @@ def c_style_programming_brace_style(style) -> str:
 def c_style_programming_type(m) -> str:
     result = m.code_type
     if len(m) > 1 and m[1] in ['array', 'ray']:
-        result += '[]'
+        result += get_declaration_squares().get_empty_text()
     return result
 
     

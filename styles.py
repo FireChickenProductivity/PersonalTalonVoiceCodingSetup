@@ -45,6 +45,13 @@ semicolon_separator_style = module.setting(
     desc = 'The spacing style to use for semicolon separators',
 )
 
+colon_separator_style = module.setting(
+    'generic_programming_colon_separator_style',
+    type = str,
+    default = 'both',
+    desc = 'The spacing style to use for colon separators',
+)
+
 assignment_style = module.setting(
     'generic_programming_assignment_style',
     type = str,
@@ -150,6 +157,20 @@ assign_mod_style = module.setting(
     desc = 'The spacing style to use for assign mod',
 )
 
+binary_logical_operator_style = module.setting(
+    'generic_programming_binary_logical_operator_style',
+    type = str,
+    default = 'both',
+    desc = 'The spacing style to use for binary logical operators',
+)
+
+unary_logical_operator_style = module.setting(
+    'generic_programming_unary_logical_operator_style',
+    type = str,
+    default = 'both',
+    desc = 'The spacing style to use for unary logical operators',
+)
+
 function_parentheses_style = module.setting(
     'generic_programming_function_parentheses_style',
     type = str,
@@ -253,6 +274,10 @@ class Actions:
         '''Inserts a semicolon separator with the appropriate style'''
         text = apply_spacing_style_to(semicolon_separator_style.get(), ';')
         actions.insert(text)
+    def generic_programming_insert_colon_separator():
+        '''Inserts a colon separator with the appropriate style'''
+        apply_spacing_style_to(colon_separator_style.get(), ':')
+
     def generic_programming_insert_assignment():
         '''Inserts an assignment with the appropriate style'''
         text = apply_spacing_style_to(assignment_style.get(), '=')

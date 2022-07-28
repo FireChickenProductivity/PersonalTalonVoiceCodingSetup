@@ -199,14 +199,14 @@ kinder {user.code_type} <user.prose> over:
 	user.insert_formatted(prose, 'camel')
 
 reason <user.prose>$:
-	insert(', ')
+	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'camel')
 reason <user.prose> over:
-	insert(', ')
+	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'camel')
 proclaim <user.prose>$:
-	insert(', ')
+	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'snake')
 proclaim <user.prose> over:
-	insert(', ')
+	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'snake')

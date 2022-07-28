@@ -151,14 +151,14 @@ assign_mod_style = module.setting(
 )
 
 function_parentheses_style = module.setting(
-    'generic_function_parentheses_style',
+    'generic_programming_function_parentheses_style',
     type = str,
     default = '',
     desc = 'The spacing style to use for function parentheses',
 )
 
 function_call_parentheses_style = module.setting(
-    'generic_function_call_parentheses_style',
+    'generic_programming_function_call_parentheses_style',
     type = str,
     default = '',
     desc = 'The spacing style to use for function call parentheses',

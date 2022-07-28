@@ -6,6 +6,8 @@ coalmine:
 coaler: ': '
 coaling: ' : '
 
+simmer: '; '
+
 embrace:
 	edit.line_end()
 	insert(" {")

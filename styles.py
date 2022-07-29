@@ -276,7 +276,8 @@ class Actions:
         actions.insert(text)
     def generic_programming_insert_colon_separator():
         '''Inserts a colon separator with the appropriate style'''
-        apply_spacing_style_to(colon_separator_style.get(), ':')
+        text = apply_spacing_style_to(colon_separator_style.get(), ':')
+        actions.insert(text)
 
     def generic_programming_insert_assignment():
         '''Inserts an assignment with the appropriate style'''

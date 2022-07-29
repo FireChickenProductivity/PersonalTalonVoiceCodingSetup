@@ -2,6 +2,7 @@ tag: user.python
 -
 tag(): user.fire_chicken_programming_self_reference_constructor
 tag(): user.build_for_loops
+tag(): user.fire_chicken_snippets
 
 op in: ' in '
 op not: 'not '

@@ -1,5 +1,5 @@
 from talon import Module, actions, Context
-from .styles import get_declaration_squares
+from .styles import *
 
 module = Module()
 context = Context()
@@ -104,10 +104,10 @@ class Actions:
             initial_value = code[1]
             target = code[2]
         if len(code) > 3:
-            adjustment = ' += ' + code[3]
+            adjustment = apply_spacing_style_to(assign_plus_style.get(), '+=') + code[3]
 
-        initialization = datatype + ' ' + variable + ' = ' + initial_value
-        condition = variable + ' < ' + target
+        initialization = datatype + ' ' + variable + apply_spacing_style_to(assignment_style.get(), '=') + initial_value
+        condition = variable + apply_spacing_style_to(less_than_style.get(), '<') + target
         adjustment_step = variable + adjustment
         insert_for_loop(initialization, condition, adjustment_step)
         
@@ -121,7 +121,9 @@ class Actions:
         actions.insert('for')
         actions.user.generic_programming_insert_flow_control_parentheses()
         actions.user.generic_programming_enter_flow_control_parentheses_from_right()
-        actions.insert(f'{variable_declaration} : {container}')
+        actions.insert(variable_declaration)
+        actions.user.generic_programming_insert_colon_separator()
+        actions.insert(container)
         start_block()
 
 @context.action_class('user')

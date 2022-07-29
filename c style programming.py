@@ -4,6 +4,18 @@ from .styles import get_declaration_squares
 module = Module()
 context = Context()
 context.matches = '''tag: user.c_style_programming'''
+context_without_javascript = Context()
+context_without_javascript.matches = r'''
+tag: user.c_style_programming
+and not tag: user.javascript
+'''
+#Javascript stuff should normally go in the javascript files but not when overriding c style programming stuff
+javascript_context = Context()
+javascript_context.matches = r'''
+tag: user.javascript
+'''
+
+
 module.tag(
     'c_style_programming',
     desc = 'enables commands for c style programming'
@@ -114,9 +126,7 @@ class Actions:
 
 @context.action_class('user')
 class UserActions:
-    def fire_chicken_programming_build_count_loop():
-        '''Builds a cstyle count loop'''
-        actions.user.c_style_programming_make_count_for_loop_given_datatype()
+    
     def fire_chicken_programming_build_for_loop():
         '''Builds a for loop out of three arguments'''
         code = actions.user.generic_programming_get_comma_separated_line_ignoring_standard_separators()
@@ -127,9 +137,17 @@ class UserActions:
         adjustment = code[2]
         insert_for_loop(initialization, condition, adjustment)
         
-        
+@context_without_javascript.action_class('user')
+class UserActionsWithoutJavascript:
+      def fire_chicken_programming_build_count_loop():
+        '''Builds a cstyle count loop'''
+        actions.user.c_style_programming_make_count_for_loop_given_datatype()
 
-
+@javascript_context.action_class('user')
+class JavascriptUserActions:
+    def fire_chicken_programming_build_count_loop():
+        '''Builds a cstyle count loop'''
+        actions.user.c_style_programming_make_count_for_loop_given_datatype('let')
 
 def start_block():
     if brace_style.get() == 'same line':

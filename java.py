@@ -39,7 +39,13 @@ class Actions:
             f'new {data_type}{get_object_parentheses().get_text()};')
         for iteration in range(2):
             actions.edit.left() 
-    
+    def java_programming_system_out_method(name: str):
+        '''Inserts the specified system out method'''
+        container = get_function_call_parentheses()
+        actions.insert(f'System.out.{name}{container.get_text()};')
+        actions.edit.left()
+        container.enter_from_right()
+
 context = Context()
 context.matches = r'''
 tag: user.java

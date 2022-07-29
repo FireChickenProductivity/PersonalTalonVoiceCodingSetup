@@ -99,6 +99,8 @@ fishing|clowning: ' < '
 left (fish|clown): ' <'
 right (fish|clown): '>'
 R (fish|clown): ' > '
+diamond: '<>'
+
 use:
 	insert('()')
 	edit.left()
@@ -137,7 +139,8 @@ sword <user.word>:
 	insert('.')
 	user.insert_with_history(word)
 
-bird <user.word>:
+#Ball is a mix between tall and big. Capitalizes the word
+ball <user.word>:
 	user.insert_formatted(word, 'hammer')
 
 method <user.prose>$:

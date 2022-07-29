@@ -1,8 +1,8 @@
 jump: edit.line_end()
 choice: key(enter)
-remove: key(delete)
+remove|clean: key(delete)
 #On windows, clearing presses backspace
-clearing: edit.delete()
+clearing|sweep: edit.delete()
 swing: key(tab)
 
 semi: key(;)

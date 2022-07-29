@@ -1,6 +1,6 @@
 from talon import Module, actions, clip
 
-from typing import Callable, List
+from typing import Callable, List, Tuple
 
 from .text_containers import TextContainer, split_string_ignoring_containers
 
@@ -120,6 +120,30 @@ class Actions:
         actions.user.code_operator_assignment()
         actions.insert(variable + statement_ending)
     
+    def generic_programming_get_counting_for_loop_components_from_the_current_line() -> Tuple:
+        '''Builds a simple counting for loop using the current line text'''
+        code = actions.user.generic_programming_get_comma_separated_line_ignoring_standard_separators()
+        variable = 'i'
+        start = '0'
+        ending = ''
+        step = ''
+
+        if len(code) == 0:
+            return None, None, None, None
+        if len(code) == 1:
+            ending = code[0]
+        if len(code) > 1:
+            variable = code[0]
+        if len(code) == 2:
+            ending = code[1]
+        if len(code) > 2:
+            start = code[1]
+            ending = code[2]
+        if len(code) > 3:
+            step = code[3]       
+
+        return variable, start, ending, step
+        
 
     def fire_chicken_programming_build_count_loop():
         '''Does nothing intended to be overridden'''

@@ -185,6 +185,15 @@ function_call_parentheses_style = module.setting(
     desc = 'The spacing style to use for function call parentheses',
 )
 
+object_parentheses_style = module.setting(
+    'generic_programming_object_parentheses_style',
+    type = str,
+    default = '',
+    desc = 'The spacing style used for object constructor call parentheses',
+)
+def get_object_parentheses():
+    return StylizedContainer('(', ')', object_parentheses_style)
+
 declaration_squares_style = module.setting(
     'generic_programming_declaration_squares_style',
     type = str,
@@ -233,6 +242,9 @@ def apply_spacing_style_to(style, target):
         space_before = ' '
         space_after = ' '
     return f'{space_before}{target}{space_after}'
+
+def apply_spacing_setting_to(setting, target):
+    return apply_spacing_style_to(setting.get(), target)
 
 def apply_spacing_style_to_container(style, container):
     result = apply_spacing_style_to_container_inside(style, container)
@@ -378,6 +390,9 @@ class Actions:
     def generic_programming_insert_empty_declaration_squares():
         '''inserts empty declaration squares'''
         get_declaration_squares().insert_empty()
+    def generic_programming_insert_object_parentheses():
+        '''Inserts object parentheses with the appropriate style'''
+        get_object_parentheses().insert()
        
 def get_parentheses_container():
     return TextContainer('(', ')')

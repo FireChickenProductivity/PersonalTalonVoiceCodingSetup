@@ -17,11 +17,18 @@ console print f:
 state continue: 'continue;'
     
 
-main method: 'public static void main(String[] args)'
+main method:
+    insert('public static void main')
+    user.generic_programming_insert_function_call_parentheses()
+    user.generic_programming_enter_function_call_parentheses_from_right()
+    insert('String')
+    user.generic_programming_insert_empty_declaration_squares()
+    insert(' args')
+
 build new: user.java_programming_build_new()
 
 <user.java_programming_function_access_modifier>:
-    insert(java_programming_function_access_modifier )
+    insert(java_programming_function_access_modifier)
 <user.java_programming_function_access_modifier> <user.c_style_programming_type>:
     insert(java_programming_function_access_modifier + c_style_programming_type)
     insert(' ')
@@ -59,20 +66,22 @@ op ray: user.generic_programming_insert_empty_declaration_squares()
 Claire {user.code_type} <user.prose>$:
     insert(user.code_type + ' ')
     user.insert_formatted(prose, 'camel')
-    insert(' = ;')
+    user.generic_programming_insert_assignment()
+    insert(';')
     edit.left()
 Claire {user.code_type} <user.prose> over:
     insert(user.code_type + ' ')
     user.insert_formatted(prose, 'camel')
-    insert(' = ;')
+    user.generic_programming_insert_assignment()
+    insert(';')
     edit.left()
 
 param {user.code_type} <user.prose>$:
-    insert(', ')
+    user.generic_programming_insert_comma_separator()
     insert(user.code_type + ' ')
     user.insert_formatted(prose, 'camel')
 param {user.code_type} <user.prose> over:
-    insert(', ')
+    user.generic_programming_insert_comma_separator()
     insert(user.code_type + ' ')
     user.insert_formatted(prose, 'camel')
     
@@ -81,21 +90,23 @@ param {user.code_type} <user.prose> over:
 vary <user.prose>$:
     insert('var ')
     user.insert_formatted(prose, 'camel')
-    insert(' = ;')
+    user.generic_programming_insert_assignment()
+    insert(';')
     edit.left()
 vary <user.prose> over:
     insert('var ')
     user.insert_formatted(prose, 'camel')
-    insert(' = ;')
+    user.generic_programming_insert_assignment()
+    insert(';')
     edit.left()
 
 pristine <user.prose>$:
     insert('new ')
     user.insert_formatted(prose, 'hammer')
-    insert('()')
-    edit.left()
+    user.generic_programming_insert_object_parentheses()
+    user.generic_programming_enter_object_parentheses_from_right()
 pristine <user.prose> over:
     insert('new ')
     user.insert_formatted(prose, 'hammer')
-    insert('()')
-    edit.left()
+    user.generic_programming_insert_object_parentheses()
+    user.generic_programming_enter_object_parentheses_from_right()

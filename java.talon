@@ -8,13 +8,11 @@ system out: 'System.out.'
 system in: 'System.in'
 
 console print line:
-    insert('System.out.println();')
-    edit.left()
-    edit.left()
+    user.java_programming_system_out_method('println')
 console print:
-    insert('System.out.print();')
-    edit.left()
-    edit.left()     
+    user.java_programming_system_out_method('print')
+console print f:
+    user.java_programming_system_out_method('printf')
 
 state continue: 'continue;'
     

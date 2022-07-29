@@ -1,4 +1,5 @@
 from talon import actions, Module, Context
+from .styles import * 
 
 module = Module()
 
@@ -34,7 +35,8 @@ class Actions:
             return 
         data_type = current_line[0]
         variable_name = current_line[1]
-        actions.insert(f'{data_type} {variable_name} = new {data_type}();')
+        actions.insert(f'{data_type} {variable_name}{apply_spacing_setting_to(assignment_style, "=")}'
+            f'new {data_type}{get_object_parentheses().get_text()};')
         for iteration in range(2):
             actions.edit.left() 
     

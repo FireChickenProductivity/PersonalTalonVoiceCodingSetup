@@ -184,6 +184,8 @@ function_call_parentheses_style = module.setting(
     default = '',
     desc = 'The spacing style to use for function call parentheses',
 )
+def get_function_call_parentheses():
+    return StylizedContainer('(', ')', function_call_parentheses_style)
 
 object_parentheses_style = module.setting(
     'generic_programming_object_parentheses_style',

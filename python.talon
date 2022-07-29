@@ -1,6 +1,7 @@
 tag: user.python
 -
 tag(): user.fire_chicken_programming_self_reference_constructor
+tag(): user.build_for_loops
 
 op in: ' in '
 op not: 'not '

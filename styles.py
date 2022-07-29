@@ -395,6 +395,9 @@ class Actions:
     def generic_programming_insert_object_parentheses():
         '''Inserts object parentheses with the appropriate style'''
         get_object_parentheses().insert()
+    def generic_programming_enter_object_parentheses_from_right():
+        '''Enters the object parentheses if initially to the right of them'''
+        get_object_parentheses().enter_from_right()
        
 def get_parentheses_container():
     return TextContainer('(', ')')

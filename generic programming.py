@@ -1,8 +1,8 @@
 from talon import Module, actions, clip
-
 from typing import Callable, List, Tuple
-
 from .text_containers import TextContainer, split_string_ignoring_containers
+
+
 
 mod = Module()
 
@@ -63,7 +63,24 @@ class Actions:
         '''Uses split string ignoring standard containers with standard containers'''
         return split_string_ignoring_containers(text, separator, construct_standard_programming_containers())
 
-
+    def generic_programming_call_method(name: str):
+        '''Inserts the specified method call'''
+        actions.user.code_operator_object_accessor()
+        actions.insert(name)
+        actions.user.generic_programming_insert_function_call_parentheses()
+    def generic_programming_call_method_inside(name: str):
+        '''Inserts the specified method call and enters the parentheses'''
+        actions.user.generic_programming_call_method(name)
+        actions.user.generic_programming_enter_function_call_parentheses()
+    def generic_programming_call_method_with_name_formatted(name: str, format: str):
+        '''Inserts the specified method call'''
+        formatted_name = actions.formatted_text(name, format)
+        actions.user.generic_programming_call_method(formatted_name)
+    def generic_programming_call_method_inside_with_name_formatted(name: str, format: str):
+        '''Inserts the specified method call and enters the parentheses'''
+        actions.user.generic_programming_call_method_with_name_formatted(name, format)
+        actions.user.generic_programming_enter_function_call_parentheses()
+    
     
 
     def generic_programming_build_for(beginning: str, separator_after_initialization: str, separator_after_condition: str, ending: str ):

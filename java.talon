@@ -57,8 +57,8 @@ import (util|utilities|utility): 'import java.util.*;'
 import io: 'import java.io.*;'
 
 state var: 'var '
-state (implements|imp|imply): 'implements '
-state extends: 'extends '
+state (implements|imp|imply): ' implements '
+state extends: ' extends '
 
 op ray: user.generic_programming_insert_empty_declaration_squares()
 

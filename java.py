@@ -49,7 +49,11 @@ class Actions:
         '''Inserts text indicating the superclass'''
         actions.insert('extends ')
         actions.user.insert_formatted(name, 'hammer')
-
+    def java_programming_indicate_implements(interface_name: str):
+        '''Inserts text indicating that the class implements the specified interface'''
+        actions.insert('implements ')
+        actions.user.insert_formatted(interface_name, 'hammer')
+        
 context = Context()
 context.matches = r'''
 tag: user.java

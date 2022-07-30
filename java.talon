@@ -111,3 +111,6 @@ pristine <user.prose> over:
     user.insert_formatted(prose, 'hammer')
     user.generic_programming_insert_object_parentheses()
     user.generic_programming_enter_object_parentheses_from_right()
+
+(is a|parent) <user.prose>$: user.java_programming_indicate_superclass(prose)
+(is a|parent) <user.prose> over: user.java_programming_indicate_superclass(prose)

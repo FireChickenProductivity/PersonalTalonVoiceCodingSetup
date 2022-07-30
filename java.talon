@@ -2,6 +2,7 @@ tag: user.java
 -
 tag(): user.c_style_programming
 tag(): user.fire_chicken_programming_self_reference_constructor
+tag(): user.fire_chicken_snippets
 
 System: 'System.'
 system out: 'System.out.'

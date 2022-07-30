@@ -45,6 +45,10 @@ class Actions:
         actions.insert(f'System.out.{name}{container.get_text()};')
         actions.edit.left()
         container.enter_from_right()
+    def java_programming_indicate_superclass(name: str):
+        '''Inserts text indicating the superclass'''
+        actions.insert('extends ')
+        actions.user.insert_formatted(name, 'hammer')
 
 context = Context()
 context.matches = r'''

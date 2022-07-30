@@ -114,3 +114,6 @@ pristine <user.prose> over:
 
 (is a|parent) <user.prose>$: user.java_programming_indicate_superclass(prose)
 (is a|parent) <user.prose> over: user.java_programming_indicate_superclass(prose)
+
+fulfills <user.prose>$: user.java_programming_indicate_implements(prose)
+fulfills <user.prose> over: user.java_programming_indicate_implements(prose)

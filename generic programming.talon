@@ -144,25 +144,15 @@ ball <user.word>:
 	user.insert_formatted(word, 'hammer')
 
 method <user.prose>$:
-	user.insert_formatted('.' + prose, 'camel')
-	user.generic_programming_insert_function_call_parentheses()
-	user.generic_programming_enter_function_call_parentheses_from_right()
-
+	user.generic_programming_call_method_inside_with_name_formatted(prose, 'camel')
 method <user.prose> over:
-	user.insert_formatted('.' + prose, 'camel')
-	user.generic_programming_insert_function_call_parentheses()
-	user.generic_programming_enter_function_call_parentheses_from_right()
+	user.generic_programming_call_method_inside_with_name_formatted(prose, 'camel')
 
 perform <user.prose>$:
-	user.insert_formatted('.' + prose, 'snake')
-	user.generic_programming_insert_function_call_parentheses()
-	user.generic_programming_enter_function_call_parentheses_from_right()
+	user.generic_programming_call_method_inside_with_name_formatted(prose, 'snake')
 
 perform <user.prose> over:
-	user.insert_formatted('.' + prose, 'snake')
-	user.generic_programming_insert_function_call_parentheses()
-	user.generic_programming_enter_function_call_parentheses_from_right()
-
+	user.generic_programming_call_method_inside_with_name_formatted(prose, 'snake')
 
 selfie <user.prose>$:
 	user.generic_programming_self_dot()

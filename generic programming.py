@@ -76,12 +76,12 @@ class Actions:
         get_function_call_parentheses().enter_from_right()
     def generic_programming_call_method_with_name_formatted(name: str, format: str):
         '''Inserts the specified method call'''
-        formatted_name = actions.formatted_text(name, format)
+        formatted_name = actions.user.formatted_text(name, format)
         actions.user.generic_programming_call_method(formatted_name)
     def generic_programming_call_method_inside_with_name_formatted(name: str, format: str):
         '''Inserts the specified method call and enters the parentheses'''
-        actions.user.generic_programming_call_method_with_name_formatted(name, format)
-        actions.user.generic_programming_enter_function_call_parentheses_from_right()
+        formatted_name = actions.user.formatted_text(name, format)
+        actions.user.generic_programming_call_method_inside(formatted_name)
     
     
 

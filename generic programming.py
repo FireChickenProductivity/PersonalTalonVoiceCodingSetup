@@ -1,7 +1,7 @@
 from talon import Module, actions, clip
 from typing import Callable, List, Tuple
 from .text_containers import TextContainer, split_string_ignoring_containers
-
+from .styles import * 
 
 
 mod = Module()
@@ -67,11 +67,13 @@ class Actions:
         '''Inserts the specified method call'''
         actions.user.code_operator_object_accessor()
         actions.insert(name)
-        actions.user.generic_programming_insert_function_call_parentheses()
+        get_function_call_parentheses().insert_empty()
     def generic_programming_call_method_inside(name: str):
         '''Inserts the specified method call and enters the parentheses'''
-        actions.user.generic_programming_call_method(name)
-        actions.user.generic_programming_enter_function_call_parentheses_from_right()
+        actions.user.code_operator_object_accessor()
+        actions.insert(name)
+        get_function_call_parentheses().insert()
+        get_function_call_parentheses().enter_from_right()
     def generic_programming_call_method_with_name_formatted(name: str, format: str):
         '''Inserts the specified method call'''
         formatted_name = actions.formatted_text(name, format)

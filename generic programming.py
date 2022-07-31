@@ -192,3 +192,9 @@ def construct_standard_programming_containers():
 
 def get_parentheses_container():
     return TextContainer('(', ')')
+
+@mod.action_class
+class Defaults:
+    def code_operator_object_accessor():
+        '''This default just inserts a dot'''
+        actions.insert('.')

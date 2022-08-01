@@ -283,4 +283,6 @@ context.lists['user.fire_chicken_method_snippets'] = {
     'value Of' : 'valueOf',
     'values' : 'values',
     'wait' : 'wait',
+    'write object' : 'writeObject',
+    'read object' : 'readObject',
 }

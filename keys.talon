@@ -1,9 +1,20 @@
 jump: edit.line_end()
-choice: key(enter)
+clap: key(enter)
 remove|clean: key(delete)
+clean <number_small>:
+	key(delete)
+	repeat(number_small - 1)
 #On windows, clearing presses backspace
 clearing|sweep: edit.delete()
+sweep <number_small>:
+	edit.delete()
+	repeat(number_small - 1)
 swing: key(tab)
+
+wrong: edit.undo()
+wrong <number_small>:
+	edit.undo()
+	repeat(number_small - 1)
 
 semi: key(;)
 slump:
@@ -22,7 +33,7 @@ dance:
 who: edit.right()
 sue: edit.word_right()
 
-stew:
+soap:
 	edit.extend_word_right()
 	user.generic_programming_wait_word_movement_delay()
 	edit.delete()
@@ -30,17 +41,17 @@ stew:
 
 why: edit.left()
 sly: edit.word_left()
-sty:
+broom:
 	edit.extend_word_left()
 	user.generic_programming_wait_word_movement_delay()
 	edit.delete()
 	user.generic_programming_wait_word_movement_delay()
 
-choice <number_small>:
+pick <number_small>:
 	edit.down()
 	repeat(number_small - 1)
 	key(enter)
-choosing <number_small>:
+<number_small> pick:
 	edit.up()
 	repeat(number_small - 1)
 	key(enter)

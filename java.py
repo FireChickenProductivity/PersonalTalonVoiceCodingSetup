@@ -3,22 +3,29 @@ from .styles import *
 
 module = Module()
 
-@module.capture(rule = '(pro|pry|pub)')
+#Uses hide for private to improve accuracy
+@module.capture(rule = '(pro|pry|pub|last|trans|ab|hide)')
 def java_programming_access_modifier(m) -> str:
     word = m[0]
     if word == 'pub':
         return 'public '
-    elif word == 'pry':
+    elif word == 'hide':
         return 'private '
     elif word == 'pro':
         return 'protected '
+    elif word == 'last':
+        return 'final '
+    elif word == 'trans':
+        return 'transient '
+    elif word == 'ab':
+        return 'abstract'
 
-@module.capture(rule = '<user.java_programming_access_modifier>|prose|prize|pubs')
+@module.capture(rule = '<user.java_programming_access_modifier>|prose|pubs|hides')
 def java_programming_function_access_modifier(m) -> str:
     word = m[0]
     if word == 'prose':
         return 'protected static '
-    elif word == 'prize':
+    elif word == 'hides':
         return 'private static '
     elif word == 'pubs':
         return 'public static '

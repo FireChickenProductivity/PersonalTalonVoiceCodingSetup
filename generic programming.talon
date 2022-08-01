@@ -119,15 +119,26 @@ kinder {user.code_type} <user.prose> over:
 	insert(code_type + ' ')
 	user.insert_formatted(prose, 'camel')
 
+#comma related commands
+spam: user.generic_programming_insert_comma_separator()
+#camel
 reason <user.prose>$:
 	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'camel')
 reason <user.prose> over:
 	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'camel')
+#snake
 proclaim <user.prose>$:
 	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'snake')
 proclaim <user.prose> over:
 	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'snake')
+#PascalCase
+surmise <user.prose> over:
+	user.generic_programming_insert_comma_separator()
+	user.insert_formatted(prose, 'hammer')
+surmise <user.prose>$:
+	user.generic_programming_insert_comma_separator()
+	user.insert_formatted(prose, 'hammer')

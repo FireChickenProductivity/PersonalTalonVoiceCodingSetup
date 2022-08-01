@@ -7,6 +7,7 @@ tag(): user.fire_chicken_snippets
 System: 'System.'
 system out: 'System.out.'
 system in: 'System.in'
+Math: 'Math'
 
 console print line:
     user.java_programming_system_out_method('println')

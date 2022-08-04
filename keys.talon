@@ -1,5 +1,5 @@
 jump: edit.line_end()
-clap: key(enter)
+spear|bow: key(enter)
 remove|clean: key(delete)
 clean <number_small>:
 	key(delete)
@@ -71,4 +71,4 @@ lead <number_small>:
 steer <number_small>:
 	edit.line_start()
 	edit.word_right()
-	repeat(number_small - 1)
+	repeat(number_small - 1).

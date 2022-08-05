@@ -43,6 +43,9 @@ build new: user.java_programming_build_new()
     insert(' ')
     user.insert_formatted(prose, 'camel')
 
+import <user.fire_chicken_programming_package>: user.fire_chicken_programming_import_package(fire_chicken_programming_package)
+from <user.fire_chicken_programming_package> import <user.fire_chicken_programming_class>: 
+    user.fire_chicken_programming_from_import(fire_chicken_programming_package, fire_chicken_programming_class)
 import arraylist: 'import java.util.ArrayList;'
 import linked list: 'import java.util.LinkedList;'
 import hashmap: 'import java.util.HashMap;'

@@ -4,6 +4,16 @@ from typing import List
 
 module = Module()
 
+module.list('fire_chicken_programming_packages', desc = 'Active language list of programming packages')
+@module.capture(rule = '{user.fire_chicken_programming_packages}')
+def fire_chicken_programming_package(m) -> str:
+    return m.fire_chicken_programming_packages
+
+module.list('fire_chicken_programming_classes', desc = 'Active language list of classes')
+@module.capture(rule = '{user.fire_chicken_programming_classes}')
+def fire_chicken_programming_class(m) -> str:
+    return m.fire_chicken_programming_classes
+
 @module.action_class
 class Actions:
     def fire_chicken_code_self_reference_constructor_arguments():
@@ -13,6 +23,18 @@ class Actions:
         '''Does nothing intended to be overridden'''
         pass
     def fire_chicken_programming_build_for_loop():
+        '''Does nothing intended to be overridden'''
+        pass
+    
+    def fire_chicken_programming_import_package(name: str):
+        '''Does nothing intended to be overridden'''
+        pass
+
+    def fire_chicken_programming_import(name: str):
+        '''Does nothing intended to be overridden'''
+        pass
+
+    def fire_chicken_programming_from_import(package: str, target: str):
         '''Does nothing intended to be overridden'''
         pass
 

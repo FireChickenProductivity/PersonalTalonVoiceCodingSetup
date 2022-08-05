@@ -123,12 +123,17 @@ new <user.fire_chicken_programming_class>:
     user.generic_programming_insert_object_parentheses()
     user.generic_programming_enter_object_parentheses_from_right()
 
-new plain <user.fire_chicken_programming_class>:
+new plain <user.fire_chicken_programming_generic_class>:
     insert('new ')
-    insert(fire_chicken_programming_class)
+    insert(fire_chicken_programming_generic_class)
     user.fire_chicken_programming_code_empty_generics_operator()
     user.generic_programming_insert_object_parentheses()
     user.generic_programming_enter_object_parentheses_from_right()
+
+<user.fire_chicken_programming_generic_class> plain <user.fire_chicken_programming_class>+:
+    insert(fire_chicken_programming_generic_class)
+    user.fire_chicken_programming_code_generic_type_info(fire_chicken_programming_class_list)
+
 
 (is a|parent) <user.prose>$: user.java_programming_indicate_superclass(prose)
 (is a|parent) <user.prose> over: user.java_programming_indicate_superclass(prose)

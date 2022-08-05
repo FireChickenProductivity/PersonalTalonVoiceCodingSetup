@@ -16,6 +16,11 @@ module.list('fire_chicken_programming_classes', desc = 'Active language list of 
 def fire_chicken_programming_class(m) -> str:
     return m.fire_chicken_programming_classes
 
+module.list('fire_chicken_programming_generic_classes', desc = 'Active language list of generics')
+@module.capture(rule = '{user.fire_chicken_programming_generic_classes}')
+def fire_chicken_programming_generic_class(m) -> str:
+    return m.fire_chicken_programming_generic_classes
+
 @module.action_class
 class Actions:
     def fire_chicken_code_self_reference_constructor_arguments():
@@ -60,9 +65,7 @@ class Actions:
         '''By default, inserts the diamond operator and puts the arguments in it separated by commas'''
         actions.user.fire_chicken_programming_code_generics_operator()
         is_first = True
-        for typename in typenames:
-            actions.user.insert_formatted(typename, 'hammer')
-            if is_first:
-                is_first = False
-            else:
+        for index, typename in enumerate(typenames):
+            actions.insert(typename)
+            if index + 1 != len(typenames):
                 actions.user.generic_programming_insert_comma_separator()

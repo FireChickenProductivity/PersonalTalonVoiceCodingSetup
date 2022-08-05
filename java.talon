@@ -4,6 +4,7 @@ tag(): user.c_style_programming
 tag(): user.fire_chicken_programming_self_reference_constructor
 tag(): user.fire_chicken_snippets
 tag(): user.fire_chicken_class_command
+tag(): user.fire_chicken_programming_math_methods
 
 System: 'System.'
 system out: 'System.out.'

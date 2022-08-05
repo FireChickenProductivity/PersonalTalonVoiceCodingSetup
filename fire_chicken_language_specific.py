@@ -4,6 +4,8 @@ from typing import List
 
 module = Module()
 
+module.tag('fire_chicken_class_command', desc = 'Enables class command')
+
 module.list('fire_chicken_programming_packages', desc = 'Active language list of programming packages')
 @module.capture(rule = '{user.fire_chicken_programming_packages}')
 def fire_chicken_programming_package(m) -> str:
@@ -43,6 +45,10 @@ class Actions:
         diamond = get_declaration_angles()
         diamond.insert()
         diamond.enter_from_right()
+    def fire_chicken_programming_code_empty_generics_operator():
+        '''Uses diamond symbol as default'''
+        diamond = get_declaration_angles()
+        diamond.insert_empty()
     def fire_chicken_programming_code_generic_type_start(typename: str):
         '''By default, puts the typename in pascal case and then does the diamond operator'''
         actions.user.insert_formatted(typename, 'hammer')

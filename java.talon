@@ -3,6 +3,7 @@ tag: user.java
 tag(): user.c_style_programming
 tag(): user.fire_chicken_programming_self_reference_constructor
 tag(): user.fire_chicken_snippets
+tag(): user.fire_chicken_class_command
 
 System: 'System.'
 system out: 'System.out.'
@@ -113,6 +114,19 @@ pristine <user.prose>$:
 pristine <user.prose> over:
     insert('new ')
     user.insert_formatted(prose, 'hammer')
+    user.generic_programming_insert_object_parentheses()
+    user.generic_programming_enter_object_parentheses_from_right()
+
+new <user.fire_chicken_programming_class>:
+    insert('new ')
+    insert(fire_chicken_programming_class)
+    user.generic_programming_insert_object_parentheses()
+    user.generic_programming_enter_object_parentheses_from_right()
+
+new plain <user.fire_chicken_programming_class>:
+    insert('new ')
+    insert(fire_chicken_programming_class)
+    user.fire_chicken_programming_code_empty_generics_operator()
     user.generic_programming_insert_object_parentheses()
     user.generic_programming_enter_object_parentheses_from_right()
 

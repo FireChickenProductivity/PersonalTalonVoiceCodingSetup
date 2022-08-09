@@ -42,8 +42,9 @@ class Actions:
             return 
         data_type = current_line[0]
         variable_name = current_line[1]
+        constructor_datatype = get_data_type_without_generic_specifics(data_type)
         actions.insert(f'{data_type} {variable_name}{apply_spacing_setting_to(assignment_style, "=")}'
-            f'new {data_type}{get_object_parentheses().get_text()};')
+            f'new {constructor_datatype}{get_object_parentheses().get_text()};')
         for iteration in range(2):
             actions.edit.left() 
     def java_programming_system_out_method(name: str):
@@ -60,6 +61,15 @@ class Actions:
         '''Inserts text indicating that the class implements the specified interface'''
         actions.insert(' implements ')
         actions.user.insert_formatted(interface_name, 'hammer')
+
+def get_data_type_without_generic_specifics(name):
+    if '<' not in name:
+        return name
+    else:
+        name_without_generics = name.split('<')[0]
+        result = name_without_generics + '<>'
+        return result
+
 
 context = Context()
 context.matches = r'''

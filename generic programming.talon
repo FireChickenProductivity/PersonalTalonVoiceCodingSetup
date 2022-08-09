@@ -1,5 +1,5 @@
 
-coalmine|kneel: 
+coalmine|heel: 
 	edit.line_end()
 	key(:)
 	key(enter)
@@ -18,7 +18,7 @@ bracelet:
 	key(enter)
 	insert('{')
 	key(enter)
-leap|seal:
+leap|Le|leal:
 	edit.line_end()
 	key(enter)
 beep|feel:

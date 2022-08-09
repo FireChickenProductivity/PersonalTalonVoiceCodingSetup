@@ -32,3 +32,31 @@ class Actions:
         actions.insert("''")
         actions.edit.left()
         actions.insert(keys)
+    def talon_python_programming_define_module(name: str):
+        '''Defines a module'''
+        actions.insert(name + ' = ' + 'Module()')
+    def talon_python_programming_module_capture(module_name: str):
+        '''Starts creating module capture'''
+        actions.insert(f'@{module_name}.capture(rule = )')
+        actions.edit.left()
+    def talon_python_programming_define_context(name: str):
+        '''Defines a context'''
+        actions.insert(name + ' = ' + 'Context()')
+
+
+
+@module.capture(rule = 'mod|module')
+def talon_programming_module_name(m) -> str:
+    return str(m[0])
+
+@module.capture(rule = 'standard|stand')
+def talon_programming_standard(m) -> str:
+    return str(m[0])
+
+@module.capture(rule = 'context|ctx')
+def talon_programming_context_name(m) -> str:
+    return str(m[0])
+
+@module.capture(rule = 'insert|key|sleep|repeat|mouse click|mouse scroll|mouse move')
+def talon_programming_standard_actions(m) -> str:
+    return str('_'.join(m))

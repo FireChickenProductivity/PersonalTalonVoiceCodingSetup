@@ -42,12 +42,31 @@ class Actions:
     def talon_python_programming_define_context(name: str):
         '''Defines a context'''
         actions.insert(name + ' = ' + 'Context()')
-    def talon_python_programming_def_module_action_class(module_name: str, classname: str):
+    def talon_python_programming_define_module_action_class(module_name: str, classname: str):
         '''Defines a module action class'''
         actions.insert(f'@{module_name}.action_class')
         actions.key('enter')
         actions.insert(f'class {classname}:')
         actions.key('enter')
+    def talon_python_programming_start_setting_definition(module_name: str):
+        '''Starts setting definition'''
+        actions.insert(f' = {module_name}.setting()')
+        actions.edit.left()
+        actions.key('enter')
+        actions.insert("'',")
+        actions.key('enter')
+        actions.insert('type = ')
+        actions.key('enter')
+        actions.insert('default = ')
+        actions.key('enter')
+        actions.insert('desc = ')
+        for i in range(3):
+            actions.edit.up()
+        actions.edit.line_end()
+        for i in range(2):
+            actions.edit.left()
+
+
 
 
 @module.capture(rule = 'mod|module')

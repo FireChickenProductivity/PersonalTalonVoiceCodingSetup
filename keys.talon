@@ -21,7 +21,7 @@ slump:
 	edit.line_end()
 	key(;)
 fly: edit.up()
-spring:
+hop:
 	edit.up()
 	edit.line_start()
 
@@ -71,4 +71,4 @@ lead <number_small>:
 steer <number_small>:
 	edit.line_start()
 	edit.word_right()
-	repeat(number_small - 1).
+	repeat(number_small - 1)

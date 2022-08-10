@@ -14,6 +14,9 @@ state user: 'user.'
     user.talon_python_programming_define_context(talon_programming_context_name)
 <user.talon_programming_module_name> capture: 
     user.talon_python_programming_module_capture(talon_programming_module_name)
+<user.talon_programming_module_name> <user.talon_programming_standard> action class:
+    user.talon_python_programming_def_module_action_class(talon_programming_module_name, 'Actions')
+
 
 action <user.talon_programming_standard_actions>:
     insert('actions.')
@@ -21,3 +24,8 @@ action <user.talon_programming_standard_actions>:
     insert('()')
     edit.left()
 action user: insert('actions.user.')
+control <user.talon_programming_control_function>:
+    insert('ctrl.')
+    insert(talon_programming_control_function)
+    insert('()')
+    edit.left()

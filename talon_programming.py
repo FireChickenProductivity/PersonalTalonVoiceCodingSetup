@@ -42,7 +42,12 @@ class Actions:
     def talon_python_programming_define_context(name: str):
         '''Defines a context'''
         actions.insert(name + ' = ' + 'Context()')
-
+    def talon_python_programming_def_module_action_class(module_name: str, classname: str):
+        '''Defines a module action class'''
+        actions.insert(f'@{module_name}.action_class')
+        actions.key('enter')
+        actions.insert(f'class {classname}:')
+        actions.key('enter')
 
 
 @module.capture(rule = 'mod|module')
@@ -59,4 +64,8 @@ def talon_programming_context_name(m) -> str:
 
 @module.capture(rule = 'insert|key|sleep|repeat|mouse click|mouse scroll|mouse move')
 def talon_programming_standard_actions(m) -> str:
+    return str('_'.join(m))
+
+@module.capture(rule = 'mouse pos')
+def talon_programming_control_function(m) -> str:
     return str('_'.join(m))

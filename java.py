@@ -4,7 +4,7 @@ from .styles import *
 module = Module()
 
 #Uses hide for private to improve accuracy
-@module.capture(rule = '(pro|pry|pub|last|trans|ab|hide)')
+@module.capture(rule = '(pro|pub|last|trans|ab|hide)')
 def java_programming_access_modifier(m) -> str:
     word = m[0]
     if word == 'pub':

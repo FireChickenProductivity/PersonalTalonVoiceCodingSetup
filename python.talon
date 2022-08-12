@@ -4,6 +4,10 @@ tag(): user.fire_chicken_programming_self_reference_constructor
 tag(): user.build_for_loops
 tag(): user.fire_chicken_snippets
 
+#activating and deactivating talon python commands
+talon python activate: user.talon_programming_activate_python_commands()
+talon python deactivate: user.talon_programming_deactivate_python_commands()
+
 op in: ' in '
 op not: 'not '
 op not in: ' not in '
@@ -45,3 +49,6 @@ testing <user.prose> over:
     insert('def test_')
     user.insert_formatted(prose, 'snake')
     insert('(self):') 
+
+settings():
+    user.fire_chicken_default_method_format = 'snake'

@@ -39,6 +39,12 @@ suggestion_closing_delay = mod.setting(
 def wait_suggestion_closing_delay():
     actions.sleep(f'{suggestion_closing_delay.get()}ms')
 
+default_method_format = mod.setting(
+    'fire_chicken_default_method_format',
+    type = str,
+    default = 'camel',
+    desc = 'The default way to format method names',
+)
 
 @mod.action_class
 class Actions:
@@ -82,7 +88,12 @@ class Actions:
         '''Inserts the specified method call and enters the parentheses'''
         formatted_name = actions.user.formatted_text(name, format)
         actions.user.generic_programming_call_method_inside(formatted_name)
-    
+    def fire_chicken_call_default_formatted_method(name: str):
+        '''Performs the method call with the given name and the default format'''
+        actions.user.generic_programming_call_method_with_name_formatted(name, default_method_format.get())
+    def fire_chicken_call_default_formatted_method_inside(name: str):
+        '''Performs the method call inside with the given name and the default format'''
+        actions.user.generic_programming_call_method_inside_with_name_formatted(name, default_method_format.get())
     
 
     def generic_programming_build_for(beginning: str, separator_after_initialization: str, separator_after_condition: str, ending: str ):

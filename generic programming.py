@@ -98,7 +98,7 @@ class Actions:
 
     def generic_programming_build_for(beginning: str, separator_after_initialization: str, separator_after_condition: str, ending: str ):
         '''Builds a for loop using the code written on the current line'''
-        current_line = actions.user.generic_programming_get_comma_separated_line()
+        current_line = actions.user.fire_chicken_separate_current_line()
         initialization = current_line[0]
         condition = current_line[1]
         next_iteration_variable_change = current_line[2]
@@ -149,7 +149,7 @@ class Actions:
     
     def generic_programming_get_counting_for_loop_components_from_the_current_line() -> Tuple:
         '''Builds a simple counting for loop using the current line text'''
-        code = actions.user.generic_programming_get_comma_separated_line_ignoring_standard_separators()
+        code = actions.user.fire_chicken_separate_current_line()
         variable = 'i'
         start = '0'
         ending = ''

@@ -85,7 +85,7 @@ class Actions:
         actions.user.generic_programming_enter_flow_control_parentheses_from_right()
     def c_style_programming_make_count_for_loop_given_datatype(datatype: str = 'int'):
         '''Builds a simple counting for loop using the current line text'''
-        code = actions.user.generic_programming_get_comma_separated_line_ignoring_standard_separators()
+        code = actions.user.fire_chicken_separate_current_line()
         variable = 'i'
         initial_value = '0'
         target = ''
@@ -112,8 +112,8 @@ class Actions:
         insert_for_loop(initialization, condition, adjustment_step)
         
     def c_style_programming_make_for_each_loop():
-        '''Builds a for each loop assuming two comma separated arguments in the current text'''
-        code = actions.user.generic_programming_get_comma_separated_line_ignoring_standard_separators()        
+        '''Builds a for each loop assuming two separated arguments in the current text'''
+        code = actions.user.fire_chicken_separate_current_line()
         if len(code) != 2:
             return 
         variable_declaration = code[0]
@@ -131,7 +131,7 @@ class UserActions:
     
     def fire_chicken_programming_build_for_loop():
         '''Builds a for loop out of three arguments'''
-        code = actions.user.generic_programming_get_comma_separated_line_ignoring_standard_separators()
+        code = actions.user.fire_chicken_separate_current_line()
         if len(code) != 3:
             return 
         initialization = code[0]

@@ -81,6 +81,15 @@ perform <user.prose>$:
 perform <user.prose> over:
 	user.generic_programming_call_method_inside_with_name_formatted(prose, 'snake')
 
+routine <user.prose>$:
+	user.fire_chicken_call_function_inside_with_name_formatted(prose, 'camel')
+routine <user.prose> over:
+	user.fire_chicken_call_function_inside_with_name_formatted(prose, 'camel')
+process <user.prose>$:
+	user.fire_chicken_call_function_inside_with_name_formatted(prose, 'snake')
+process <user.prose> over:
+	user.fire_chicken_call_function_inside_with_name_formatted(prose, 'snake')
+
 selfie <user.prose>$:
 	user.generic_programming_self_dot()
 	user.insert_formatted(prose, 'snake')
@@ -101,15 +110,6 @@ swordfish <user.word>:
 	user.insert_with_history(word)
 
 
-#searching:
-search <user.text>:
-	user.simple_action_search_next(text)
-
-chase <user.spelling_out_symbol>+:
-	user.simple_action_search_next_multiple(spelling_out_symbol_list)
-
-bound <user.spelling_out_symbol>:
-	user.generic_programming_regular_expression_boundary_search_next(spelling_out_symbol)
 
 kind {user.code_type}:
 	insert(code_type + ' ')
@@ -143,3 +143,14 @@ surmise <user.prose> over:
 surmise <user.prose>$:
 	user.generic_programming_insert_comma_separator()
 	user.insert_formatted(prose, 'hammer')
+
+
+#searching:
+search <user.text>:
+	user.simple_action_search_next(text)
+
+chase <user.spelling_out_symbol>+:
+	user.simple_action_search_next_multiple(spelling_out_symbol_list)
+
+bound <user.spelling_out_symbol>:
+	user.generic_programming_regular_expression_boundary_search_next(spelling_out_symbol)

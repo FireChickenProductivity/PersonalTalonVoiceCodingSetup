@@ -69,6 +69,23 @@ class Actions:
         '''Uses split string ignoring standard containers with standard containers'''
         return split_string_ignoring_containers(text, separator, construct_standard_programming_containers())
 
+    def fire_chicken_call_function(name: str):
+        '''Inserts the specified function call'''
+        actions.insert(name)
+        get_function_call_parentheses().insert_empty()
+    def fire_chicken_call_function_inside(name: str):
+        '''Inserts the specified function call and enters the parentheses'''
+        actions.insert(name)
+        get_function_call_parentheses().insert()
+        get_function_call_parentheses().enter_from_right()
+    def fire_chicken_call_function_with_name_formatted(name: str, format: str):
+        '''Calls the function with the name formatted'''
+        formatted_name = actions.user.formatted_text(name, format)
+        actions.user.fire_chicken_call_function(formatted_name)
+    def fire_chicken_call_function_inside_with_name_formatted(name: str, format: str):
+        '''Calls the function inside with the name formatted'''
+        formatted_name = actions.user.formatted_text(name, format)
+        actions.user.fire_chicken_call_function_inside(formatted_name)
     def generic_programming_call_method(name: str):
         '''Inserts the specified method call'''
         actions.user.code_operator_object_accessor()

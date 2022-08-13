@@ -113,6 +113,7 @@ class Actions:
         actions.user.generic_programming_call_method_inside_with_name_formatted(name, default_method_format.get())
     
 
+        
     def generic_programming_build_for(beginning: str, separator_after_initialization: str, separator_after_condition: str, ending: str ):
         '''Builds a for loop using the code written on the current line'''
         current_line = actions.user.fire_chicken_separate_current_line()
@@ -209,6 +210,10 @@ def construct_standard_programming_containers():
 
 def get_parentheses_container():
     return TextContainer('(', ')')
+
+
+
+
 
 @mod.action_class
 class Defaults:

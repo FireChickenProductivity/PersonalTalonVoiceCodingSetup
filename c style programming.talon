@@ -26,3 +26,6 @@ kind <user.c_style_programming_type>:
 
 
 build for each: user.c_style_programming_make_for_each_loop()
+
+settings():
+    user.fire_chicken_statement_ending = ';'

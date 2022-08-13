@@ -38,7 +38,9 @@ keep:
 	key(enter)
 
 
-
+#generic building
+build calls <number_small> [args|arg|argue|argues|argument|arguments]:
+	user.fire_chicken_build_calls(number_small)
 
 
 

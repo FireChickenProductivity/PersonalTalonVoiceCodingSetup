@@ -28,7 +28,7 @@ brace_style = module.setting(
     desc = 'the active brace style',
 )
 
-@module.capture(rule = 'if|else if|while|for')
+@module.capture(rule = 'if|else if|while|for|catch|try|finally')
 def c_style_programming_simple_flow_control_name(flow_control) -> str:
     return str(flow_control[0])
 
@@ -71,7 +71,7 @@ class Actions:
         actions.insert('do')
         start_block()
         move_after_block()
-        actions.insert(f' while {actions.user.generic_programming_get_flow_control_parentheses()};')
+        actions.insert(f' while{actions.user.generic_programming_get_flow_control_parentheses()};')
         actions.user.generic_programming_enter_flow_control_parentheses_from_right()
         actions.edit.left()
         

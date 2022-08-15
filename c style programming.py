@@ -30,7 +30,11 @@ brace_style = module.setting(
 
 @module.capture(rule = 'if|else if|while|for|catch|try|finally')
 def c_style_programming_simple_flow_control_name(flow_control) -> str:
-    return str(flow_control[0])
+    return str(' '.join(flow_control))
+
+@module.capture(rule = 'else|else if|catch|finally')
+def c_style_programming_continuation_flow_control_name(flow_control) -> str:
+    return str(' '.join(flow_control))
 
 @module.capture(rule = 'same line|next line|same line no space')
 def c_style_programming_brace_style(style) -> str:
@@ -54,6 +58,9 @@ class Actions:
     def c_style_programming_start_block():
         '''Starts a c style code block'''
         start_block()
+    def c_style_programming_continue_block():
+        '''Starts a continuation of the c style code block'''
+        start_block_continuation()
     def c_style_programming_return_from_block():
         '''Use after starting a c style code block to return to before it'''
         return_from_block()
@@ -83,6 +90,19 @@ class Actions:
         start_block()
         return_from_block()
         actions.user.generic_programming_enter_flow_control_parentheses_from_right()
+    
+    def c_style_programming_continuation_flow_control(flow_control_text: str):
+        '''Makes the specified continuation flow control block'''
+        start_block_continuation()
+        flow_control_parentheses = actions.user.generic_programming_get_flow_control_parentheses()
+        actions.insert(flow_control_text + flow_control_parentheses)
+        actions.user.generic_programming_enter_flow_control_parentheses_from_right()
+    def c_style_programming_continuation_flow_control_next_line(flow_control_text: str):
+        ''' moves to the end of the next line and starts the flow control continuation'''
+        actions.edit.down()
+        actions.edit.line_end()
+        actions.user.c_style_programming_continuation_flow_control(flow_control_text)
+
     def c_style_programming_make_count_for_loop_given_datatype(datatype: str = 'int'):
         '''Builds a simple counting for loop using the current line text'''
         code = actions.user.fire_chicken_separate_current_line()
@@ -172,6 +192,16 @@ def start_block_same_line_no_space():
     actions.edit.line_end()
     actions.insert('{')
     actions.key('enter')
+
+def start_block_continuation():
+    insert_continuation_spaces(brace_style.get())
+    start_block()
+    return_from_block()
+def insert_continuation_spaces(style: str):
+    if style == 'same line':
+        actions.insert(' ')
+    elif style == 'next line':
+        actions.key('enter')
 
 # use this after starting a block to go before the start of it
 def return_from_block():

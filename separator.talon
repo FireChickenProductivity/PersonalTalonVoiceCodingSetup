@@ -1,1 +1,1 @@
-spew: user.fire_chicken_insert_separator()
+barf: user.fire_chicken_insert_separator()

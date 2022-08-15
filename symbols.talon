@@ -1,4 +1,6 @@
 #symbol dictation
+rope: '"'
+yarn: '`'
 (some|sum): ' + '
 minus: ' - '
 times: ' * '

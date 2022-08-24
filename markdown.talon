@@ -18,3 +18,12 @@ image:
     insert('![]()')
     edit.left()
     repeat(2)
+
+link:
+    insert('[]()')
+    edit.left()
+    repeat(2)
+
+emoji:
+    insert('::')
+    edit.left()

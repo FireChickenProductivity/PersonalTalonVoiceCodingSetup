@@ -25,5 +25,7 @@ link:
     repeat(2)
 
 emoji:
-    insert('::')
-    edit.left()
+    user.fire_chicken_insert_around_cursor(':', ':')
+
+italics: user.fire_chicken_insert_around_cursor('*', '*')
+bold: user.fire_chicken_insert_around_cursor('**', '**')

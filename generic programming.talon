@@ -16,7 +16,7 @@ bracer:
 bracelet:
 	edit.line_end()
 	key(enter)
-	insert('{')
+	user.fire_chicken_insert_around_cursor('{', '}')
 	key(enter)
 leap|Le|leal:
 	edit.line_end()

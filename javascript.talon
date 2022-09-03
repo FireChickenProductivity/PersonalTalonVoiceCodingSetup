@@ -18,6 +18,8 @@ op (spread|rest): '...'
 
 strict same: ' === '
 strict equal: '==='
+strict (bang|banger): ' !== '
+strict not: '!=='
 
 allow <user.prose>$:
     insert('let ')
@@ -36,3 +38,5 @@ constant <user.prose> over:
 build for let:
     user.generic_programming_build_for('for (let ', '; ', '; ', ')')
 
+is (not a number| nan):
+    user.fire_chicken_call_function_inside('isNaN')

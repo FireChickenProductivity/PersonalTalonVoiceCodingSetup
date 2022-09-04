@@ -6,6 +6,7 @@ module = Module()
 
 module.tag('fire_chicken_class_command', desc = 'Enables class command')
 module.tag('fire_chicken_programming_math_methods', desc = 'Enables math method command')
+module.tag('fire_chicken_fast_functions', desc = 'Enables fast functions')
 
 module.list('fire_chicken_programming_packages', desc = 'Active language list of programming packages')
 @module.capture(rule = '{user.fire_chicken_programming_packages}')
@@ -26,6 +27,11 @@ module.list('fire_chicken_math_methods', desc = 'Active language list of math me
 @module.capture(rule = '{user.fire_chicken_math_methods}')
 def fire_chicken_programming_math_method(m) -> str:
     return m.fire_chicken_math_methods
+
+module.list('fire_chicken_fast_functions', desc = 'Functions that can be dictated by stating a name for them with no prefix')
+@module.capture(rule = '{user.fire_chicken_fast_functions}')
+def fire_chicken_fast_functions(m) -> str:
+    return m.fire_chicken_fast_functions
 
 statement_ending = module.setting(
     'fire_chicken_statement_ending',

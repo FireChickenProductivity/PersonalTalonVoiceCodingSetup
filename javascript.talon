@@ -1,12 +1,7 @@
 tag: user.javascript
 -
 tag(): user.c_style_programming
-
-
-logging | console log: 
-    insert("console.log")
-    user.generic_programming_insert_function_parentheses()
-    user.generic_programming_enter_function_parentheses_from_right()
+tag(): user.fire_chicken_fast_functions
 
 dot length: '.length'
 dot name: '.name'

@@ -35,3 +35,18 @@ build for let:
 
 is (not a number| nan):
     user.fire_chicken_call_function_inside('isNaN')
+
+proper <user.prose>:
+    user.fire_chicken_insert_javascript_property(prose)
+
+(proper|prop) method <user.prose>:
+    user.fire_chicken_insert_javascript_property(prose)
+    user.fire_chicken_call_function_inside('function')
+
+(proper|prop) set <user.prose>:
+    insert('set ')
+    user.fire_chicken_call_function_inside_with_name_formatted(prose, 'camel')
+
+(proper|prop) get <user.prose>:
+    insert('get ')
+    user.fire_chicken_call_function_inside_with_name_formatted(prose, 'camel')

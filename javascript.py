@@ -21,6 +21,8 @@ context.lists['user.fire_chicken_fast_functions'] = {
     'filtering' : '.filter',
     'everything' : '.every',
     'summing' : '.some',
+    'sub stir' : '.substr',
+    'sub string' : '.substring',
     
 }
 

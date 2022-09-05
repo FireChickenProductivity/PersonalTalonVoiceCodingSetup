@@ -1,4 +1,4 @@
-from talon import Module, Context
+from talon import Module, Context, actions
 
 module = Module()
 context = Context()
@@ -23,3 +23,10 @@ context.lists['user.fire_chicken_fast_functions'] = {
     'summing' : '.some',
     
 }
+
+@module.action_class
+class Actions:
+    def fire_chicken_insert_javascript_property(name: str):
+        '''Insert specified JavaScript property declaration start'''
+        actions.user.insert_formatted(name, 'camel')
+        actions.insert(': ')

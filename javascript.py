@@ -27,7 +27,9 @@ context.lists['user.fire_chicken_fast_functions'] = {
     'sub stir' : '.substr',
     'sub string' : '.substring',
     'listening' : '.addEventListener',
-    
+    'Jason parse' : 'JSON.parse',
+    'Jason string' : 'JSON.stringify',
+
     'writing' : 'document.writeln',
     'l i d' : 'document.getElementById',
     'l tag' : 'document.getElementByTagName',

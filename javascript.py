@@ -17,6 +17,9 @@ context.lists['user.fire_chicken_fast_functions'] = {
     'popping' : '.pop',
     'slicing' : '.slice',
     'logging' : 'console.log',
+    'warning' : 'console.warn',
+    'erring' : 'console.error',
+    'object logging' : 'console.dir',
     'mapping' : '.map',
     'filtering' : '.filter',
     'everything' : '.every',
@@ -24,6 +27,8 @@ context.lists['user.fire_chicken_fast_functions'] = {
     'sub stir' : '.substr',
     'sub string' : '.substring',
     
+    'writing' : 'document.writeln',
+
 }
 
 @module.action_class

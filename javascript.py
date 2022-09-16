@@ -26,6 +26,7 @@ context.lists['user.fire_chicken_fast_functions'] = {
     'summing' : '.some',
     'sub stir' : '.substr',
     'sub string' : '.substring',
+    'listening' : '.addEventListener',
     
     'writing' : 'document.writeln',
     'l i d' : 'document.getElementById',

@@ -9,7 +9,9 @@ dot name: '.name'
 state set: 'set '
 state get: 'get '
 op in: ' in '
-op (spread|rest): '...'
+op (spread|rest): '...':
+dom dot: 'document.'
+(win|window) dot: 'window.'
 
 strict same: ' === '
 strict equal: '==='

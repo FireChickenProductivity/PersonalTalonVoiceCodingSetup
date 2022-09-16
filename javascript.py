@@ -28,7 +28,12 @@ context.lists['user.fire_chicken_fast_functions'] = {
     'sub string' : '.substring',
     
     'writing' : 'document.writeln',
-
+    'l i d' : 'document.getElementById',
+    'l tag' : 'document.getElementByTagName',
+    'l class' : 'document.getElementByClassName',
+    'query all' : 'document.querySelectorAll',
+    'querying' : 'document.querySelector',
+    
 }
 
 @module.action_class

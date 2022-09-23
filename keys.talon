@@ -1,7 +1,7 @@
 jump: edit.line_end()
 spear|bow: key(enter)
-remove|clean: key(delete)
-clean <number_small>:
+remove|clean|wash: key(delete)
+(clean|wash) <number_small>:
 	key(delete)
 	repeat(number_small - 1)
 #On windows, clearing presses backspace
@@ -10,6 +10,7 @@ sweep <number_small>:
 	edit.delete()
 	repeat(number_small - 1)
 swing: key(tab)
+cape: key(escape)
 
 wrong: edit.undo()
 wrong <number_small>:

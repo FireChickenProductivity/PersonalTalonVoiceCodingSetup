@@ -71,6 +71,10 @@ ball <user.word>:
 	user.insert_formatted(word, 'hammer')
 
 march <user.word>: insert(word + ' ')
+push <user.word>: insert(' ' + word)
+shove <user.word>:
+	insert(' ' + word)
+	insert(' ')
 
 method <user.prose>$:
 	user.generic_programming_call_method_inside_with_name_formatted(prose, 'camel')

@@ -27,3 +27,20 @@ git fetch remote clipboard:
     insert('git checkout ')
     edit.paste()
     key(enter)
+
+git checkout main:
+    insert('git checkout main')
+    key(enter)
+
+git checkout: insert('git checkout ')
+
+git checkout clipboard:
+    insert('git checkout ')
+    edit.paste()
+    key(enter)
+
+git (fetching|fetch):
+    insert('git fetch')
+    key(enter)
+
+git (pulling|pull): insert('git pull')

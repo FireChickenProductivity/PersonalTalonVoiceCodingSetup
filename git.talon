@@ -44,3 +44,5 @@ git (fetching|fetch):
     key(enter)
 
 git (pulling|pull): insert('git pull')
+
+git obtain changes from main: insert('git pull origin main')

@@ -1,5 +1,5 @@
 jump: edit.line_end()
-spear|bow: key(enter)
+spear: key(enter)
 remove|clean|wash: key(delete)
 (clean|wash) <number_small>:
 	key(delete)

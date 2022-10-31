@@ -22,11 +22,11 @@ slump:
 	edit.line_end()
 	key(;)
 fly: edit.up()
-hop:
+steam:
 	edit.up()
 	edit.line_start()
 
-down: edit.down()
+rain: edit.down()
 dance: 
 	edit.down()
 	key(tab)

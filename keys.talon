@@ -27,6 +27,9 @@ steam:
 	edit.line_start()
 
 rain: edit.down()
+snow:
+	edit.down()
+	edit.line_end()
 dance: 
 	edit.down()
 	key(tab)

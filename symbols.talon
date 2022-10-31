@@ -1,7 +1,7 @@
 #symbol dictation
 rope: '"'
 yarn: '`'
-(some|sum): ' + '
+summing: ' + '
 minus: ' - '
 times: ' * '
 divide: ' / '

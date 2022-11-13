@@ -15,3 +15,10 @@ terminal: user.vscode("workbench.action.terminal.focus")
 
 #Switch to the editor
 editor: user.vscode("workbench.action.focusActiveEditorGroup")
+
+#Run last terminal command and move back to editor
+(terminal|term) (repeat|peat):
+    user.vscode("workbench.action.terminal.focus")
+    key(up)
+    key(enter)
+    user.vscode("workbench.action.focusActiveEditorGroup")

@@ -43,7 +43,7 @@ soap:
 	edit.delete()
 	user.generic_programming_wait_word_movement_delay()
 
-why: edit.left()
+lone: edit.left()
 sly: edit.word_left()
 broom:
 	edit.extend_word_left()

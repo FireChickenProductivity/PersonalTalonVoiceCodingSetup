@@ -22,3 +22,10 @@ editor: user.vscode("workbench.action.focusActiveEditorGroup")
     key(up)
     key(enter)
     user.vscode("workbench.action.focusActiveEditorGroup")
+
+(terminal|term) stop (repeat|peat):
+    user.vscode("workbench.action.terminal.focus")
+    key(ctrl-c)
+    key(up)
+    key(enter)
+    user.vscode("workbench.action.focusActiveEditorGroup")

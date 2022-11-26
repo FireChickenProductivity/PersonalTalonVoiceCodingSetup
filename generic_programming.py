@@ -56,6 +56,13 @@ class Actions:
             actions.sleep(f'{clipboard_operation_delay.get()}ms')
             result = clip.text()
         return result
+    def generic_programming_get_selected_text() -> str:
+        '''Returns the selected text'''
+        with clip.revert():
+            actions.edit.copy()
+            actions.sleep(f'{clipboard_operation_delay.get()}ms')
+            result = clip.text()
+        return result
     def generic_programming_get_comma_separated_line():
         '''returns a list containing the comma separated stuff on the current line'''
         current_line = actions.user.generic_programming_get_line()

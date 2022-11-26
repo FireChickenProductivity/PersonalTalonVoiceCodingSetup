@@ -52,3 +52,14 @@ proper <user.prose>:
 (proper|prop) get <user.prose>:
     insert('get ')
     user.fire_chicken_call_function_inside_with_name_formatted(prose, 'camel')
+
+#The Ren is short for parenthesis
+(lamb|lambda) [non] Ren:
+    insert('() => {}')
+    edit.left()
+    key(enter)
+
+(lamb|lambda) non:
+    insert(' => {}')
+    edit.left()
+    key(enter)

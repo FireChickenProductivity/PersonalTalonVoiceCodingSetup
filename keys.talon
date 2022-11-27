@@ -13,6 +13,7 @@ sweep <number_small>:
 	edit.delete()
 	repeat(number_small - 1)
 swing: key(tab)
+switch: key(alt-tab)
 cape: key(escape)
 
 wrong: edit.undo()

@@ -2,6 +2,7 @@ jump: edit.line_end()
 boing:
 	edit.line_end()
 	key(space)
+punch: '. '
 spear: key(enter)
 remove|clean|wash: key(delete)
 (clean|wash) <number_small>:

@@ -81,3 +81,7 @@ steer <number_small>:
 	edit.line_start()
 	edit.word_right()
 	repeat(number_small - 1)
+
+cushion:
+	key(enter:2)
+	edit.up()

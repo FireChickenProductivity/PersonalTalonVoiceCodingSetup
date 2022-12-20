@@ -29,3 +29,12 @@ editor: user.vscode("workbench.action.focusActiveEditorGroup")
     key(up)
     key(enter)
     user.vscode("workbench.action.focusActiveEditorGroup")
+
+pass:
+    edit.select_all()
+    edit.copy()
+    key(escape)
+    key(alt-tab)
+    edit.paste()
+    edit.save()
+

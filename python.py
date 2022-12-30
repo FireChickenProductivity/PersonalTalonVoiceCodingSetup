@@ -28,6 +28,22 @@ class UserActions:
             actions.insert(step)
         start_code_block()
 
+@module.action_class
+class Actions:
+    def fire_chicken_programming_define_python_class(classname: str):
+        ''''''
+        actions.insert('class ')
+        actions.user.insert_formatted(classname ,'hammer')
+        actions.insert(':')
+        actions.edit.line_down()
+
+    def fire_chicken_programming_define_python_subclass(classname: str):
+        ''''''
+        actions.user.fire_chicken_programming_define_python_class(classname)
+        actions.edit.up()
+        actions.edit.line_end()
+        actions.edit.left()
+        actions.user.fire_chicken_insert_around_cursor('(', ')')
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

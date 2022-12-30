@@ -50,5 +50,15 @@ testing <user.prose> over:
     user.insert_formatted(prose, 'snake')
     insert('(self):') 
 
+classy <user.prose>$: 
+    user.fire_chicken_programming_define_python_class(prose)
+classy <user.prose> over:
+    user.fire_chicken_programming_define_python_class(prose)
+
+subclass <user.prose>$:
+    user.fire_chicken_programming_define_python_subclass(prose)
+subclass <user.prose> over:
+    user.fire_chicken_programming_define_python_subclass(prose)
+
 settings():
     user.fire_chicken_default_method_format = 'snake'

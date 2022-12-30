@@ -8,7 +8,7 @@ tag(): user.fire_chicken_snippets
 talon python activate: user.talon_programming_activate_python_commands()
 talon python deactivate: user.talon_programming_deactivate_python_commands()
 
-op in: ' in '
+op (in|each): ' in '
 op not: 'not '
 op not in: ' not in '
 op length: 'len('

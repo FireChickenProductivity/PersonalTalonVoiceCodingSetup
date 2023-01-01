@@ -128,6 +128,10 @@ kinder {user.code_type} <user.prose> over:
 
 #comma related commands
 spam: user.generic_programming_insert_comma_separator()
+beef:
+	edit.right()
+	user.generic_programming_insert_comma_separator()
+
 #camel
 reason <user.prose>$:
 	user.generic_programming_insert_comma_separator()

@@ -85,3 +85,5 @@ steer <number_small>:
 cushion:
 	key(enter:2)
 	edit.up()
+
+slam: key(escape)

@@ -62,3 +62,4 @@ subclass <user.prose> over:
 
 settings():
     user.fire_chicken_default_method_format = 'snake'
+    user.fire_chicken_default_variable_format = 'snake'

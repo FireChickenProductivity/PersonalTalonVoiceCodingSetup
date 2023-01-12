@@ -46,6 +46,13 @@ default_method_format = mod.setting(
     desc = 'The default way to format method names',
 )
 
+default_variable_format = mod.setting(
+    'fire_chicken_default_variable_format',
+    type = str,
+    default = 'camel',
+    desc = 'The default way to format variable names'
+)
+
 @mod.action_class
 class Actions:
     def generic_programming_get_line() -> str:
@@ -118,7 +125,12 @@ class Actions:
     def fire_chicken_call_default_formatted_method_inside(name: str):
         '''Performs the method call inside with the given name and the default format'''
         actions.user.generic_programming_call_method_inside_with_name_formatted(name, default_method_format.get())
-    
+    def fire_chicken_insert_default_formatted_variable(name: str):
+        '''Inserts the variable name with default formatting'''
+        formatted_name = actions.user.formatted_text(name, default_variable_format.get())
+        actions.insert(formatted_name)
+
+
 
         
     def generic_programming_build_for(beginning: str, separator_after_initialization: str, separator_after_condition: str, ending: str ):

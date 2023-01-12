@@ -17,3 +17,8 @@ small <user.cursorless_target>:
 piece <user.cursorless_target>:
     insert(', ')
     user.fire_chicken_cursorless_bring(cursorless_target)
+
+<user.cursorless_target> stow <user.prose>$:
+    user.fire_chicken_insert_default_formatted_variable(prose)
+    user.code_operator_assignment()
+    user.fire_chicken_cursorless_bring(cursorless_target)

@@ -7,6 +7,10 @@ house <user.cursorless_target>:
     user.code_operator_assignment()
     user.fire_chicken_cursorless_bring(cursorless_target)
 
+<user.cursorless_target> (store|house) <user.cursorless_target>: 
+    user.fire_chicken_cursorless_assign(cursorless_target_1)
+    user.fire_chicken_cursorless_bring(cursorless_target_2)
+
 turn <user.cursorless_target>:
     user.fire_chicken_cursorless_return(cursorless_target)
 

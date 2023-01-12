@@ -13,3 +13,7 @@ some <user.cursorless_target>:
 small <user.cursorless_target>:
     user.code_operator_subtraction()
     user.fire_chicken_cursorless_bring(cursorless_target)
+
+piece <user.cursorless_target>:
+    insert(', ')
+    user.fire_chicken_cursorless_bring(cursorless_target)

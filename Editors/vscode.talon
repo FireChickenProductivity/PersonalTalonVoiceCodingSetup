@@ -30,7 +30,7 @@ editor: user.vscode("workbench.action.focusActiveEditorGroup")
     key(enter)
     user.vscode("workbench.action.focusActiveEditorGroup")
 
-pass:
+code pass:
     edit.select_all()
     edit.copy()
     key(escape)

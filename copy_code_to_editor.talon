@@ -1,7 +1,7 @@
 mode: command
 and not mode: user.exam_mode
 -
-grab:
+code grab:
     edit.select_all()
     edit.copy()
     edit.down()

@@ -47,6 +47,9 @@ import numb plot:
     insert('import matplotlib as plt')
     key(enter)
 
+plot: 'plt.'
+numpy: 'np.'
+
 testing <user.prose>$:   
     insert('def test_')
     user.insert_formatted(prose, 'snake')

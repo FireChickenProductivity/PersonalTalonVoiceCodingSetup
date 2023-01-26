@@ -41,6 +41,12 @@ unit test template:
     edit.right()
     repeat(5)
 
+import numb plot:
+    insert('import numpy as np')
+    key(enter)
+    insert('import matplotlib as plt')
+    key(enter)
+
 testing <user.prose>$:   
     insert('def test_')
     user.insert_formatted(prose, 'snake')

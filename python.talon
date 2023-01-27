@@ -44,7 +44,7 @@ unit test template:
 import numb plot:
     insert('import numpy as np')
     key(enter)
-    insert('import matplotlib as plt')
+    insert('import matplotlib.pyplot as plt')
     key(enter)
 
 plot: 'plt.'

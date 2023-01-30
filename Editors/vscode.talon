@@ -38,3 +38,11 @@ code pass:
     edit.paste()
     edit.save()
 
+parrot(shush):
+    key(down)
+    sleep(0.4)
+parrot(shush:repeat):
+    key(down)
+    sleep(0.4)
+parrot(shush:stop):
+    key(enter)

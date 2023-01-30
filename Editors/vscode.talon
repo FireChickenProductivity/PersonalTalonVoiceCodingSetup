@@ -1,4 +1,4 @@
-Visual Studio Code
+app: Visual Studio Code
 -
 
 #Keyboard shortcut for show code actions
@@ -39,10 +39,9 @@ code pass:
     edit.save()
 
 parrot(shush):
-    key(down)
-    sleep(0.4)
+    print('shushing')
 parrot(shush:repeat):
     key(down)
-    sleep(0.4)
+    sleep(0.8)
 parrot(shush:stop):
     key(enter)

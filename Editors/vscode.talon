@@ -37,11 +37,3 @@ code pass:
     key(alt-tab)
     edit.paste()
     edit.save()
-
-parrot(shush):
-    print('shushing')
-parrot(shush:repeat):
-    key(down)
-    sleep(0.8)
-parrot(shush:stop):
-    key(enter)

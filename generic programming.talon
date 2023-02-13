@@ -18,7 +18,7 @@ bracelet:
 	key(enter)
 	user.fire_chicken_insert_around_cursor('{', '}')
 	key(enter)
-leap|Le|leal:
+leap|leal:
 	edit.line_end()
 	key(enter)
 beep|feel:

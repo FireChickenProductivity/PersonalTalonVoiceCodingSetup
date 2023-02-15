@@ -35,5 +35,6 @@ code pass:
     edit.copy()
     key(escape)
     key(alt-tab)
+    sleep(0.5)
     edit.paste()
     edit.save()

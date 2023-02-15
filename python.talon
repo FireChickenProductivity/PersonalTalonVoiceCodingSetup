@@ -55,6 +55,10 @@ import numb plot pan:
     insert('import pandas as pd')
     key(enter)
 
+if main:
+    insert("if __name__ == '__main__':")
+    key(enter)
+
 plot: 'plt.'
 numpy: 'np.'
 

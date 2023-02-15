@@ -19,3 +19,7 @@ class Actions:
         actions.user.code_state_return()
         actions.user.fire_chicken_cursorless_bring(target)
         actions.user.fire_chicken_insert_statement_ending()
+    
+    def fire_chicken_cursorless_call(target: Any):
+        ''''''
+        actions.user.cursorless_command("callAsFunction", target)

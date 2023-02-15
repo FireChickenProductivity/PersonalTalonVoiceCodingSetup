@@ -47,6 +47,14 @@ import numb plot:
     insert('import matplotlib.pyplot as plt')
     key(enter)
 
+import numb plot pan:
+    insert('import numpy as np')
+    key(enter)
+    insert('import matplotlib.pyplot as plt')
+    key(enter)
+    insert('import pandas as pd')
+    key(enter)
+
 plot: 'plt.'
 numpy: 'np.'
 

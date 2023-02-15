@@ -30,3 +30,19 @@ piece <user.cursorless_target>:
     user.fire_chicken_insert_default_formatted_variable(prose)
     user.code_operator_assignment()
     user.fire_chicken_cursorless_bring(cursorless_target)
+
+mine <user.cursorless_target>:
+    user.generic_programming_self_dot()
+    user.fire_chicken_cursorless_bring(cursorless_target)
+
+own <user.cursorless_target>:
+    user.generic_programming_self_dot()
+    user.fire_chicken_cursorless_call(cursorless_target)
+
+mem <user.cursorless_target>:
+    insert('.')
+    user.fire_chicken_cursorless_bring(cursorless_target)
+
+mall <user.cursorless_target>:
+    insert('.')
+    user.fire_chicken_cursorless_call(cursorless_target)

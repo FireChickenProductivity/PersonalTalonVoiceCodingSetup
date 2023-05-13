@@ -1,5 +1,5 @@
 mode: command
-and not mode: user.exam_mode
+and not tag: user.exam_mode
 -
 
 var cell: user.fire_chicken_programming_select_next_variable_name_part()

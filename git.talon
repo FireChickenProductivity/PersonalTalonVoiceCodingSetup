@@ -1,5 +1,5 @@
 mode: command
-and not mode: user.exam_mode
+and not tag: user.exam_mode
 -
 git fetch main:
     insert('git checkout main')

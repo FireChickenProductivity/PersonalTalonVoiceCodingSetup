@@ -3,11 +3,24 @@ boing:
 	edit.line_end()
 	key(space)
 punch: '. '
+pounce:
+	edit.line_end()
+	insert('. ')
 spear|spare: key(enter)
 remove|clean|wash: key(delete)
 (clean|wash) <number_small>:
 	key(delete)
 	repeat(number_small - 1)
+smash:
+	edit.line_end()
+	key(shift-down)
+	key(shift-end)
+	key(backspace)
+reach:
+	edit.line_start()
+	key(shift-up)
+	key(shift-home)
+	key(backspace)
 #On windows, clearing presses backspace
 clearing|sweep: edit.delete()
 sweep <number_small>:
@@ -15,7 +28,6 @@ sweep <number_small>:
 	repeat(number_small - 1)
 swing: key(tab)
 switch: key(alt-tab)
-cape: key(escape)
 
 wrong: edit.undo()
 wrong <number_small>:
@@ -40,6 +52,9 @@ dance:
 	key(tab)
 
 who: edit.right()
+pass:
+	edit.right()
+	edit.right()
 sue: edit.word_right()
 
 soap:

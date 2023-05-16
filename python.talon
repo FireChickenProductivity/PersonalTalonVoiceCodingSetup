@@ -59,6 +59,17 @@ if main:
     insert("if __name__ == '__main__':")
     key(enter)
 
+representation|represent:
+    insert('def __repr__(self):')
+    key(enter)
+    insert('return self.__str__()')
+    key(enter)
+    key(backspace)
+    key(enter)
+    insert('def __str__(self):')
+    key(enter)
+
+ 
 plot: 'plt.'
 numpy: 'np.'
 

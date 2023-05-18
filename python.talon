@@ -92,6 +92,10 @@ subclass <user.prose>$:
 subclass <user.prose> over:
     user.fire_chicken_programming_define_python_subclass(prose)
 
+path join:
+    insert('os.path.join')
+    user.fire_chicken_insert_around_cursor('(', ')')
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

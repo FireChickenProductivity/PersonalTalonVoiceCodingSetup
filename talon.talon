@@ -23,6 +23,9 @@ insert:
     insert('insert')
     insert('()')
     edit.left()
+[app] notify:
+    insert("app.notify")
+    user.fire_chicken_insert_around_cursor('("', '")')
 
 capture:
     user.fire_chicken_insert_around_cursor('<', '>')

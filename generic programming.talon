@@ -42,11 +42,9 @@ keep:
 build calls <number_small> [args|arg|argue|argues|argument|arguments]:
 	user.fire_chicken_build_calls(number_small)
 
-
-
 #formatting:
-phrasing <user.text>$: user.insert_with_history(' ' + text)
-phrasing <user.text> over: user.insert_with_history(' ' + text)
+phrasing|sing <user.text>$: insert(' ' + text)
+phrasing|sing <user.text> over: insert(' ' + text)
 sore <user.prose>$: user.insert_formatted(prose, 'snake')
 sore <user.prose> over: user.insert_formatted(prose, 'snake')
 soaring <user.prose>$: user.insert_formatted('_' + prose, 'snake')
@@ -164,3 +162,7 @@ chase <user.spelling_out_symbol>+:
 
 bound <user.spelling_out_symbol>:
 	user.generic_programming_regular_expression_boundary_search_next(spelling_out_symbol)
+
+#navigation
+swim: app.tab_next()
+dive: app.tab_previous()

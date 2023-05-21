@@ -1,6 +1,11 @@
 tag: user.talon
 -
 state user: 'user.'
+packed|[act|action] paste:
+    insert('user.')
+    key(ctrl-v)
+    insert('()')
+    edit.left()
 
 header (end|ending|finished|finish|done):
     key(enter)

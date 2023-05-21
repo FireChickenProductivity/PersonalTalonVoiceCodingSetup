@@ -23,3 +23,9 @@ insert:
     insert('insert')
     insert('()')
     edit.left()
+
+capture:
+    user.fire_chicken_insert_around_cursor('<', '>')
+    insert('user.')
+
+(number|numb) small: 'number_small'

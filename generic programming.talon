@@ -77,6 +77,8 @@ shove <user.word>:
 	insert(' ' + word)
 	insert(' ')
 
+tooth: edit.paste()
+
 method <user.prose>$:
 	user.generic_programming_call_method_inside_with_name_formatted(prose, 'camel')
 method <user.prose> over:

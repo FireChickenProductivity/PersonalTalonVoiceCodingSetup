@@ -29,8 +29,8 @@ sweep <number_small>:
 swing: key(tab)
 switch: key(alt-tab)
 
-wrong: edit.undo()
-wrong <number_small>:
+fail: edit.undo()
+fail <number_small>:
 	edit.undo()
 	repeat(number_small - 1)
 
@@ -99,6 +99,9 @@ steer <number_small>:
 
 cushion:
 	key(enter:2)
+	edit.up()
+stomp:
+	key(enter)
 	edit.up()
 
 slam: key(escape)

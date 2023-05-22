@@ -18,6 +18,9 @@ bracelet:
 	key(enter)
 	user.fire_chicken_insert_around_cursor('{', '}')
 	key(enter)
+clasp:
+	key('space')
+	key('{')
 leap|leal:
 	edit.line_end()
 	key(enter)

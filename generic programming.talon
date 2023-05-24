@@ -80,7 +80,7 @@ shove <user.word>:
 tooth: edit.paste()
 fang:
 	edit.paste()
-	user.fire_chicken_insert_around_cursor('(', '))
+	user.fire_chicken_insert_around_cursor('(', ')')
 
 method <user.prose>$:
 	user.generic_programming_call_method_inside_with_name_formatted(prose, 'camel')

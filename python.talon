@@ -96,6 +96,20 @@ path join:
     insert('os.path.join')
     user.fire_chicken_insert_around_cursor('(', ')')
 
+mend:
+    insert('()')
+    key('left')
+    insert('self')
+    key('end')
+    key(':')
+    key('enter')
+
+opening:
+    insert('with open')
+    insert('() as')
+    key('left')
+    repeat(3)
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

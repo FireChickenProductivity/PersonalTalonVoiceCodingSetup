@@ -1,4 +1,6 @@
 jump: edit.line_end()
+basement: edit.file_end()
+attic: edit.file_start()
 boing:
 	edit.line_end()
 	key(space)

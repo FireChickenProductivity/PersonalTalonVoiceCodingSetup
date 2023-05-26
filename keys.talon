@@ -9,8 +9,8 @@ pounce:
 	edit.line_end()
 	insert('. ')
 spear|spare: key(enter)
-remove|clean|wash: key(delete)
-(clean|wash) <number_small>:
+wash: key(delete)
+wash <number_small>:
 	key(delete)
 	repeat(number_small - 1)
 smash:
@@ -24,10 +24,11 @@ reach:
 	key(shift-home)
 	key(backspace)
 #On windows, clearing presses backspace
-clearing|sweep: edit.delete()
+sweep: edit.delete()
 sweep <number_small>:
 	edit.delete()
 	repeat(number_small - 1)
+clearing: edit.delete_line()
 swing: key(tab)
 switch: key(alt-tab)
 
@@ -67,7 +68,7 @@ soap:
 
 lone: edit.left()
 sly: edit.word_left()
-broom:
+broom|boom|bloom:
 	edit.extend_word_left()
 	user.generic_programming_wait_word_movement_delay()
 	edit.delete()
@@ -107,3 +108,8 @@ stomp:
 	edit.up()
 
 slam: key(escape)
+
+mimic: edit.copy()
+miming:
+	edit.select_all()
+	edit.copy()

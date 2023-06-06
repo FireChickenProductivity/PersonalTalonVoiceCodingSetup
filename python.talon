@@ -26,6 +26,19 @@ constructor|construct:
     edit.left()
     repeat(1)
 
+elif:
+	key('end')
+	key('esc')
+	key('enter')
+	key('backspace')
+	key('e')
+	key('l')
+	key('i')
+	key('f')
+	key('space')
+	key(':')
+	key('left')
+
 unit test template:
     insert('import unittest')
     key(enter)

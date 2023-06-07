@@ -17,7 +17,7 @@ annotate <user.code_type>:
     insert(': ')
     insert(code_type)
 
-state else if:
+[state] else if:
     insert('elif :')
     edit.left()
 
@@ -25,6 +25,23 @@ constructor|construct:
     insert('def __init__(self, ):')
     edit.left()
     repeat(1)
+
+return false: insert('return False')
+return true: insert('return True')
+
+technique <user.prose>$:
+    insert('def :')
+    edit.left()
+    user.fire_chicken_call_function_inside_with_name_formatted(prose, 'snake')
+    insert('self, ')
+
+approach <user.prose>$:
+    insert('def :')
+    edit.left()
+    user.fire_chicken_call_function_inside_with_name_formatted(prose, 'snake')
+    insert('self')
+    edit.line_end()
+    key(enter)
 
 elif:
 	key('end')

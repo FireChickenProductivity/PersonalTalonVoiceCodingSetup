@@ -27,6 +27,10 @@ leap|leal:
 beep|feel:
 	user.generic_programming_create_line_below()
 	edit.delete()
+pound:
+	user.generic_programming_create_line_below()
+	edit.delete()
+	key(enter)
 reap|real:
 	edit.line_end()
 	key(enter)

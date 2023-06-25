@@ -43,6 +43,16 @@ approach <user.prose>$:
     edit.line_end()
     key(enter)
 
+obtain <user.prose>$:
+    insert('def :')
+    edit.left()
+    user.fire_chicken_call_function_inside_with_name_formatted('get ' + prose, 'snake')
+    insert('self')
+    edit.line_end()
+    key(enter)
+    insert('return self.')
+    user.insert_formatted(prose, 'snake')
+
 elif:
 	key('end')
 	key('esc')
@@ -139,6 +149,15 @@ opening:
     insert('() as')
     key('left')
     repeat(3)
+
+range:
+    insert('range')
+    user.fire_chicken_insert_around_cursor('(', ')')
+
+in range:
+    insert(' in ')
+    insert('range')
+    user.fire_chicken_insert_around_cursor('(', ')')
 
 settings():
     user.fire_chicken_default_method_format = 'snake'

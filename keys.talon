@@ -9,6 +9,7 @@ pounce:
 	edit.line_end()
 	insert('. ')
 spear|spare: key(enter)
+lance: key(shift-enter)
 wash: key(delete)
 wash <number_small>:
 	key(delete)

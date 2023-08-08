@@ -19,7 +19,7 @@ smash:
 	key(shift-down)
 	key(shift-end)
 	key(backspace)
-reach:
+stretch:
 	edit.line_start()
 	key(shift-up)
 	key(shift-home)

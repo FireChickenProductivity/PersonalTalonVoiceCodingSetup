@@ -62,6 +62,10 @@ flowing <user.prose>$: user.insert_formatted('_' + prose, 'all cap,snake')
 flowing <user.prose> over: user.insert_formatted('_' + prose, 'all cap,snake')
 caps case <user.prose>$: user.insert_formatted(prose ,'hammer')
 caps case <user.prose> over: user.insert_formatted(prose ,'hammer')
+object <user.text>$: 
+	user.fire_chicken_auto_generated_command_action_insert_formatted_text(user.text_1, 'capitalized', '')
+	insert('()')
+	key(left)
 
 member <user.prose>$: user.insert_formatted('.' + prose, 'camel')
 member <user.prose> over: user.insert_formatted('.' + prose, 'camel')

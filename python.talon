@@ -109,6 +109,9 @@ representation|represent:
     insert('def __str__(self):')
     key(enter)
 
+equality:
+    insert('def __eq__(self, other) -> bool:')
+    key(enter)
  
 plot: 'plt.'
 numpy: 'np.'

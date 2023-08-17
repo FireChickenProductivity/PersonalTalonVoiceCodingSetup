@@ -38,3 +38,9 @@ code pass:
     sleep(0.5)
     edit.paste()
     edit.save()
+
+running: key(ctrl-f5)
+
+settings():
+    user.context_sensitive_dictation = 1
+    user.fire_chicken_context_sensitive_dictation_use_basic_action_recorder_for_context = 1

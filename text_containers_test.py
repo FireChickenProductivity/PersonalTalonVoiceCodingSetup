@@ -1,5 +1,8 @@
-
-from text_containers import * 
+try:
+    from text_containers import * 
+    PARENTHESES_CONTAINER = TextContainer('(', ')')
+    ANGLE_CONTAINER = TextContainer('<', '>')
+except: pass
 
 import unittest
 
@@ -75,8 +78,7 @@ class TestLeftMostUnclosedContainer(unittest.TestCase):
 
         self.assertEqual(left_most_unclosed_container(text, containers), ANGLE_CONTAINER)
 
-PARENTHESES_CONTAINER = TextContainer('(', ')')
-ANGLE_CONTAINER = TextContainer('<', '>')
+
 def set_up_containers():
     containers = []
     containers.append(PARENTHESES_CONTAINER)

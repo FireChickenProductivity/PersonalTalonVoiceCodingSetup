@@ -65,7 +65,7 @@ caps case <user.prose> over: user.insert_formatted(prose ,'hammer')
 object <user.text>$: 
 	user.fire_chicken_auto_generated_command_action_insert_formatted_text(user.text_1, 'capitalized', '')
 	insert('()')
-	key(left)
+	key('left')
 
 member <user.prose>$: user.insert_formatted('.' + prose, 'camel')
 member <user.prose> over: user.insert_formatted('.' + prose, 'camel')
@@ -73,7 +73,7 @@ fellow <user.prose>$: user.insert_formatted('.' + prose, 'snake')
 fellow <user.prose> over: user.insert_formatted('.' + prose, 'snake')
 sword <user.word>:
 	insert('.')
-	user.insert_with_history(word)
+	user.fire_chicken_programming_insert_with_history(word)
 
 #Ball is a mix between tall and big. Capitalizes the word
 ball <user.word>:
@@ -127,7 +127,7 @@ selfish <user.prose> over:
 
 swordfish <user.word>:
 	user.generic_programming_self_dot()
-	user.insert_with_history(word)
+	user.fire_chicken_programming_insert_with_history(word)
 
 
 

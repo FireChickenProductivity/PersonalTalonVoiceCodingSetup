@@ -44,3 +44,5 @@ running: key(ctrl-f5)
 settings():
     user.context_sensitive_dictation = 1
     user.fire_chicken_context_sensitive_dictation_use_basic_action_recorder_for_context = 1
+    user.fire_chicken_context_sensitive_dictation_select_word_delay = 100
+    user.fire_chicken_context_sensitive_dictation_ending_delay = 50

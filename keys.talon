@@ -14,7 +14,7 @@ wash: key(delete)
 wash <number_small>:
 	key(delete)
 	repeat(number_small - 1)
-smash:
+club:
 	edit.line_end()
 	key(shift-down)
 	key(shift-end)

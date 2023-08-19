@@ -68,6 +68,9 @@ soap:
 	user.generic_programming_wait_word_movement_delay()
 
 lone: edit.left()
+wolf:
+	edit.left()
+	edit.left()
 sly: edit.word_left()
 broom|boom|bloom:
 	edit.extend_word_left()

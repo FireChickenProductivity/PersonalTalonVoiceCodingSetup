@@ -49,6 +49,8 @@ git obtain changes from main: insert('git pull origin main')
 
 git new branch: insert('git checkout -b ')
 
-git new commit: 
-    insert('git commit -m ')
+git new commit|git commit: 
+    insert('git commit -a -m ')
     user.fire_chicken_insert_around_cursor("'", "'")
+
+git push changes: 'git push'

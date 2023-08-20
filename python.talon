@@ -29,6 +29,12 @@ constructor|construct:
 return false: insert('return False')
 return true: insert('return True')
 
+device <user.text>:
+    insert(' = ')
+    user.fire_chicken_auto_generated_command_action_insert_formatted_text(user.text_1, 'capitalized', '')
+    insert('()')
+    key('left')
+
 technique <user.prose>$:
     insert('def :')
     edit.left()

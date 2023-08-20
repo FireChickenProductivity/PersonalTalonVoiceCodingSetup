@@ -5,9 +5,7 @@ module = Module()
 class Actions:
     def fire_chicken_cursorless_bring(target: Any):
         ''''''
-        actions.user.cursorless_command("callAsFunction", target)
-        actions.key('delete')
-        actions.key('backspace')
+        actions.user.cursorless_command("replaceWithTarget", target)
     
     def fire_chicken_cursorless_assign(target: Any):
         ''''''

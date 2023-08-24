@@ -117,3 +117,5 @@ mimic: edit.copy()
 miming:
 	edit.select_all()
 	edit.copy()
+
+blade: ' --'

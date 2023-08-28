@@ -119,3 +119,4 @@ miming:
 	edit.copy()
 
 blade: ' --'
+knife: ' -'

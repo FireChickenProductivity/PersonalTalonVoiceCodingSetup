@@ -5,7 +5,7 @@ module = Module()
 separator = module.setting(
     'fire_chicken_separator',
     type = str,
-    default = '!!&   3$%^$',
+    default = '   !!&   3$%^$   ',
     desc = 'separator used to separate arguments to commands',
 )
 

@@ -1,6 +1,8 @@
 jump: edit.line_end()
 basement: edit.file_end()
 attic: edit.file_start()
+pup: key(pageup)
+pone: key(pagedown)
 boing:
 	edit.line_end()
 	key(space)

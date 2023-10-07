@@ -22,7 +22,6 @@ class TextContainer:
     
 
 
-
 class SplitStringIgnoringContainersState:
     def __init__(self):
         self.result = []

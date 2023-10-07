@@ -19,7 +19,7 @@ splitting: '/='
 assign|receive: ' = '
 lesser: ' < '
 greater: ' > '
-mod: ' % '
+moding: ' % '
 remain: ' %= '
 surplus: '%='
 same: ' == '
@@ -38,6 +38,9 @@ amping: ' & '
 banger: ' != '
 loudly: '!='
 staff: ': '
+cane:
+	edit.line_end()
+	insert(': ')
 simmer: '; '
 swine: ';'
 calming: ' , '

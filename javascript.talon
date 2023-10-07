@@ -18,6 +18,11 @@ strict equal: '==='
 strict (bang|banger): ' !== '
 strict not: '!=='
 
+compose <user.text>$:
+    user.fire_chicken_insert_react_component(text)
+compose <user.text> over:
+    user.fire_chicken_insert_react_component(text)
+
 allow <user.prose>$:
     insert('let ')
     user.insert_formatted(prose, 'camel')

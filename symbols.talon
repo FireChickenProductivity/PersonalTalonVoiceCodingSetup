@@ -38,7 +38,7 @@ amping: ' & '
 banger: ' != '
 loudly: '!='
 staff: ': '
-cane:
+pole:
 	edit.line_end()
 	insert(': ')
 simmer: '; '

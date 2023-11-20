@@ -141,3 +141,10 @@ new plain <user.fire_chicken_programming_generic_class>:
 
 fulfills <user.prose>$: user.java_programming_indicate_implements(prose)
 fulfills <user.prose> over: user.java_programming_indicate_implements(prose)
+
+testing: 
+    insert('@Test\n@DisplayName("")')
+    key(left:2)
+assert true: user.fire_chicken_call_function_inside("assertTrue")
+assert false: user.fire_chicken_call_function_inside("assertFalse")
+assert equals: user.fire_chicken_call_function_inside("assertEquals")

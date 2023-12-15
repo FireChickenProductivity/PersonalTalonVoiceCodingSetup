@@ -22,6 +22,8 @@ state user: 'user.'
     user.talon_python_programming_define_module_action_class(talon_programming_module_name, 'Actions')
 <user.talon_programming_module_name> setting:
     user.talon_python_programming_start_setting_definition(talon_programming_module_name)
+<user.talon_programming_module_name> tag:
+    user.talon_python_programming_start_tag_definition(talon_programming_module_name)
 
 action <user.talon_programming_standard_actions>:
     insert('actions.')

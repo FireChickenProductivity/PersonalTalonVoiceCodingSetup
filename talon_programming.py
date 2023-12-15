@@ -50,7 +50,7 @@ class Actions:
         actions.key('enter')
     def talon_python_programming_start_setting_definition(module_name: str):
         '''Starts setting definition'''
-        actions.insert(f' = {module_name}.setting()')
+        actions.insert(f'{module_name}.setting()')
         actions.edit.left()
         actions.key('enter')
         actions.insert("'',")
@@ -65,13 +65,10 @@ class Actions:
         actions.edit.line_end()
         for i in range(2):
             actions.edit.left()
-
-
-
-
-@module.capture(rule = 'mod|module')
-def talon_programming_module_name(m) -> str:
-    return str(m[0])
+    def talon_python_programming_start_tag_definition(module_name: str):
+        '''Starts tag definition'''
+        actions.insert(f'{module_name}.tag()')
+        actions.edit.left()
 
 @module.capture(rule = 'standard|stand')
 def talon_programming_standard(m) -> str:

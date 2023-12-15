@@ -1,4 +1,4 @@
-from talon import Module, actions, Context
+from talon import Module, actions, Context, settings
 from .styles import *
 
 module = Module()
@@ -21,8 +21,10 @@ module.tag(
     desc = 'enables commands for c style programming'
 )
 
-brace_style = module.setting(
-    'c_style_programming_brace_style',
+brace_style_setting_name = 'c_style_programming_brace_style'
+brace_style = 'user.' + brace_style_setting_name
+module.setting(
+    brace_style_setting_name,
     type = str,
     default = 'same line',
     desc = 'the active brace style',
@@ -172,11 +174,11 @@ class JavascriptUserActions:
         actions.user.c_style_programming_make_count_for_loop_given_datatype('let')
 
 def start_block():
-    if brace_style.get() == 'same line':
+    if settings.get(brace_style) == 'same line':
         start_block_same_line()
-    elif brace_style.get() == 'next line':
+    elif settings.get(brace_style) == 'next line':
         start_block_next_line()
-    elif brace_style.get() == 'same line no space':
+    elif settings.get(brace_style) == 'same line no space':
         start_block_same_line_no_space()
 def start_block_same_line():
     actions.edit.line_end()
@@ -194,7 +196,7 @@ def start_block_same_line_no_space():
     actions.key('enter')
 
 def start_block_continuation():
-    insert_continuation_spaces(brace_style.get())
+    insert_continuation_spaces(settings.get(brace_style))
     start_block()
     return_from_block()
 def insert_continuation_spaces(style: str):
@@ -205,16 +207,16 @@ def insert_continuation_spaces(style: str):
 
 # use this after starting a block to go before the start of it
 def return_from_block():
-    if brace_style.get() == 'same line':
+    if settings.get(brace_style) == 'same line':
         actions.edit.up()
         actions.edit.line_end()
         actions.edit.left()
         actions.edit.left()
-    elif brace_style.get() == 'next line':
+    elif settings.get(brace_style) == 'next line':
         actions.edit.up()
         actions.edit.up()
         actions.edit.line_end()
-    elif brace_style.get() == 'same line no space':
+    elif settings.get(brace_style) == 'same line no space':
         actions.edit.up()
         actions.edit.line_end()
         actions.edit.left()

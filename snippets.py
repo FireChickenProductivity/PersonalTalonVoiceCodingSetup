@@ -1,4 +1,4 @@
-from talon import actions, Module, Context
+from talon import actions, Module, Context, settings
 
 module = Module()
 context = Context()
@@ -8,8 +8,10 @@ tag: user.fire_chicken_snippets
 module.tag('fire_chicken_snippets', desc = 'commands for using language specific code snippets')
 module.list('fire_chicken_method_snippets', desc = 'language specific method snippets')
 
-math_class_name = module.setting(
-    'fire_chicken_snippets_math_class_name',
+math_class_name_setting_name = 'fire_chicken_snippets_math_class_name'
+math_class_name = 'user.' + math_class_name_setting_name
+module.setting(
+    math_class_name_setting_name,
     type = str,
     default = 'Math',
     desc = 'Language specific math class name',
@@ -37,4 +39,4 @@ class Actions:
 
 
 def insert_math_class():
-    actions.insert(math_class_name.get())
+    actions.insert(settings.get(math_class_name))

@@ -1,4 +1,4 @@
-from talon import Module, actions, clip
+from talon import Module, actions, clip, settings
 from typing import Callable, List, Tuple
 from .text_containers import TextContainer, split_string_ignoring_containers
 from .styles import * 
@@ -16,38 +16,48 @@ mod.tag(
     desc = 'self referencing the constructor'
 )
 
-clipboard_operation_delay = mod.setting(
-    'generic_programming_clipboard_operation_delay',
+clipboard_operation_delay_setting_name = 'generic_programming_clipboard_operation_delay'
+clipboard_operation_delay = 'user.' + clipboard_operation_delay_setting_name
+mod.setting(
+    clipboard_operation_delay_setting_name,
     type = int,
     default = 250,
     desc = 'How long in milliseconds commands will pause when using the clipboard to ensure that they do not restore the clipboard too quickly.'
 )
 
-word_movement_delay = mod.setting(
-    'generic_programming_word_movement_delay',
+word_movement_delay_setting_name = 'generic_programming_word_movement_delay'
+word_movement_delay = 'user.' + word_movement_delay_setting_name
+mod.setting(
+    word_movement_delay_setting_name,
     type = int,
     default = 100,
     desc = 'How long commands should pause after word movement. Needed to get desired behavior in some editors.'
 )
 
-suggestion_closing_delay = mod.setting(
-    'generic_programming_suggestion_closing_delay',
+suggestion_closing_delay_setting_name = 'generic_programming_suggestion_closing_delay'
+suggestion_closing_delay = 'user.' + suggestion_closing_delay_setting_name
+mod.setting(
+    suggestion_closing_delay_setting_name,
     type = int,
     default = 100,
     desc = 'How long commands should pause when closing code suggestions in milliseconds',
 )
 def wait_suggestion_closing_delay():
-    actions.sleep(f'{suggestion_closing_delay.get()}ms')
+    actions.sleep(f'{settings.get(suggestion_closing_delay)}ms')
 
-default_method_format = mod.setting(
-    'fire_chicken_default_method_format',
+default_method_format_setting_name = 'fire_chicken_default_method_format'
+default_method_format = 'user.' + default_method_format_setting_name
+mod.setting(
+    default_method_format_setting_name,
     type = str,
     default = 'camel',
     desc = 'The default way to format method names',
 )
 
-default_variable_format = mod.setting(
-    'fire_chicken_default_variable_format',
+default_variable_format_setting_name = 'fire_chicken_default_variable_format'
+default_variable_format = 'user.' + default_variable_format_setting_name
+mod.setting(
+    default_variable_format_setting_name,
     type = str,
     default = 'camel',
     desc = 'The default way to format variable names'
@@ -60,14 +70,14 @@ class Actions:
         with clip.revert():
             actions.edit.select_line()
             actions.edit.copy()
-            actions.sleep(f'{clipboard_operation_delay.get()}ms')
+            actions.sleep(f'{settings.get(clipboard_operation_delay)}ms')
             result = clip.text()
         return result
     def generic_programming_get_selected_text() -> str:
         '''Returns the selected text'''
         with clip.revert():
             actions.edit.copy()
-            actions.sleep(f'{clipboard_operation_delay.get()}ms')
+            actions.sleep(f'{settings.get(clipboard_operation_delay)}ms')
             result = clip.text()
         return result
     def generic_programming_get_comma_separated_line():
@@ -121,13 +131,13 @@ class Actions:
         actions.user.generic_programming_call_method_inside(formatted_name)
     def fire_chicken_call_default_formatted_method(name: str):
         '''Performs the method call with the given name and the default format'''
-        actions.user.generic_programming_call_method_with_name_formatted(name, default_method_format.get())
+        actions.user.generic_programming_call_method_with_name_formatted(name, settings.get(default_method_format))
     def fire_chicken_call_default_formatted_method_inside(name: str):
         '''Performs the method call inside with the given name and the default format'''
-        actions.user.generic_programming_call_method_inside_with_name_formatted(name, default_method_format.get())
+        actions.user.generic_programming_call_method_inside_with_name_formatted(name, settings.get(default_method_format))
     def fire_chicken_insert_default_formatted_variable(name: str):
         '''Inserts the variable name with default formatting'''
-        formatted_name = actions.user.formatted_text(name, default_variable_format.get())
+        formatted_name = actions.user.formatted_text(name, settings.get(default_variable_format))
         actions.insert(formatted_name)
 
 
@@ -143,7 +153,7 @@ class Actions:
         actions.insert(result_string)
     def generic_programming_wait_word_movement_delay():
         '''Sleeps for the word movement delay amount'''
-        actions.sleep(f'{word_movement_delay.get()}ms')
+        actions.sleep(f'{settings.get(word_movement_delay)}ms')
     def generic_programming_self_dot():
         '''Uses the community repository code to create the language version of self dot'''
         actions.user.code_self()

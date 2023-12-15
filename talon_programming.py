@@ -70,6 +70,10 @@ class Actions:
         actions.insert(f'{module_name}.tag()')
         actions.edit.left()
 
+@module.capture(rule = 'mod|module')
+def talon_programming_module_name(m) -> str:
+    return str(m[0])
+
 @module.capture(rule = 'standard|stand')
 def talon_programming_standard(m) -> str:
     return str(m[0])

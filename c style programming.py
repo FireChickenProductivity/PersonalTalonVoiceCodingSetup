@@ -126,10 +126,10 @@ class Actions:
             initial_value = code[1]
             target = code[2]
         if len(code) > 3:
-            adjustment = apply_spacing_style_to(assign_plus_style.get(), '+=') + code[3]
+            adjustment = apply_spacing_style_to(settings.get(assign_plus_style), '+=') + code[3]
 
-        initialization = datatype + ' ' + variable + apply_spacing_style_to(assignment_style.get(), '=') + initial_value
-        condition = variable + apply_spacing_style_to(less_than_style.get(), '<') + target
+        initialization = datatype + ' ' + variable + apply_spacing_style_to(settings.get(assignment_style), '=') + initial_value
+        condition = variable + apply_spacing_style_to(settings.get(less_than_style), '<') + target
         adjustment_step = variable + adjustment
         insert_for_loop(initialization, condition, adjustment_step)
         

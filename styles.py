@@ -302,7 +302,7 @@ def apply_spacing_style_to(style, target):
     return f'{space_before}{target}{space_after}'
 
 def apply_spacing_setting_to(setting, target):
-    return apply_spacing_style_to(setting.get(), target)
+    return apply_spacing_style_to(settings.get(setting), target)
 
 def apply_spacing_style_to_container(style, container):
     result = apply_spacing_style_to_container_inside(style, container)

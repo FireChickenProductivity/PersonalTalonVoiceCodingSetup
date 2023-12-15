@@ -97,7 +97,7 @@ class Actions:
             actions.insert(function_name)
             get_function_call_parentheses().insert()
             get_function_call_parentheses().enter_from_right()
-            separator = apply_spacing_style_to(comma_separator_style.get(), ',')
+            separator = apply_spacing_style_to(comma_separator_style, ',')
             arguments = separator.join(argument_list)
             actions.insert(arguments)
             actions.edit.line_end()

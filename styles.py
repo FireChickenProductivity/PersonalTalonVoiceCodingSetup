@@ -5,7 +5,7 @@ from talon import Module, actions, settings
 class StylizedContainer(TextContainer):
     def __init__(self, start, end, style_setting, invalid_left_boundary = '', invalid_right_boundary = ''):
         super().__init__(start, end, invalid_left_boundary, invalid_right_boundary)
-        self.style = style_setting.get()
+        self.style = settings.get(style_setting)
     def get_text(self):
         text = apply_spacing_style_to_container(self.style, self)
         return text

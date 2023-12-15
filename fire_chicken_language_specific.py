@@ -1,4 +1,4 @@
-from talon import actions, Module
+from talon import actions, Module, settings
 from .styles import * 
 from typing import List
 
@@ -33,8 +33,10 @@ module.list('fire_chicken_fast_functions', desc = 'Functions that can be dictate
 def fire_chicken_fast_functions(m) -> str:
     return m.fire_chicken_fast_functions
 
-statement_ending = module.setting(
-    'fire_chicken_statement_ending',
+statement_ending_setting_name = 'fire_chicken_statement_ending'
+statement_ending = 'user.' + statement_ending_setting_name
+module.setting(
+    statement_ending_setting_name,
     type = str,
     default = '',
     desc = 'Language specific statement ending'
@@ -112,10 +114,10 @@ class Actions:
         arguments = line[1 : ]
         argument_lists = get_list_divided_by_continuous_regions_of_length(arguments, arguments_per_call)
         for argument_list in argument_lists:
-            build_call(function_name, argument_list, statement_ending.get())
+            build_call(function_name, argument_list, settings.get(statement_ending))
     def fire_chicken_get_statement_ending() -> str:
         ''''''
-        return statement_ending.get()
+        return settings.get(statement_ending)
     def fire_chicken_insert_statement_ending():
         ''''''
         actions.insert(actions.user.fire_chicken_get_statement_ending())

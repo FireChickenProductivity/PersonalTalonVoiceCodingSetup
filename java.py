@@ -73,7 +73,7 @@ def get_data_type_without_generic_specifics(name):
 
 context = Context()
 context.matches = r'''
-tag: user.java
+code.language: java
 '''
 
 @context.action_class('user')

@@ -1,4 +1,4 @@
-tag: user.sql
+code.language: sql
 -
 create table: 'CREATE TABLE '
 varchar: 

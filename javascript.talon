@@ -1,4 +1,4 @@
-tag: user.javascript
+code.language: javascript
 -
 tag(): user.c_style_programming
 tag(): user.fire_chicken_fast_functions

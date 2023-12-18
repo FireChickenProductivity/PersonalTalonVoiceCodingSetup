@@ -1,4 +1,4 @@
-tag: user.talon
+code.language: talon
 -
 state user: 'user.'
 packed|[act|action] paste:

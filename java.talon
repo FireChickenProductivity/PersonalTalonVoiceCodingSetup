@@ -1,4 +1,4 @@
-tag: user.java
+code.language: java
 -
 tag(): user.c_style_programming
 tag(): user.fire_chicken_programming_self_reference_constructor

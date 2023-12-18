@@ -7,12 +7,12 @@ context.matches = '''tag: user.c_style_programming'''
 context_without_javascript = Context()
 context_without_javascript.matches = r'''
 tag: user.c_style_programming
-and not tag: user.javascript
+not code.language: javascript
 '''
 #Javascript stuff should normally go in the javascript files but not when overriding c style programming stuff
 javascript_context = Context()
 javascript_context.matches = r'''
-tag: user.javascript
+code.language: javascript
 '''
 
 

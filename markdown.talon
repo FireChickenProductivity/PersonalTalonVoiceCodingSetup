@@ -1,4 +1,4 @@
-tag: user.markdown
+code.language: markdown
 -
 header <number_small>: 
     insert('#')

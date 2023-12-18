@@ -1,5 +1,5 @@
 app: vscode
-tag: user.python
+code.language: python
 -
 debug <user.cursorless_target>:
     user.fire_chicken_programming_insert_python_debug_print_statement_from_cursorless_target(cursorless_target)

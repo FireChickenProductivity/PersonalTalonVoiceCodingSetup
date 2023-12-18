@@ -1,4 +1,4 @@
-tag: user.python
+code.language: python
 and tag: user.fire_chicken_talon_python_programming
 -
 (keypress|keystroke) <user.keys>$: user.talon_python_programming_insert_keypress(keys)

@@ -3,7 +3,7 @@ from talon import Module, actions, Context
 module = Module()
 context = Context()
 context.matches = r'''
-tag: user.python
+code.language: python
 '''
 
 @context.action_class('user')

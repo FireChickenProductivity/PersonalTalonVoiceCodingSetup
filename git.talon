@@ -53,7 +53,7 @@ git new commit|git commit:
     insert('git commit -a -m ')
     user.fire_chicken_insert_around_cursor("'", "'")
 
-commit <user.text>: 
+commit <user.text>$: 
     insert('git commit -a -m \'\'')
     key('left')
     user.fire_chicken_auto_generated_command_action_insert_formatted_text(user.text_1, 'capitalized lower', ' ')

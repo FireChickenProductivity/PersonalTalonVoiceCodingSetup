@@ -66,9 +66,6 @@ state var: 'var '
 state (implements|imp|imply): ' implements '
 state extends: ' extends '
 
-op ray: user.generic_programming_insert_empty_declaration_squares()
-
-
 #Short for declare
 Claire {user.code_type} <user.prose>$:
     insert(user.code_type + ' ')

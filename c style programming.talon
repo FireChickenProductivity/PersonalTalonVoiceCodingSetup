@@ -12,6 +12,7 @@ form more <user.c_style_programming_continuation_flow_control_name>:
 meal <user.c_style_programming_continuation_flow_control_name>:
     user.c_style_programming_continuation_flow_control_next_line(c_style_programming_continuation_flow_control_name)
 
+op ray: user.generic_programming_insert_empty_declaration_squares()
 
 form else: user.c_style_programming_else()
 

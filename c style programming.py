@@ -42,13 +42,12 @@ def c_style_programming_continuation_flow_control_name(flow_control) -> str:
 def c_style_programming_brace_style(style) -> str:
     return str(' '.join(style))
 
-@module.capture(rule = '<user.code_type> [array|ray]')
+@module.capture(rule = '(<user.code_type>|<user.c_types>) [array|ray]')
 def c_style_programming_type(m) -> str:
-    result = m.code_type
+    result = m[0]
     if len(m) > 1 and m[1] in ['array', 'ray']:
         result += get_declaration_squares().get_empty_text()
     return result
-
     
 
 @module.action_class

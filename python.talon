@@ -101,6 +101,12 @@ import numb plot pan:
     insert('import pandas as pd')
     key(enter)
 
+linear algebra|lionel: 'linalg.'
+least square: 
+    user.fire_chicken_call_function_inside('lstsq')
+inverse:
+    user.fire_chicken_call_function_inside('inv')
+
 if main:
     insert("if __name__ == '__main__':")
     key(enter)
@@ -120,7 +126,7 @@ equality:
     key(enter)
  
 plot: 'plt.'
-numpy: 'np.'
+numpy|nope: 'np.'
 
 testing <user.prose>$:   
     insert('def test_')

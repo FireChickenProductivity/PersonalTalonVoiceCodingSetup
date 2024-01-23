@@ -1,6 +1,6 @@
 #symbol dictation
 rope: '"'
-tape: user.fire_chicken_insert_around_cursor('"', '"')
+lace: user.fire_chicken_insert_around_cursor('"', '"')
 (twin|twine): user.fire_chicken_insert_around_cursor("'", "'")
 yarn: '`'
 noise: '&'

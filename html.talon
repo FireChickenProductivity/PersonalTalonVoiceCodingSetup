@@ -7,3 +7,6 @@ tagging <user.letter>+: user.fire_chicken_programming_html_insert_single_line_el
 h ref: insert(' href="')
 source: insert(' src="')
 (alt|alternate) text: insert(' alt="')
+horizontal (rule|line|break): insert('<hr>')
+line break: insert('<br>')
+pre formated text: user.fire_chicken_programming_html_insert_single_line_element('pre')

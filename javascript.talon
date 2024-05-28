@@ -72,3 +72,6 @@ proper <user.prose>:
 
 inner (html|hit mal):
     insert('.innerHTML = ')
+
+function: 
+    insert('function ')

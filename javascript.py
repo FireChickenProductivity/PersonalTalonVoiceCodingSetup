@@ -4,6 +4,7 @@ module = Module()
 context = Context()
 context.matches = r'''
 code.language: javascript
+code.language: html
 '''
 
 @module.action_class

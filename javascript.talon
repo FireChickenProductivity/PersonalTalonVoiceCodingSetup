@@ -75,3 +75,6 @@ inner (html|hit mal):
 
 function: 
     insert('function ')
+
+value: 
+    insert('$(')

@@ -174,6 +174,9 @@ in range:
     insert('range')
     user.fire_chicken_insert_around_cursor('(', ')')
 
+flask route:
+    insert("@app.route('/")
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

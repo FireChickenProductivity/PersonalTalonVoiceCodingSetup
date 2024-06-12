@@ -1,4 +1,5 @@
 code.language: javascript
+code.language: html
 -
 tag(): user.c_style_programming
 tag(): user.fire_chicken_fast_functions
@@ -68,3 +69,15 @@ proper <user.prose>:
     insert(' => {}')
     edit.left()
     key(enter)
+
+inner (html|hit mal):
+    insert('.innerHTML = ')
+
+function: 
+    insert('function ')
+
+value: 
+    insert('$(')
+
+hooking <user.text>:
+    user.fire_chicken_insert_react_hook(text)

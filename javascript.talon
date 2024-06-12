@@ -78,3 +78,6 @@ function:
 
 value: 
     insert('$(')
+
+hooking <user.text>:
+    user.fire_chicken_insert_react_hook(text)

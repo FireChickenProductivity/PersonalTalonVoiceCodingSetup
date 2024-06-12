@@ -15,6 +15,14 @@ class Actions:
         component_start: str = f"<{component_name_text}>"
         component_ending: str = f'</{component_name_text}>'
         actions.user.fire_chicken_insert_around_cursor(component_start, component_ending)
+    
+    def fire_chicken_insert_react_hook(name: str):
+        '''Defines react hook variables'''
+        hook_name: str = actions.user.fire_chicken_convert_text_to_camel_case(name)
+        pascal_case_hook_name: str = actions.user.fire_chicken_convert_text_to_pascal_case(name)
+        text = f"const [{hook_name}, set{pascal_case_hook_name}] = useState();"
+        actions.insert(text)
+        for i in range(2): actions.edit.left()
 
 context.lists['user.fire_chicken_fast_functions'] = {
     'prompting' : 'prompt',

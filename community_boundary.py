@@ -13,3 +13,6 @@ class Actions:
         '''Converts the text to pascal case'''
         return actions.user.formatted_text(text, "hammer")
 
+    def fire_chicken_convert_text_to_camel_case(text: str) -> str:
+        '''Converts the text to camel case'''
+        return actions.user.formatted_text(text, "camel")

@@ -76,6 +76,14 @@ inner (html|hit mal):
 function: 
     insert('function ')
 
+export: 'export '
+default: 'default '
+
+importing: 
+    insert('import {  ')
+    edit.left()
+import: 'import '
+
 value: 
     insert('$(')
 

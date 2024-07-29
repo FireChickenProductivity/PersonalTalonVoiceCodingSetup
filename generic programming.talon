@@ -52,32 +52,28 @@ build calls <number_small> [args|arg|argue|argues|argument|arguments]:
 #formatting:
 phrasing|sing <user.text>$: insert(' ' + text)
 phrasing|sing <user.text> over: insert(' ' + text)
-sore <user.prose>$: user.insert_formatted(prose, 'snake')
-sore <user.prose> over: user.insert_formatted(prose, 'snake')
-soaring <user.prose>$: user.insert_formatted('_' + prose, 'snake')
-soaring <user.prose> over: user.insert_formatted('_' + prose, 'snake')
-flow [case] <user.prose>$: user.insert_formatted(prose, 'all cap,snake')
-flow [case] <user.prose> over: user.insert_formatted(prose, 'all cap,snake')
-flowing <user.prose>$: user.insert_formatted('_' + prose, 'all cap,snake')
-flowing <user.prose> over: user.insert_formatted('_' + prose, 'all cap,snake')
-caps case <user.prose>$: user.insert_formatted(prose ,'hammer')
-caps case <user.prose> over: user.insert_formatted(prose ,'hammer')
+sore <user.prose>$: user.fire_chicken_insert_with_snake_case(prose)
+sore <user.prose> over: user.fire_chicken_insert_with_snake_case(prose)
+soaring <user.prose>$: user.fire_chicken_insert_with_snake_case('_' + prose)
+soaring <user.prose> over: user.fire_chicken_insert_with_snake_case('_' + prose)
+flow [case] <user.prose>$: user.fire_chicken_insert_with_upper_snake_case(prose)
+flow [case] <user.prose> over: user.fire_chicken_insert_with_upper_snake_case(prose)
+flowing <user.prose>$: user.fire_chicken_insert_with_upper_snake_case('_' + prose)
+flowing <user.prose> over: user.fire_chicken_insert_with_upper_snake_case('_' + prose)
+pascal <user.prose>$: user.fire_chicken_insert_with_pascal_case(prose)
+pascal <user.prose> over: user.fire_chicken_insert_with_pascal_case(prose)
 object <user.text>$: 
 	user.fire_chicken_auto_generated_command_action_insert_formatted_text(user.text_1, 'capitalized', '')
 	insert('()')
 	key('left')
 
-member <user.prose>$: user.insert_formatted('.' + prose, 'camel')
-member <user.prose> over: user.insert_formatted('.' + prose, 'camel')
+member <user.prose>$: user.fire_chicken_insert_with_camel_case('.' + prose)
+member <user.prose> over: user.fire_chicken_insert_with_camel_case('.' + prose)
 fellow <user.prose>$: user.insert_formatted('.' + prose, 'snake')
 fellow <user.prose> over: user.insert_formatted('.' + prose, 'snake')
 sword <user.word>:
 	insert('.')
 	user.fire_chicken_programming_insert_with_history(word)
-
-#Ball is a mix between tall and big. Capitalizes the word
-ball <user.word>:
-	user.insert_formatted(word, 'hammer')
 
 march <user.word>: insert(word + ' ')
 push <user.word>: insert(' ' + word)

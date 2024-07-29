@@ -77,16 +77,15 @@ class Actions:
         diamond.insert_empty()
     def fire_chicken_programming_code_generic_type_start(typename: str):
         '''By default, puts the typename in pascal case and then does the diamond operator'''
-        actions.user.insert_formatted(typename, 'hammer')
+        actions.user.fire_chicken_insert_with_pascal_case(typename)
         actions.user.fire_chicken_programming_code_generics_operator()
     def fire_chicken_programming_code_generic_type_info_start(typename: str):
         '''By default, inserts the diamond operator and puts the argument in it'''
-        pascal_case_text = actions.user.formatted_text(typename, 'hammer')
+        pascal_case_text = actions.user.fire_chicken_format_text(typename, 'pascal')
         actions.user.fire_chicken_programming_code_generic_type_info([pascal_case_text])
     def fire_chicken_programming_code_generic_type_info(typenames: List):
         '''By default, inserts the diamond operator and puts the arguments in it separated by commas'''
         actions.user.fire_chicken_programming_code_generics_operator()
-        is_first = True
         for index, typename in enumerate(typenames):
             actions.insert(typename)
             if index + 1 != len(typenames):

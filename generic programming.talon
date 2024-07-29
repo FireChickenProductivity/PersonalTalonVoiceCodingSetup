@@ -52,32 +52,28 @@ build calls <number_small> [args|arg|argue|argues|argument|arguments]:
 #formatting:
 phrasing|sing <user.text>$: insert(' ' + text)
 phrasing|sing <user.text> over: insert(' ' + text)
-sore <user.prose>$: user.insert_formatted(prose, 'snake')
-sore <user.prose> over: user.insert_formatted(prose, 'snake')
-soaring <user.prose>$: user.insert_formatted('_' + prose, 'snake')
-soaring <user.prose> over: user.insert_formatted('_' + prose, 'snake')
-flow [case] <user.prose>$: user.insert_formatted(prose, 'all cap,snake')
-flow [case] <user.prose> over: user.insert_formatted(prose, 'all cap,snake')
-flowing <user.prose>$: user.insert_formatted('_' + prose, 'all cap,snake')
-flowing <user.prose> over: user.insert_formatted('_' + prose, 'all cap,snake')
-caps case <user.prose>$: user.insert_formatted(prose ,'hammer')
-caps case <user.prose> over: user.insert_formatted(prose ,'hammer')
+sore <user.prose>$: user.fire_chicken_insert_with_snake_case(prose)
+sore <user.prose> over: user.fire_chicken_insert_with_snake_case(prose)
+soaring <user.prose>$: user.fire_chicken_insert_with_snake_case('_' + prose)
+soaring <user.prose> over: user.fire_chicken_insert_with_snake_case('_' + prose)
+flow [case] <user.prose>$: user.fire_chicken_insert_with_upper_snake_case(prose)
+flow [case] <user.prose> over: user.fire_chicken_insert_with_upper_snake_case(prose)
+flowing <user.prose>$: user.fire_chicken_insert_with_upper_snake_case('_' + prose)
+flowing <user.prose> over: user.fire_chicken_insert_with_upper_snake_case('_' + prose)
+pascal <user.prose>$: user.fire_chicken_insert_with_pascal_case(prose)
+pascal <user.prose> over: user.fire_chicken_insert_with_pascal_case(prose)
 object <user.text>$: 
 	user.fire_chicken_auto_generated_command_action_insert_formatted_text(user.text_1, 'capitalized', '')
 	insert('()')
 	key('left')
 
-member <user.prose>$: user.insert_formatted('.' + prose, 'camel')
-member <user.prose> over: user.insert_formatted('.' + prose, 'camel')
-fellow <user.prose>$: user.insert_formatted('.' + prose, 'snake')
-fellow <user.prose> over: user.insert_formatted('.' + prose, 'snake')
+member <user.prose>$: user.fire_chicken_insert_with_camel_case('.' + prose)
+member <user.prose> over: user.fire_chicken_insert_with_camel_case('.' + prose)
+fellow <user.prose>$: user.fire_chicken_insert_with_snake_case('.' + prose)
+fellow <user.prose> over: user.fire_chicken_insert_with_snake_case('.' + prose)
 sword <user.word>:
 	insert('.')
 	user.fire_chicken_programming_insert_with_history(word)
-
-#Ball is a mix between tall and big. Capitalizes the word
-ball <user.word>:
-	user.insert_formatted(word, 'hammer')
 
 march <user.word>: insert(word + ' ')
 push <user.word>: insert(' ' + word)
@@ -112,17 +108,17 @@ process <user.prose> over:
 
 selfie <user.prose>$:
 	user.generic_programming_self_dot()
-	user.insert_formatted(prose, 'snake')
+	user.fire_chicken_insert_with_snake_case(prose)
 selfie <user.prose> over:
 	user.generic_programming_self_dot()
-	user.insert_formatted(prose, 'snake')
+	user.fire_chicken_insert_with_snake_case(prose)
 
 selfish <user.prose>$:
 	user.generic_programming_self_dot()
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 selfish <user.prose> over:
 	user.generic_programming_self_dot()
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 
 
 swordfish <user.word>:
@@ -135,10 +131,10 @@ kind {user.code_type}:
 	insert(code_type + ' ')
 kinder {user.code_type} <user.prose>$:
 	insert(code_type + ' ')
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 kinder {user.code_type} <user.prose> over:
 	insert(code_type + ' ')
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 
 #comma related commands
 spam: user.generic_programming_insert_comma_separator()
@@ -149,24 +145,24 @@ beef:
 #camel
 reason <user.prose>$:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 reason <user.prose> over:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 #snake
 proclaim <user.prose>$:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'snake')
+	user.fire_chicken_insert_with_snake_case(prose)
 proclaim <user.prose> over:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'snake')
+	user.fire_chicken_insert_with_snake_case(prose)
 #PascalCase
 surmise <user.prose> over:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'hammer')
+	user.fire_chicken_insert_with_pascal_case(prose)
 surmise <user.prose>$:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'hammer')
+	user.fire_chicken_insert_with_pascal_case(prose)
 
 
 #searching:

@@ -39,11 +39,11 @@ build new: user.java_programming_build_new()
 <user.java_programming_function_access_modifier> <user.c_style_programming_type> <user.prose>$:
     insert(java_programming_function_access_modifier + c_style_programming_type)
     insert(' ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
 <user.java_programming_function_access_modifier> <user.c_style_programming_type> <user.prose> over:
     insert(java_programming_function_access_modifier + c_style_programming_type)
     insert(' ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
 
 import <user.fire_chicken_programming_package>: user.fire_chicken_programming_import_package(fire_chicken_programming_package)
 from <user.fire_chicken_programming_package> import <user.fire_chicken_programming_class>: 
@@ -69,13 +69,13 @@ state extends: ' extends '
 #Short for declare
 Claire {user.code_type} <user.prose>$:
     insert(user.code_type + ' ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
     user.generic_programming_insert_assignment()
     insert(';')
     edit.left()
 Claire {user.code_type} <user.prose> over:
     insert(user.code_type + ' ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
     user.generic_programming_insert_assignment()
     insert(';')
     edit.left()
@@ -83,35 +83,35 @@ Claire {user.code_type} <user.prose> over:
 param {user.code_type} <user.prose>$:
     user.generic_programming_insert_comma_separator()
     insert(user.code_type + ' ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
 param {user.code_type} <user.prose> over:
     user.generic_programming_insert_comma_separator()
     insert(user.code_type + ' ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
     
     
 
 vary <user.prose>$:
     insert('var ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
     user.generic_programming_insert_assignment()
     insert(';')
     edit.left()
 vary <user.prose> over:
     insert('var ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
     user.generic_programming_insert_assignment()
     insert(';')
     edit.left()
 
 pristine <user.prose>$:
     insert('new ')
-    user.insert_formatted(prose, 'hammer')
+    user.fire_chicken_insert_formatted_text(prose, 'hammer')
     user.generic_programming_insert_object_parentheses()
     user.generic_programming_enter_object_parentheses_from_right()
 pristine <user.prose> over:
     insert('new ')
-    user.insert_formatted(prose, 'hammer')
+    user.fire_chicken_insert_formatted_text(prose, 'hammer')
     user.generic_programming_insert_object_parentheses()
     user.generic_programming_enter_object_parentheses_from_right()
 

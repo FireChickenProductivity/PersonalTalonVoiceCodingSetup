@@ -69,8 +69,8 @@ object <user.text>$:
 
 member <user.prose>$: user.fire_chicken_insert_with_camel_case('.' + prose)
 member <user.prose> over: user.fire_chicken_insert_with_camel_case('.' + prose)
-fellow <user.prose>$: user.insert_formatted('.' + prose, 'snake')
-fellow <user.prose> over: user.insert_formatted('.' + prose, 'snake')
+fellow <user.prose>$: user.fire_chicken_insert_with_snake_case('.' + prose)
+fellow <user.prose> over: user.fire_chicken_insert_with_snake_case('.' + prose)
 sword <user.word>:
 	insert('.')
 	user.fire_chicken_programming_insert_with_history(word)
@@ -108,17 +108,17 @@ process <user.prose> over:
 
 selfie <user.prose>$:
 	user.generic_programming_self_dot()
-	user.insert_formatted(prose, 'snake')
+	user.fire_chicken_insert_with_snake_case(prose)
 selfie <user.prose> over:
 	user.generic_programming_self_dot()
-	user.insert_formatted(prose, 'snake')
+	user.fire_chicken_insert_with_snake_case(prose)
 
 selfish <user.prose>$:
 	user.generic_programming_self_dot()
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 selfish <user.prose> over:
 	user.generic_programming_self_dot()
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 
 
 swordfish <user.word>:
@@ -131,10 +131,10 @@ kind {user.code_type}:
 	insert(code_type + ' ')
 kinder {user.code_type} <user.prose>$:
 	insert(code_type + ' ')
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 kinder {user.code_type} <user.prose> over:
 	insert(code_type + ' ')
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 
 #comma related commands
 spam: user.generic_programming_insert_comma_separator()
@@ -145,24 +145,24 @@ beef:
 #camel
 reason <user.prose>$:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 reason <user.prose> over:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'camel')
+	user.fire_chicken_insert_with_camel_case(prose)
 #snake
 proclaim <user.prose>$:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'snake')
+	user.fire_chicken_insert_with_snake_case(prose)
 proclaim <user.prose> over:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'snake')
+	user.fire_chicken_insert_with_snake_case(prose)
 #PascalCase
 surmise <user.prose> over:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'hammer')
+	user.fire_chicken_insert_with_pascal_case(prose)
 surmise <user.prose>$:
 	user.generic_programming_insert_comma_separator()
-	user.insert_formatted(prose, 'hammer')
+	user.fire_chicken_insert_with_pascal_case(prose)
 
 
 #searching:

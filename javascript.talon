@@ -26,17 +26,17 @@ compose <user.text> over:
 
 allow <user.prose>$:
     insert('let ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
 allow <user.prose> over:
     insert('let ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
 
 constant <user.prose>$:
     insert('const ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
 constant <user.prose> over:
     insert('const ')
-    user.insert_formatted(prose, 'camel')
+    user.fire_chicken_insert_formatted_text(prose, 'camel')
 
 build for let:
     user.generic_programming_build_for('for (let ', '; ', '; ', ')')

@@ -33,7 +33,7 @@ class Actions:
     def fire_chicken_programming_define_python_class(classname: str):
         ''''''
         actions.insert('class ')
-        actions.user.insert_formatted(classname ,'hammer')
+        actions.user.fire_chicken_insert_formatted_text(classname ,'hammer')
         actions.insert(':')
         actions.user.generic_programming_create_line_below()
 

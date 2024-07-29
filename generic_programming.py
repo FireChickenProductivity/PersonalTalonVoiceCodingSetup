@@ -104,11 +104,11 @@ class Actions:
         get_function_call_parentheses().enter_from_right()
     def fire_chicken_call_function_with_name_formatted(name: str, format: str):
         '''Calls the function with the name formatted'''
-        formatted_name = actions.user.formatted_text(name, format)
+        formatted_name = actions.user.fire_chicken_format_text(name, format)
         actions.user.fire_chicken_call_function(formatted_name)
     def fire_chicken_call_function_inside_with_name_formatted(name: str, format: str):
         '''Calls the function inside with the name formatted'''
-        formatted_name = actions.user.formatted_text(name, format)
+        formatted_name = actions.user.fire_chicken_format_text(name, format)
         actions.user.fire_chicken_call_function_inside(formatted_name)
     def generic_programming_call_method(name: str):
         '''Inserts the specified method call'''
@@ -123,11 +123,11 @@ class Actions:
         get_function_call_parentheses().enter_from_right()
     def generic_programming_call_method_with_name_formatted(name: str, format: str):
         '''Inserts the specified method call'''
-        formatted_name = actions.user.formatted_text(name, format)
+        formatted_name = actions.user.fire_chicken_format_text(name, format)
         actions.user.generic_programming_call_method(formatted_name)
     def generic_programming_call_method_inside_with_name_formatted(name: str, format: str):
         '''Inserts the specified method call and enters the parentheses'''
-        formatted_name = actions.user.formatted_text(name, format)
+        formatted_name = actions.user.fire_chicken_format_text(name, format)
         actions.user.generic_programming_call_method_inside(formatted_name)
     def fire_chicken_call_default_formatted_method(name: str):
         '''Performs the method call with the given name and the default format'''
@@ -137,7 +137,7 @@ class Actions:
         actions.user.generic_programming_call_method_inside_with_name_formatted(name, settings.get(default_method_format))
     def fire_chicken_insert_default_formatted_variable(name: str):
         '''Inserts the variable name with default formatting'''
-        formatted_name = actions.user.formatted_text(name, settings.get(default_variable_format))
+        formatted_name = actions.user.fire_chicken_format_text(name, settings.get(default_variable_format))
         actions.insert(formatted_name)
 
 

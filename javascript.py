@@ -61,5 +61,5 @@ context.lists['user.fire_chicken_fast_functions'] = {
 class Actions:
     def fire_chicken_insert_javascript_property(name: str):
         '''Insert specified JavaScript property declaration start'''
-        actions.user.insert_formatted(name, 'camel')
+        actions.user.fire_chicken_insert_formatted_text(name, 'camel')
         actions.insert(': ')

@@ -57,7 +57,7 @@ obtain <user.prose>$:
     edit.line_end()
     key(enter)
     insert('return self.')
-    user.insert_formatted(prose, 'snake')
+    user.fire_chicken_insert_formatted_text(prose, 'snake')
 
 elif:
 	key('end')
@@ -130,11 +130,11 @@ numpy|nope: 'np.'
 
 testing <user.prose>$:   
     insert('def test_')
-    user.insert_formatted(prose, 'snake')
+    user.fire_chicken_insert_formatted_text(prose, 'snake')
     insert('(self):')
 testing <user.prose> over:   
     insert('def test_')
-    user.insert_formatted(prose, 'snake')
+    user.fire_chicken_insert_formatted_text(prose, 'snake')
     insert('(self):') 
 
 classy <user.prose>$: 

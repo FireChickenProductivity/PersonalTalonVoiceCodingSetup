@@ -56,6 +56,9 @@ formatters = {
     'snake': Formatter(lowercase_conversion_function, "_"),
     'upper snake': Formatter(uppercase_conversion_function, "_"),
 }
+aliases = {
+    'hammer': 'pascal',
+}
 
 def format_text_using_formatter(text: str, formatter: Formatter):
     return format_text(text, formatter.separator, formatter.case_conversion_function)
@@ -73,6 +76,7 @@ class Actions:
         actions.user.fire_chicken_insert_after(text_after_cursor)
     def fire_chicken_format_text(text: str, name: str):
         '''Format text with the given formatter'''
+        name = aliases.get(name, name)
         formatter = formatters[name]
         new_text = format_text_using_formatter(text, formatter)
         return new_text

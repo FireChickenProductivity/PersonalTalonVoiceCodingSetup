@@ -3,7 +3,9 @@ code.language: talon
 state user: 'user.'
 packed|[act|action] paste:
     insert('user.')
-    key(ctrl-v)
+    sleep(0.2)
+    edit.paste()
+    sleep(0.2)
     insert('()')
     edit.left()
 

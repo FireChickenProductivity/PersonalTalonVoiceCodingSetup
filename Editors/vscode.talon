@@ -1,4 +1,5 @@
 app: Visual Studio Code
+app: Code
 -
 
 #Keyboard shortcut for show code actions
@@ -34,7 +35,7 @@ code pass:
     edit.select_all()
     edit.copy()
     key(escape)
-    key(alt-tab)
+    user.fire_chicken_switch_to_last_application()
     sleep(0.5)
     edit.paste()
     edit.save()

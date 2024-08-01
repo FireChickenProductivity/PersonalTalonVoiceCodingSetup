@@ -7,9 +7,7 @@ code actions: key(ctrl-.)
 
 #Closes the current folder
 workspace folder close:
-    key(alt-f)
-    key(f:2)
-    key(enter)
+    user.fire_chicken_close_active_vscode_folder()
 
 #Switch to the terminal
 terminal: user.vscode("workbench.action.terminal.focus")

@@ -101,6 +101,10 @@ import numb plot pan:
     insert('import pandas as pd')
     key(enter)
 
+import pie plot: 
+    insert('import matplotlib.pyplot as plt')
+    key(enter)
+
 linear algebra|lionel: 'linalg.'
 least square: 
     user.fire_chicken_call_function_inside('lstsq')

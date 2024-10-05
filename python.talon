@@ -35,29 +35,37 @@ device <user.text>:
     insert('()')
     key('left')
 
-technique <user.prose>$:
+technique <user.text>$:
     insert('def :')
     edit.left()
-    user.fire_chicken_call_function_inside_with_name_formatted(prose, 'snake')
+    user.fire_chicken_call_function_inside_with_name_formatted(text, 'snake')
     insert('self, ')
 
-approach <user.prose>$:
+approach <user.text>$:
     insert('def :')
     edit.left()
-    user.fire_chicken_call_function_inside_with_name_formatted(prose, 'snake')
+    user.fire_chicken_call_function_inside_with_name_formatted(text, 'snake')
     insert('self')
     edit.line_end()
     key(enter)
 
-obtain <user.prose>$:
+private <user.text>$:
     insert('def :')
     edit.left()
-    user.fire_chicken_call_function_inside_with_name_formatted('get ' + prose, 'snake')
+    insert("_")
+    user.fire_chicken_call_function_inside_with_name_formatted(text, 'snake')
+    insert('self')
+    
+
+obtain <user.text>$:
+    insert('def :')
+    edit.left()
+    user.fire_chicken_call_function_inside_with_name_formatted('get ' + text, 'snake')
     insert('self')
     edit.line_end()
     key(enter)
     insert('return self.')
-    user.fire_chicken_insert_formatted_text(prose, 'snake')
+    user.fire_chicken_insert_formatted_text(text, 'snake')
 
 elif:
 	key('end')
@@ -132,24 +140,24 @@ equality:
 plot: 'plt.'
 numpy|nope: 'np.'
 
-testing <user.prose>$:   
+testing <user.text>$:   
     insert('def test_')
-    user.fire_chicken_insert_formatted_text(prose, 'snake')
+    user.fire_chicken_insert_formatted_text(text, 'snake')
     insert('(self):')
-testing <user.prose> over:   
+testing <user.text> over:   
     insert('def test_')
-    user.fire_chicken_insert_formatted_text(prose, 'snake')
+    user.fire_chicken_insert_formatted_text(text, 'snake')
     insert('(self):') 
 
-classy <user.prose>$: 
-    user.fire_chicken_programming_define_python_class(prose)
-classy <user.prose> over:
-    user.fire_chicken_programming_define_python_class(prose)
+classy <user.text>$: 
+    user.fire_chicken_programming_define_python_class(text)
+classy <user.text> over:
+    user.fire_chicken_programming_define_python_class(text)
 
-subclass <user.prose>$:
-    user.fire_chicken_programming_define_python_subclass(prose)
-subclass <user.prose> over:
-    user.fire_chicken_programming_define_python_subclass(prose)
+subclass <user.text>$:
+    user.fire_chicken_programming_define_python_subclass(text)
+subclass <user.text> over:
+    user.fire_chicken_programming_define_python_subclass(text)
 
 path join:
     insert('os.path.join')
@@ -180,6 +188,8 @@ in range:
 
 flask route:
     insert("@app.route('/")
+
+assert match: 'self.assertEqual(expected, actual)'
 
 settings():
     user.fire_chicken_default_method_format = 'snake'

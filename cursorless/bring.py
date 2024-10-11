@@ -1,5 +1,10 @@
 from talon import Module, actions
 from typing import Any
+
+def is_target_not_single_character(target):
+    print('target.mark["symbolColor"]', target.mark["symbolColor"])
+    return target.modifiers is not None or target.mark["symbolColor"] != "default"
+
 module = Module()
 @module.action_class
 class Actions:
@@ -21,3 +26,10 @@ class Actions:
     def fire_chicken_cursorless_call(target: Any):
         ''''''
         actions.user.cursorless_command("callAsFunction", target)
+
+    def fire_chicken_cursorless_bring_target_or_type_character(target: Any):
+        """"""
+        if is_target_not_single_character(target):
+            actions.user.fire_chicken_cursorless_bring(target)
+        else:
+            actions.insert(target.mark["character"])

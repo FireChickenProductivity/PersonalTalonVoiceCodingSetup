@@ -4,6 +4,10 @@ app: Terminal
 app: Google Chrome
 and title: /jupyterlab/i
 and not tag: user.exam_mode
+app: Code
+and tag: user.terminal_chicken
+app: Visual Studio Code
+and tag: user.terminal_chicken
 -
 g c c: 'gcc *.c'
 move: 'cd '

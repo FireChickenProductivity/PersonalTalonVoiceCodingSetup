@@ -1,7 +1,5 @@
 tag: user.cursorless
 -
-<user.cursorless_target>:
-    user.fire_chicken_cursorless_bring_target_or_type_character(user.cursorless_target)
 
 store <user.cursorless_target>: 
     user.fire_chicken_cursorless_assign(cursorless_target)

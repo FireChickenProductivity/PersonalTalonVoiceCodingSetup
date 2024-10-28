@@ -8,6 +8,7 @@ app: Code
 and tag: user.terminal_chicken
 app: Visual Studio Code
 and tag: user.terminal_chicken
+app: VMware Fusion
 -
 g c c: 'gcc *.c'
 move: 'cd '
@@ -83,5 +84,15 @@ exit: 'exit'
 apt get: 'apt-get '
 apt install: 'apt-get install '
 pseudo: 'sudo '
+
+
+change mod: 'chmod '
+lookup: 'nslookup'
+lookup experiment:
+    insert('nslookup jsonlint.com\n')
+    sleep(5)
+    insert('nslookup www.mathematicalgemstones.com\n')
+    sleep(5)
+    insert('nslookup www.diagrams.net\n')
 
 

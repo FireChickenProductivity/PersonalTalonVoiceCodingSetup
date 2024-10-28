@@ -1,6 +1,9 @@
 tag: user.cursorless
 -
 
+^<user.cursorless_target>$:
+    user.fire_chicken_cursorless_bring(cursorless_target)
+
 store <user.cursorless_target>: 
     user.fire_chicken_cursorless_assign(cursorless_target)
 

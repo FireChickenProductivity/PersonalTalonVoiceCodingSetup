@@ -53,6 +53,12 @@ class Actions:
         actions.user.fire_chicken_cursorless_bring(cursorless_target)
         actions.insert(")")
 
+    def fire_chicken_programming_build_for_each_loop_using_plural():
+        """Builds a python for each loop using a plural target"""
+        code = actions.user.fire_chicken_separate_current_line()[0]
+        if code.endswith("s"):
+            actions.insert(f"for {code[:-1]} in {code}:\n")
+
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)
 

@@ -37,6 +37,8 @@ worthless:
 
 increment: ' += 1'
 
+[build] plural: user.fire_chicken_programming_build_for_each_loop_using_plural()
+
 return false: insert('return False')
 return true: insert('return True')
 

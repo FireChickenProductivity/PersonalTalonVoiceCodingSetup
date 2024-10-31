@@ -26,6 +26,17 @@ constructor|construct:
     edit.left()
     repeat(1)
 
+fashion:
+    insert('def __init__(self):')
+    key(enter)
+
+empty: insert(' = None\n')
+
+worthless:
+    insert(' = 0\n')
+
+increment: ' += 1'
+
 return false: insert('return False')
 return true: insert('return True')
 

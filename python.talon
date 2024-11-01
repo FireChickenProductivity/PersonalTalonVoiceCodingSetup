@@ -30,6 +30,10 @@ fashion:
     insert('def __init__(self):')
     key(enter)
 
+var <user.text>:
+    user.fire_chicken_insert_formatted_text(text, 'snake')
+    insert(" = ")
+
 aimless: insert(' = None\n')
 
 worthless: (' = 0\n')

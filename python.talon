@@ -35,8 +35,8 @@ aimless: insert(' = None\n')
 worthless: (' = 0\n')
 listing: insert(' = []\n')
 mapping: insert(' = {}\n')
-truly: insert(' = True')
-falsely: insert(' = False')
+truly: insert(' = True\n')
+falsely: insert(' = False\n')
 
 increment: ' += 1'
 

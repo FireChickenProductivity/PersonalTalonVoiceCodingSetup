@@ -32,12 +32,11 @@ fashion:
 
 aimless: insert(' = None\n')
 
-worthless:
-    insert(' = 0\n')
-
+worthless: (' = 0\n')
 listing: insert(' = []\n')
-
 mapping: insert(' = {}\n')
+truly: insert(' = True')
+falsely: insert(' = False')
 
 increment: ' += 1'
 

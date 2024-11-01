@@ -7,3 +7,8 @@ debug <user.cursorless_target>:
 output <user.cursorless_target>:
     user.cursorless_command("editNewLineAfter", cursorless_target)
     user.fire_chicken_programming_insert_python_debug_print_statement_from_cursorless_target(cursorless_target)
+
+query <user.cursorless_target>:
+    insert('[')
+    user.fire_chicken_cursorless_bring(cursorless_target)
+    insert(']')

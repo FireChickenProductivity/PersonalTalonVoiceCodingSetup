@@ -30,10 +30,14 @@ fashion:
     insert('def __init__(self):')
     key(enter)
 
-empty: insert(' = None\n')
+aimless: insert(' = None\n')
 
 worthless:
     insert(' = 0\n')
+
+listing: insert(' = []\n')
+
+mapping: insert(' = {}\n')
 
 increment: ' += 1'
 

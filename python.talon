@@ -37,6 +37,7 @@ listing: insert(' = []\n')
 mapping: insert(' = {}\n')
 truly: insert(' = True\n')
 falsely: insert(' = False\n')
+language: insert(' = ""\n')
 
 increment: ' += 1'
 

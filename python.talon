@@ -30,7 +30,7 @@ fashion:
     insert('def __init__(self):')
     key(enter)
 
-var <user.text>:
+^var <user.text>$:
     user.fire_chicken_insert_formatted_text(text, 'snake')
     insert(" = ")
 

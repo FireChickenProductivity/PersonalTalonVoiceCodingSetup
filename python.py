@@ -6,7 +6,7 @@ context.matches = r'''
 code.language: python
 '''
 
-LINE_STARTING_STATEMENTS = set(['while', 'while :', 'for', 'if', 'if :', 'def', 'def :'])
+LINE_STARTING_STATEMENTS = set(['while', 'while :', 'for', 'for ', 'if', 'if :', 'def', 'def :', 'return ', 'return'])
 
 @context.action_class('user')
 class UserActions:
@@ -67,9 +67,12 @@ class Actions:
             if action.get_name() == 'insert':
                 text = action.get_arguments()[0]
                 if text in LINE_STARTING_STATEMENTS:
-                    for _ in range(len(text)): actions.edit.left()
-                    actions.key('enter')
-                    actions.edit.line_end()
+                    current_line: str = actions.user.generic_programming_get_line()
+                    actions.edit.right()
+                    if current_line.strip() != text:
+                        for _ in range(len(text)): actions.edit.left()
+                        actions.key('enter')
+                        actions.edit.line_end()
         actions.user.basic_action_recorder_register_callback_function_with_name(on_action, 'auto line')
 
     def fire_chicken_disable_programming_auto_line():

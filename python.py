@@ -67,12 +67,16 @@ class Actions:
             if action.get_name() == 'insert':
                 text = action.get_arguments()[0]
                 if text in LINE_STARTING_STATEMENTS:
-                    current_line: str = actions.user.generic_programming_get_line()
-                    actions.edit.right()
-                    if current_line.strip() != text:
-                        for _ in range(len(text)): actions.edit.left()
+                    line_before = actions.user.generic_programming_get_line_start()
+                    line_before = line_before[:len(line_before) - len(text)]
+                    line_after = actions.user.generic_programming_get_line_ending()
+                    other_text = line_before + line_after
+                    if not other_text.isspace() and len(other_text) > 0:
+                        for _ in range(len(text)): actions.edit.delete()
+                        actions.edit.line_end()
                         actions.key('enter')
                         actions.edit.line_end()
+                        actions.user.paste(text)
         actions.user.basic_action_recorder_register_callback_function_with_name(on_action, 'auto line')
 
     def fire_chicken_disable_programming_auto_line():

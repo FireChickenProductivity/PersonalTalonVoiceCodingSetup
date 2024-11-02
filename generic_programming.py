@@ -63,16 +63,38 @@ mod.setting(
     desc = 'The default way to format variable names'
 )
 
+def copy_selection_text(selection_function):
+    with clip.revert():
+        selection_function()
+        actions.edit.copy()
+        actions.sleep(f'{settings.get(clipboard_operation_delay)}ms')
+        result = clip.text()
+        return result
+
 @mod.action_class
 class Actions:
     def generic_programming_get_line() -> str:
         '''Returns the current line'''
-        with clip.revert():
-            actions.edit.select_line()
-            actions.edit.copy()
-            actions.sleep(f'{settings.get(clipboard_operation_delay)}ms')
-            result = clip.text()
-        return result
+        return copy_selection_text(actions.edit.select_line)
+    def generic_programming_get_line_start() -> str:
+        """Returns the start of the line"""
+        actions.key("space")
+        text = copy_selection_text(actions.edit.extend_line_start)[:-1]
+        actions.edit.right()
+        actions.key('escape')
+        actions.edit.delete()
+        '''returns a list containing the comma separated stuff on the current line ignoring commas within standard containers'''
+        return text
+    def generic_programming_get_line_ending() -> str:
+        """Returns the ending of the line"""
+        actions.key("space")
+        actions.edit.left()
+        text = copy_selection_text(actions.edit.extend_line_end)[1:]
+        actions.edit.left()
+        actions.key('escape')
+        actions.edit.right()
+        actions.edit.delete()
+        return text
     def generic_programming_get_selected_text() -> str:
         '''Returns the selected text'''
         with clip.revert():
@@ -248,4 +270,4 @@ def get_parentheses_container():
 class Defaults:
     def code_operator_object_accessor():
         '''This default just inserts a dot'''
-        actions.insert('.')
+        actions.insert('.') 

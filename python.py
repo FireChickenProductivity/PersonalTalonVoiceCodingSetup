@@ -6,6 +6,8 @@ context.matches = r'''
 code.language: python
 '''
 
+LINE_STARTING_STATEMENTS = set(['while', 'while :', 'for', 'if', 'if :', 'def', 'def :'])
+
 @context.action_class('user')
 class UserActions:
     def fire_chicken_code_self_reference_constructor_arguments():
@@ -58,6 +60,21 @@ class Actions:
         code = actions.user.fire_chicken_separate_current_line()[0]
         if code.endswith("s"):
             actions.insert(f"for {code[:-1]} in {code}:\n")
+
+    def fire_chicken_programming_auto_line():
+        """Activates automatic newline insertion"""
+        def on_action(action):
+            if action.get_name() == 'insert':
+                text = action.get_arguments()[0]
+                if text in LINE_STARTING_STATEMENTS:
+                    for _ in range(len(text)): actions.edit.left()
+                    actions.key('enter')
+                    actions.edit.line_end()
+        actions.user.basic_action_recorder_register_callback_function_with_name(on_action, 'auto line')
+
+    def fire_chicken_disable_programming_auto_line():
+        """Deactivates automatic newline insertion"""
+        actions.user.basic_action_recorder_unregister_callback_function_with_name('auto line')
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

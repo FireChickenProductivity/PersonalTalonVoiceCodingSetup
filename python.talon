@@ -212,6 +212,9 @@ flask route:
 
 assert match: 'self.assertEqual(expected, actual)'
 
+autoline: user.fire_chicken_programming_auto_line()
+autoline off: user.fire_chicken_disable_programming_auto_line()
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

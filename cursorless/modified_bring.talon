@@ -5,6 +5,7 @@ tag: user.cursorless
     user.fire_chicken_cursorless_bring(cursorless_target)
 
 store <user.cursorless_target>: 
+    user.generic_programming_start_new_line_if_current_line_not_empty()
     user.fire_chicken_cursorless_assign(cursorless_target)
 
 house <user.cursorless_target>:

@@ -6,7 +6,7 @@ context.matches = r'''
 code.language: python
 '''
 
-LINE_STARTING_STATEMENTS = set(['while', 'while :', 'for', 'for ', 'if', 'if :', 'def', 'def :', 'return ', 'return'])
+LINE_STARTING_STATEMENTS = set(['while', 'while :', 'for', 'for ', 'if', 'if :', 'def', 'def :', 'def ', 'return ', 'return', 'else:', 'elif :'])
 
 @context.action_class('user')
 class UserActions:

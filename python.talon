@@ -31,6 +31,7 @@ fashion:
     key(enter)
 
 ^var <user.text>$:
+    user.generic_programming_start_new_line_if_current_line_not_empty()
     user.fire_chicken_insert_formatted_text(text, 'snake')
     insert(" = ")
 

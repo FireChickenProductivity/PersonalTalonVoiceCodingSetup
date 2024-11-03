@@ -95,6 +95,15 @@ class Actions:
         actions.edit.right()
         actions.edit.delete()
         return text
+    def generic_programming_get_line_from_start_and_ending() -> str:
+        """Returns the text on the current line"""
+        text = actions.user.generic_programming_get_line_start() + actions.user.generic_programming_get_line_ending()
+        return text
+    def generic_programming_start_new_line_if_current_line_not_empty():
+        """Starts a newline the current line is not empty"""
+        line_text = actions.user.generic_programming_get_line_from_start_and_ending()
+        if not line_text.isspace():
+            actions.edit.line_insert_down()
     def generic_programming_get_selected_text() -> str:
         '''Returns the selected text'''
         with clip.revert():

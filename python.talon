@@ -37,7 +37,7 @@ fashion:
 
 aimless: insert(' = None\n')
 
-worthless: (' = 0\n')
+worthless: insert(' = 0\n')
 listing: insert(' = []\n')
 mapping: insert(' = {}\n')
 truly: insert(' = True\n')
@@ -183,6 +183,10 @@ subclass <user.text> over:
 
 path join:
     insert('os.path.join')
+    user.fire_chicken_insert_around_cursor('(', ')')
+
+path exists:
+    insert('os.path.exists')
     user.fire_chicken_insert_around_cursor('(', ')')
 
 mend:

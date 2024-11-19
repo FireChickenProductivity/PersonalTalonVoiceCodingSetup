@@ -46,3 +46,7 @@ mem <user.cursorless_target>:
 mall <user.cursorless_target>:
     insert('.')
     user.fire_chicken_cursorless_call(cursorless_target)
+
+burst <user.cursorless_target>:
+    user.fire_chicken_cursorless_bring(cursorless_target)
+    insert('.')

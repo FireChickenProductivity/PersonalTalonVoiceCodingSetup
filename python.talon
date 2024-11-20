@@ -176,6 +176,17 @@ classy <user.text>$:
 classy <user.text> over:
     user.fire_chicken_programming_define_python_class(text)
 
+model <user.text>$:
+    user.fire_chicken_programming_define_python_class(text)
+    insert('def __init__(self):')
+    key(enter)
+
+bobby <user.text>$:
+    user.fire_chicken_programming_define_python_class(text)
+    insert('def __init__(self, ):')
+    edit.left()
+    repeat(1)
+
 subclass <user.text>$:
     user.fire_chicken_programming_define_python_subclass(text)
 subclass <user.text> over:
@@ -219,6 +230,8 @@ assert match: 'self.assertEqual(expected, actual)'
 
 autoline: user.fire_chicken_programming_auto_line()
 autoline off: user.fire_chicken_disable_programming_auto_line()
+
+magic call: user.fire_chicken_programming_insert_magic_method("call")
 
 settings():
     user.fire_chicken_default_method_format = 'snake'

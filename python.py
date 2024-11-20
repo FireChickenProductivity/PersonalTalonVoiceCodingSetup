@@ -83,6 +83,15 @@ class Actions:
         """Deactivates automatic newline insertion"""
         actions.user.basic_action_recorder_unregister_callback_function_with_name('auto line')
 
+    def fire_chicken_programming_insert_magic_method(name: str, is_no_argument: bool=False):
+        """Inserts the specified magic method"""
+        actions.insert(f"def __{name}__(self):")
+        if is_no_argument:
+            actions.edit.line_insert_down()
+        else:
+            for _ in range(2): actions.edit.left()
+            actions.insert(", ")
+
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)
 

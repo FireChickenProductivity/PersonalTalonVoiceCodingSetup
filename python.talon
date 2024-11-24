@@ -40,25 +40,32 @@ var <user.text>$:
     insert(" = ")
 
 aimless:
-    insert(' = None)
+    user.fire_chicken_python_programming_insert_assignment_if_missing()
+    insert('None)
     user.generic_programming_start_new_line_if_next_line_empty()
 worthless: 
-    insert(' = 0')
+    user.fire_chicken_python_programming_insert_assignment_if_missing()
+    insert('0')
     user.generic_programming_start_new_line_if_next_line_empty()
 listing: 
-    insert(' = []')
+    user.fire_chicken_python_programming_insert_assignment_if_missing()
+    insert('[]')
     user.generic_programming_start_new_line_if_next_line_empty()
 mapping: 
-    insert(' = {}')
+    user.fire_chicken_python_programming_insert_assignment_if_missing()
+    insert('{}')
     user.generic_programming_start_new_line_if_next_line_empty()
 truly: 
-    insert(' = True')
+    user.fire_chicken_python_programming_insert_assignment_if_missing()
+    insert('True')
     user.generic_programming_start_new_line_if_next_line_empty()
 falsely: 
-    insert(' = False')
+    user.fire_chicken_python_programming_insert_assignment_if_missing()
+    insert('False')
     user.generic_programming_start_new_line_if_next_line_empty()
 language: 
-    insert(' = ""')
+    user.fire_chicken_python_programming_insert_assignment_if_missing()
+    insert('""')
     user.generic_programming_start_new_line_if_next_line_empty()
 
 increment: ' += 1'

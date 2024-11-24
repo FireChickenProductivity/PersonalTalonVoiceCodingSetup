@@ -97,6 +97,13 @@ class Actions:
         actions.insert(name + " :")
         actions.edit.left()
 
+    def fire_chicken_python_programming_insert_assignment_if_missing():
+        """Ad assignment operator is missing """
+        line_start = actions.user.generic_programming_get_line_start()
+        assignment_text = ' = '
+        if assignment_text not in line_start:
+            actions.insert(assignment_text)
+
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)
 

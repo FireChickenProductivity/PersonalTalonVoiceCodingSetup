@@ -92,6 +92,11 @@ class Actions:
             for _ in range(2): actions.edit.left()
             actions.insert(", ")
 
+    def fire_chicken_programming_insert_python_block_starter(name: str):
+        """Inserts the specified python block starter"""
+        actions.insert(name + " :")
+        actions.edit.left()
+
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)
 

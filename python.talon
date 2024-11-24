@@ -36,7 +36,7 @@ fashion:
     insert(" = ")
 
 aimless:
-    insert(' = None\)
+    insert(' = None)
     user.generic_programming_start_new_line_if_next_line_empty()
 worthless: 
     insert(' = 0')

@@ -102,7 +102,7 @@ class Actions:
     def generic_programming_start_new_line_if_current_line_not_empty():
         """Starts a newline the current line is not empty"""
         line_text = actions.user.generic_programming_get_line_from_start_and_ending()
-        if not line_text.isspace():
+        if not line_text.isspace() and len(line_text) > 0:
             actions.edit.line_insert_down()
     def generic_programming_get_selected_text() -> str:
         '''Returns the selected text'''

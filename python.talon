@@ -113,6 +113,17 @@ obtain <user.text>$:
     insert('return self.')
     user.fire_chicken_insert_formatted_text(text, 'snake')
 
+mutate <user.text>$:
+    insert('def :')
+    edit.left()
+    user.fire_chicken_call_function_inside_with_name_formatted('set ' + text, 'snake')
+    insert('self, value')
+    edit.line_end()
+    key(enter)
+    insert('self.')
+    insert(text)
+    insert(' = value')
+
 elif:
 	key('end')
 	key('esc')

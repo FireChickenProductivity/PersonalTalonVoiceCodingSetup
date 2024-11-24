@@ -35,14 +35,27 @@ fashion:
     user.fire_chicken_insert_formatted_text(text, 'snake')
     insert(" = ")
 
-aimless: insert(' = None\n')
-
-worthless: insert(' = 0\n')
-listing: insert(' = []\n')
-mapping: insert(' = {}\n')
-truly: insert(' = True\n')
-falsely: insert(' = False\n')
-language: insert(' = ""\n')
+aimless:
+    insert(' = None\)
+    user.generic_programming_start_new_line_if_next_line_empty()
+worthless: 
+    insert(' = 0')
+    user.generic_programming_start_new_line_if_next_line_empty()
+listing: 
+    insert(' = []')
+    user.generic_programming_start_new_line_if_next_line_empty()
+mapping: 
+    insert(' = {}')
+    user.generic_programming_start_new_line_if_next_line_empty()
+truly: 
+    insert(' = True')
+    user.generic_programming_start_new_line_if_next_line_empty()
+falsely: 
+    insert(' = False')
+    user.generic_programming_start_new_line_if_next_line_empty()
+language: 
+    insert(' = ""')
+    user.generic_programming_start_new_line_if_next_line_empty()
 
 increment: ' += 1'
 

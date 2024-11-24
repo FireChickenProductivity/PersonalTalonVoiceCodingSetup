@@ -71,6 +71,12 @@ def copy_selection_text(selection_function):
         result = clip.text()
         return result
 
+def cleanup_temporary_selection_space():
+    actions.edit.left()
+    actions.key('escape')
+    actions.edit.right()
+    actions.edit.delete()
+
 @mod.action_class
 class Actions:
     def generic_programming_get_line() -> str:
@@ -90,10 +96,15 @@ class Actions:
         actions.key("space")
         actions.edit.left()
         text = copy_selection_text(actions.edit.extend_line_end)[1:]
+        cleanup_temporary_selection_space()
+        return text
+    def generic_programming_get_next_line() -> str:
+        """Returns the text on the next line"""
+        actions.key("space")
         actions.edit.left()
-        actions.key('escape')
-        actions.edit.right()
-        actions.edit.delete()
+        actions.edit.extend_down()
+        text = copy_selection_text(actions.edit.extend_line_end)[1:]
+        cleanup_temporary_selection_space()
         return text
     def generic_programming_get_line_from_start_and_ending() -> str:
         """Returns the text on the current line"""
@@ -103,6 +114,11 @@ class Actions:
         """Starts a newline the current line is not empty"""
         line_text = actions.user.generic_programming_get_line_from_start_and_ending()
         if not line_text.isspace() and len(line_text) > 0:
+            actions.edit.line_insert_down()
+    def generic_programming_start_new_line_if_next_line_empty():
+        """Starts a newline if the next line is empty"""
+        line_text = actions.user.generic_programming_get_next_line()
+        if len(line_text) == 0 or line_text.isspace():
             actions.edit.line_insert_down()
     def generic_programming_get_selected_text() -> str:
         '''Returns the selected text'''

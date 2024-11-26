@@ -34,6 +34,25 @@ def insert_subtext_if_not_inside_text(subtext, text):
     if subtext not in text:
         actions.insert(subtext)
 
+def compute_lines_from(text):
+    text = text.replace("\r", "")
+    lines = text.split("\n")
+    return lines
+
+def compute_preceding_space(text):
+    spaces = ""
+    i = 0
+    while i < len(text) and text[i].isspace():
+        spaces += text[i]
+        i += 1
+    return spaces
+
+def compute_current_line_from_preceding_text(text: str):
+    last_line_start_index = text.rindex('\n')
+    if last_line_start_index >= 0:
+        return text[last_line_start_index:]
+    return text
+
 @module.action_class
 class Actions:
     def fire_chicken_programming_define_python_class(classname: str):
@@ -111,7 +130,7 @@ class Actions:
         else:
             insert_subtext_if_not_inside_text(" = ", line_start)
         
-    def fire_chicken_programming_compute_preceding_class_text():
+    def fire_chicken_python_programming_compute_preceding_class_text():
         """Computes the text before the cursor for the current class assuming one is already inside a class"""
         preceding_text: str = actions.user.generic_programming_compute_proceeding_text()
         class_declaration_index = preceding_text.rindex('\nclass')
@@ -121,6 +140,30 @@ class Actions:
             return preceding_text
         else:
             return ""
+    
+    def fire_chicken_python_programming_start_new_method_block():
+        """Starts a new block for a method inside the current class"""
+        preceding_class_text = actions.user.fire_chicken_python_programming_compute_preceding_class_text()
+        if preceding_class_text:
+            new_lines_before_last_text = 0
+            has_computed_lines_before_last_text = False
+            indentation_text = ""
+            lines = compute_lines_from(preceding_class_text)
+            for i in range(len(lines) - 1, -1, -1):
+                line = lines[i]
+                if not has_computed_lines_before_last_text:
+                    if line.isspace():
+                        new_lines_before_last_text += 1
+                    else:
+                        has_computed_lines_before_last_text = True
+                if line.strip().startswith("def "):
+                    indentation_text = compute_preceding_space(line)
+                    break
+            if new_lines_before_last_text < 2:
+                for _ in range(2 - new_lines_before_last_text):
+                    actions.edit.line_insert_down()
+            actions.edit.extend_line_start()
+            actions.insert(indentation_text)
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

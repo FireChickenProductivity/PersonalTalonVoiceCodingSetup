@@ -82,12 +82,14 @@ device <user.text>:
     key('left')
 
 technique <user.text>$:
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def :')
     edit.left()
     user.fire_chicken_call_function_inside_with_name_formatted(text, 'snake')
     insert('self, ')
 
 approach <user.text>$:
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def :')
     edit.left()
     user.fire_chicken_call_function_inside_with_name_formatted(text, 'snake')
@@ -96,6 +98,7 @@ approach <user.text>$:
     key(enter)
 
 private <user.text>$:
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def :')
     edit.left()
     insert("_")
@@ -104,6 +107,7 @@ private <user.text>$:
     
 
 obtain <user.text>$:
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def :')
     edit.left()
     user.fire_chicken_call_function_inside_with_name_formatted('get ' + text, 'snake')
@@ -114,6 +118,7 @@ obtain <user.text>$:
     user.fire_chicken_insert_formatted_text(text, 'snake')
 
 mutate <user.text>$:
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def :')
     edit.left()
     user.fire_chicken_call_function_inside_with_name_formatted('set ' + text, 'snake')
@@ -181,6 +186,7 @@ if main:
     key(enter)
 
 representation|represent:
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def __repr__(self):')
     key(enter)
     insert('return self.__str__()')
@@ -191,6 +197,7 @@ representation|represent:
     key(enter)
 
 equality:
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def __eq__(self, other) -> bool:')
     key(enter)
  
@@ -198,10 +205,12 @@ plot: 'plt.'
 numpy|nope: 'np.'
 
 testing <user.text>$:   
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def test_')
     user.fire_chicken_insert_formatted_text(text, 'snake')
     insert('(self):')
 testing <user.text> over:   
+    user.fire_chicken_python_programming_start_new_method_block()
     insert('def test_')
     user.fire_chicken_insert_formatted_text(text, 'snake')
     insert('(self):') 

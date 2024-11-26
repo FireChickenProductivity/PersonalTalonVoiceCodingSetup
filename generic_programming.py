@@ -115,6 +115,20 @@ class Actions:
         line_text = actions.user.generic_programming_get_line_from_start_and_ending()
         if not line_text.isspace() and len(line_text) > 0:
             actions.edit.line_insert_down()
+    def generic_programming_compute_proceeding_text() -> str:
+        """Returns the preceding text in the current file"""
+        actions.insert(" ")
+        text = copy_selection_text(actions.edit.extend_file_start)[1:]
+        actions.edit.right()
+        actions.edit.delete()
+        return text
+    def generic_programming_compute_following_text() -> str:
+        """Returns the following text in the current file"""
+        actions.insert(" ")
+        actions.edit.left()
+        text = copy_selection_text(actions.edit.extend_file_end)[1:]
+        cleanup_temporary_selection_space()
+        return text
     def generic_programming_start_new_line_if_next_line_empty():
         """Starts a newline if the next line is empty"""
         line_text = actions.user.generic_programming_get_next_line()

@@ -111,7 +111,16 @@ class Actions:
         else:
             insert_subtext_if_not_inside_text(" = ", line_start)
         
-
+    def fire_chicken_programming_compute_preceding_class_text():
+        """Computes the text before the cursor for the current class assuming one is already inside a class"""
+        preceding_text: str = actions.user.generic_programming_compute_proceeding_text()
+        class_declaration_index = preceding_text.rindex('\nclass')
+        if class_declaration_index >= 0:
+            return preceding_text[class_declaration_index:]
+        elif preceding_text.startswith('class'):
+            return preceding_text
+        else:
+            return ""
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

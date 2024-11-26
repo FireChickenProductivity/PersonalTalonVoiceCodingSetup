@@ -41,7 +41,7 @@ var <user.text>$:
 
 aimless:
     user.fire_chicken_python_programming_insert_assignment_if_missing()
-    insert('None)
+    insert('None')
     user.generic_programming_start_new_line_if_next_line_empty()
 worthless: 
     user.fire_chicken_python_programming_insert_assignment_if_missing()

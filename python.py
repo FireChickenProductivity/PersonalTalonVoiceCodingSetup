@@ -30,6 +30,10 @@ class UserActions:
             actions.insert(step)
         start_code_block()
 
+def insert_subtext_if_not_inside_text(subtext, text):
+    if subtext not in text:
+        actions.insert(subtext)
+
 @module.action_class
 class Actions:
     def fire_chicken_programming_define_python_class(classname: str):
@@ -98,11 +102,16 @@ class Actions:
         actions.edit.left()
 
     def fire_chicken_python_programming_insert_assignment_if_missing():
-        """Ad assignment operator is missing """
+        """Add assignment operator if missing """
         line_start = actions.user.generic_programming_get_line_start()
-        assignment_text = ' = '
-        if assignment_text not in line_start:
-            actions.insert(assignment_text)
+        if line_start.isspace():
+            actions.insert('return ')
+        elif "(" in line_start:
+            insert_subtext_if_not_inside_text("=", line_start)
+        else:
+            insert_subtext_if_not_inside_text(" = ", line_start)
+        
+
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

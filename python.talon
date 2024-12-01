@@ -126,7 +126,7 @@ mutate <user.text>$:
     edit.line_end()
     key(enter)
     insert('self.')
-    insert(text)
+    user.fire_chicken_insert_formatted_text(text, 'snake')
     insert(' = value')
 
 elif:

@@ -72,6 +72,7 @@ python environment deactivate: 'deactivate\n'
 pip install: 'pip install '
 pip install [jupiter] notebook: 'pip install notebook'
 pip install mat plot lib: 'pip install matplotlib'
+pip install from requirements: "pip install -r requirements.txt"
 jupiter [notebook]: 'jupyter notebook'
 source: 'source '
 venv ben activate: '.venv/bin/activate'

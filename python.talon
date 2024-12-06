@@ -13,6 +13,13 @@ op not: 'not '
 op not in: ' not in '
 op length: 'len('
 
+from:
+    user.generic_programming_start_new_line_if_current_line_not_empty()
+    insert('from ')
+
+import (all|wild [card]):
+    insert(' import *')
+
 annotate <user.code_type>:
     insert(': ')
     insert(code_type)
@@ -145,6 +152,7 @@ elif:
 unit test template:
     insert('import unittest')
     key(enter)
+    repeat(1)
     insert('class (unittest.TestCase):')
     key(enter:2)
     edit.delete()

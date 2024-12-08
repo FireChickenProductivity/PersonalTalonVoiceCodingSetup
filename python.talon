@@ -129,12 +129,12 @@ mutate <user.text>$:
     insert('def :')
     edit.left()
     user.fire_chicken_call_function_inside_with_name_formatted('set ' + text, 'snake')
-    insert('self, value')
+    insert('self, ' + text)
     edit.line_end()
     key(enter)
     insert('self.')
     user.fire_chicken_insert_formatted_text(text, 'snake')
-    insert(' = value')
+    insert(' = ' + text)
 
 elif:
 	key('end')

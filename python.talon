@@ -76,6 +76,7 @@ language:
     user.generic_programming_start_new_line_if_next_line_empty()
 
 increment: ' += 1'
+decrement: " -= 1"
 
 [build] plural: user.fire_chicken_programming_build_for_each_loop_using_plural()
 

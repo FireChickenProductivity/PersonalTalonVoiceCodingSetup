@@ -122,3 +122,5 @@ miming:
 
 blade: ' --'
 knife: ' -'
+
+horse: ":"

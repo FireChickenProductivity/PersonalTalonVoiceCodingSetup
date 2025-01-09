@@ -173,12 +173,12 @@ class Actions:
         actions.user.fire_chicken_call_function_inside(formatted_name)
     def generic_programming_call_method(name: str):
         '''Inserts the specified method call'''
-        actions.user.code_operator_object_accessor()
+        actions.user.fire_chicken_code_object_accessor()
         actions.insert(name)
         get_function_call_parentheses().insert_empty()
     def generic_programming_call_method_inside(name: str):
         '''Inserts the specified method call and enters the parentheses'''
-        actions.user.code_operator_object_accessor()
+        actions.user.fire_chicken_code_object_accessor()
         actions.insert(name)
         get_function_call_parentheses().insert()
         get_function_call_parentheses().enter_from_right()
@@ -200,9 +200,13 @@ class Actions:
         '''Inserts the variable name with default formatting'''
         formatted_name = actions.user.fire_chicken_format_text(name, settings.get(default_variable_format))
         actions.insert(formatted_name)
-
-
-
+    
+    def fire_chicken_code_object_accessor():
+        '''Inserts the object accessor operator'''
+        try:
+            actions.user.code_operator_object_accessor()
+        except:
+            actions.insert('.')
         
     def generic_programming_build_for(beginning: str, separator_after_initialization: str, separator_after_condition: str, ending: str ):
         '''Builds a for loop using the code written on the current line'''
@@ -218,7 +222,7 @@ class Actions:
     def generic_programming_self_dot():
         '''Uses the community repository code to create the language version of self dot'''
         actions.user.code_self()
-        actions.user.code_operator_object_accessor()
+        actions.user.fire_chicken_code_object_accessor()
     def generic_programming_self_reference_constructor_arguments(handle_argument: Callable[[str], None], start_prefix: str = '(', ending_prefix: str = ')'):
         '''For each constructor argument, does the equivalent of self.argument = argument'''
         current_line = actions.user.generic_programming_get_line()
@@ -250,7 +254,7 @@ class Actions:
     def fire_chicken_programming_self_reference_variable(variable: str, statement_ending: str = ''):
         '''Tries to do language equivalent of self.variable = variable'''
         actions.user.code_self()
-        actions.user.code_operator_object_accessor()
+        actions.user.fire_chicken_code_object_accessor()
         actions.insert(variable)
         actions.user.code_operator_assignment()
         actions.insert(variable + statement_ending)

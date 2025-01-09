@@ -8,6 +8,15 @@ tag(): user.fire_chicken_snippets
 talon python activate: user.talon_programming_activate_python_commands()
 talon python deactivate: user.talon_programming_deactivate_python_commands()
 
+static <user.text>$:
+    insert('@staticmethod\n')
+    insert('def ')
+    user.fire_chicken_insert_formatted_text(user.text_1, 'snake')
+    user.fire_chicken_insert_around_cursor('(', ')')
+stammer:
+    insert('@staticmethod\n')
+    insert('def ')
+
 op (in|each): ' in '
 op not: 'not '
 op not in: ' not in '

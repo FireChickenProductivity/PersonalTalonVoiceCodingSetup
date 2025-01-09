@@ -15,6 +15,10 @@ numerate|num rate <user.cursorless_target>:
     user.fire_chicken_cursorless_bring(cursorless_target)
     edit.right()
 
+within <user.cursorless_target>:
+    insert(" in ")
+    user.fire_chicken_cursorless_bring(cursorless_target)
+
 comfort <user.cursorless_target>:
     key("{")
     user.fire_chicken_cursorless_bring(cursorless_target)

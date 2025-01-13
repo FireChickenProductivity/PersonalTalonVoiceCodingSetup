@@ -14,4 +14,3 @@ structure <user.prose> over: user.fire_chicken_programming_insert_c_insert_struc
 constant <user.prose>$: user.fire_chicken_programming_insert_c_constant(prose)
 constant <user.prose> over: user.fire_chicken_programming_insert_c_constant(prose)
 
-(const|constant) (exp|expression): 'constexpr '

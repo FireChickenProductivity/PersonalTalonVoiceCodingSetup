@@ -67,6 +67,7 @@ right (fish|clown): '>'
 R (fish|clown): ' > '
 diamond: '<>'
 shoe: '_'
+swirl: "@"
 
 use:
 	insert('()')

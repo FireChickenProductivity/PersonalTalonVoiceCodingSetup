@@ -39,3 +39,10 @@ classy <user.text>$:
     user.fire_chicken_insert_with_pascal_case(text)
     insert(' {\n')
     key(down end ; up tab)
+
+const: "const "
+
+stirred <user.word>:
+    insert('std::')
+    insert(word)
+

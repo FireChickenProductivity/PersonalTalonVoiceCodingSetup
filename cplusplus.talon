@@ -33,6 +33,7 @@ public:
 bowl: "bool"
 bowler: "bool "
 standing: "std::string "
+size type: "size_t "
 
 classy <user.text>$: 
     insert('class ')
@@ -46,3 +47,15 @@ stirred <user.word>:
     insert('std::')
     insert(word)
 
+stir ref: "const std::string &"
+
+recompile:
+    edit.save()
+    user.vscode("workbench.action.terminal.focus")
+    key(up:2 enter)
+    key(up:2 enter)
+    user.vscode("workbench.action.focusActiveEditorGroup")
+
+template: 
+    insert("template <typename >")
+    edit.left()

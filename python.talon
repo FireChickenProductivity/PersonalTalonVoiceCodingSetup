@@ -33,7 +33,7 @@ annotate <user.code_type>:
     insert(': ')
     insert(code_type)
 
-[state] else if:
+[state] else if|ellen:
     insert('elif :')
     edit.left()
 

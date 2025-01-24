@@ -4,6 +4,7 @@ code.language: c
 namespace stand: "using namespace std;\n"
 
 output: " << "
+line put: insert(' << "\n";')
 couch|c out: 'cout'
 auto: "auto "
 scope|scoping: "::"
@@ -32,7 +33,7 @@ public:
 (const|constant) (exp|expression): 'constexpr '
 bowl: "bool"
 bowler: "bool "
-standing: "std::string "
+strung: "std::string "
 size type: "size_t "
 
 classy <user.text>$: 
@@ -59,3 +60,4 @@ recompile:
 template: 
     insert("template <typename >")
     edit.left()
+    

@@ -295,6 +295,12 @@ autoline off: user.fire_chicken_disable_programming_auto_line()
 
 magic call: user.fire_chicken_programming_insert_magic_method("call")
 
+advance <user.text>$:
+    user.fire_chicken_insert_formatted_text(text, 'snake')
+    insert(" = ")
+    user.fire_chicken_insert_formatted_text(text, 'snake')
+    insert(".next")
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

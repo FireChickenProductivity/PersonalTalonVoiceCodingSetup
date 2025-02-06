@@ -3,9 +3,12 @@ code.language: c
 
 namespace stand: "using namespace std;\n"
 
+heading: '#include "'
+
 output: " << "
-line put: insert(' << "\n";')
+line put: insert(' << "\\n";')
 couch|c out: 'cout'
+sofa: 'std::cout << '
 auto: "auto "
 scope|scoping: "::"
 adress|reference: " &"
@@ -14,6 +17,7 @@ pointer: " *"
 const|state const: "const "
 main function: "int main(int argc, char* argv[])"
 stand: "std::"
+typedef: 'typedef '
 
 ^header guard <user.text>$: 
     name = text + ' h'
@@ -61,3 +65,18 @@ template:
     insert("template <typename >")
     edit.left()
     
+van <user.text>$:
+    insert("void ")
+    user.fire_chicken_insert_formatted_text(text, 'camel')
+    insert("(")
+
+build size type:
+    user.c_style_programming_make_count_for_loop_given_datatype("size_t")
+
+build size:
+    insert(".size()")
+    user.c_style_programming_make_count_for_loop_given_datatype("size_t")
+
+length <user.cursorless_target>:
+    user.fire_chicken_cursorless_bring(cursorless_target)
+    insert(".size()")

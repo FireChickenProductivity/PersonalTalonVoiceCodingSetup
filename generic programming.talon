@@ -50,8 +50,12 @@ build calls <number_small> [args|arg|argue|argues|argument|arguments]:
 	user.fire_chicken_build_calls(number_small)
 
 #formatting:
-phrasing|sing <user.text>$: insert(' ' + text)
-phrasing|sing <user.text> over: insert(' ' + text)
+phrasing|sing <user.text>$: 
+	insert(' ' + text)
+	user.fire_chicken_programming_add_phrase_to_history(text)
+phrasing|sing <user.text> over:
+	insert(' ' + text)
+	user.fire_chicken_programming_add_phrase_to_history(text)
 sore <user.prose>$: user.fire_chicken_insert_with_snake_case(prose)
 sore <user.prose> over: user.fire_chicken_insert_with_snake_case(prose)
 cam <user.text>$: user.fire_chicken_insert_formatted_text(text, 'camel')

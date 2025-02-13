@@ -9,6 +9,10 @@ class Actions:
         actions.insert(text)
         actions.user.add_phrase_to_history(text)
 
+    def fire_chicken_programming_add_phrase_to_history(text: str):
+        """Inserts the text into the phrase history"""
+        actions.user.add_phrase_to_history(text)
+
     def fire_chicken_convert_text_to_pascal_case(text: str) -> str:
         '''Converts the text to pascal case'''
         return actions.user.fire_chicken_format_text(text, "pascal")

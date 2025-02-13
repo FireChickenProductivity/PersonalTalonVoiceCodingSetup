@@ -256,7 +256,7 @@ class Actions:
         actions.user.code_self()
         actions.user.fire_chicken_code_object_accessor()
         actions.insert(variable)
-        actions.user.code_operator_assignment()
+        actions.user.fire_chicken_code_assignment_operator()
         actions.insert(variable + statement_ending)
     
     def generic_programming_get_counting_for_loop_components_from_the_current_line() -> Tuple:

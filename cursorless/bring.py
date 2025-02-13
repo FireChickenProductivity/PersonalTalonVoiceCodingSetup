@@ -14,7 +14,7 @@ class Actions:
     def fire_chicken_cursorless_assign(target: Any):
         ''''''
         actions.user.fire_chicken_cursorless_bring(target)
-        actions.user.code_operator_assignment()
+        actions.user.fire_chicken_code_assignment_operator()
     
     def fire_chicken_cursorless_return(target: Any):
         ''''''

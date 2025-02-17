@@ -31,6 +31,9 @@ type <user.c_style_programming_type>:
 kind <user.c_style_programming_type>:
     insert(c_style_programming_type + ' ')
 
+stowing:
+    insert(" = ;")
+    edit.left()
 
 build for each: user.c_style_programming_make_for_each_loop()
 

@@ -17,9 +17,6 @@ stammer:
     insert('@staticmethod\n')
     insert('def ')
 
-op (in|each): ' in '
-op not: 'not '
-op not in: ' not in '
 op length: 'len('
 
 from:
@@ -227,11 +224,13 @@ testing <user.text>$:
     insert('def test_')
     user.fire_chicken_insert_formatted_text(text, 'snake')
     insert('(self):')
+    key(enter)
 testing <user.text> over:   
     user.fire_chicken_python_programming_start_new_method_block()
     insert('def test_')
     user.fire_chicken_insert_formatted_text(text, 'snake')
     insert('(self):') 
+    key(enter)
 
 classy <user.text>$: 
     user.fire_chicken_programming_define_python_class(text)
@@ -300,6 +299,8 @@ advance <user.text>$:
     insert(" = ")
     user.fire_chicken_insert_formatted_text(text, 'snake')
     insert(".next")
+
+empty set: 'set()'
 
 settings():
     user.fire_chicken_default_method_format = 'snake'

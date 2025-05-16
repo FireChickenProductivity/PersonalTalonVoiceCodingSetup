@@ -89,15 +89,20 @@ class Actions:
         flow_control_parentheses = actions.user.generic_programming_get_flow_control_parentheses()
         actions.insert(flow_control_text + flow_control_parentheses)
         start_block()
-        return_from_block()
-        actions.user.generic_programming_enter_flow_control_parentheses_from_right()
+        if flow_control_text.strip() != "else":
+            return_from_block()
+            actions.user.generic_programming_enter_flow_control_parentheses_from_right()
     
     def c_style_programming_continuation_flow_control(flow_control_text: str):
         '''Makes the specified continuation flow control block'''
         start_block_continuation()
-        flow_control_parentheses = actions.user.generic_programming_get_flow_control_parentheses()
-        actions.insert(flow_control_text + flow_control_parentheses)
-        actions.user.generic_programming_enter_flow_control_parentheses_from_right()
+        actions.insert(flow_control_text)
+        if flow_control_text.strip() == "else":
+            start_block_continuation_inside()
+        else:
+            flow_control_parentheses = actions.user.generic_programming_get_flow_control_parentheses()
+            actions.insert(flow_control_parentheses)
+            actions.user.generic_programming_enter_flow_control_parentheses_from_right()
     def c_style_programming_continuation_flow_control_next_line(flow_control_text: str):
         ''' moves to the end of the next line and starts the flow control continuation'''
         actions.edit.down()
@@ -194,6 +199,10 @@ def start_block_same_line_no_space():
     actions.insert('{')
     actions.key('enter')
 
+
+def start_block_continuation_inside():
+    insert_continuation_spaces(settings.get(brace_style))
+    start_block()
 def start_block_continuation():
     insert_continuation_spaces(settings.get(brace_style))
     start_block()

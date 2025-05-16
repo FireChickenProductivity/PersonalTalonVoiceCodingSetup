@@ -18,6 +18,7 @@ const|state const: "const "
 main function: "int main(int argc, char* argv[])"
 stand: "std::"
 typedef: 'typedef '
+null pointer: 'nullptr'
 
 ^header guard <user.text>$: 
     name = text + ' h'
@@ -45,6 +46,10 @@ classy <user.text>$:
     user.fire_chicken_insert_with_pascal_case(text)
     insert(' {\n')
     key(down end ; up tab)
+
+classing <user.text>$:
+    user.fire_chicken_insert_with_pascal_case(text)
+    insert(' ')
 
 const: "const "
 
@@ -80,3 +85,5 @@ build size:
 length <user.cursorless_target>:
     user.fire_chicken_cursorless_bring(cursorless_target)
     insert(".size()")
+
+refer: " = &"

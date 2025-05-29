@@ -23,3 +23,4 @@ stew: "String::new()"
 strum: user.fire_chicken_insert_around_cursor('String::from(', ')')
 pub: "pub "
 collect: ".collect()"
+command line arguments: user.fire_chicken_insert_around_cursor("let ", ": Vec<String> = env::args().collect();")

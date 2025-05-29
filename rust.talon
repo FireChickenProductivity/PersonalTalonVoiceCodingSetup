@@ -22,3 +22,4 @@ stand: "std::"
 stew: "String::new()"
 strum: user.fire_chicken_insert_around_cursor('String::from(', ')')
 pub: "pub "
+collect: ".collect()"

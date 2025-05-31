@@ -40,6 +40,8 @@ code pass:
 
 running: key(ctrl-f5)
 
+sail | next: user.vscode("jumpToNextSnippetPlaceholder")
+
 settings():
     user.context_sensitive_dictation = 1
     user.fire_chicken_context_sensitive_dictation_use_basic_action_recorder_for_context = 1

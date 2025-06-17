@@ -30,3 +30,7 @@ testy:
 newt: user.fire_chicken_insert_around_cursor("::new(", ")")
 arc clone: user.fire_chicken_insert_around_cursor("Arc::clone(", ")")
 arc mutex: user.fire_chicken_insert_around_cursor("Arc::new(Mutex::new(", "))")
+something: user.fire_chicken_insert_around_cursor("Some(", ")")
+okay: user.fire_chicken_insert_around_cursor("Ok(", ")")
+error: user.fire_chicken_insert_around_cursor("Err(", ")")
+dine: 'dyn '

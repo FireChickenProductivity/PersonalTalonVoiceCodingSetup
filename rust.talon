@@ -23,6 +23,7 @@ stew: "String::new()"
 strum: user.fire_chicken_insert_around_cursor('String::from(', ')')
 pub: "pub "
 collect: ".collect()"
+iter: ".iter()"
 command line arguments: user.fire_chicken_insert_around_cursor("let ", ": Vec<String> = env::args().collect();")
 
 testy:
@@ -34,3 +35,4 @@ something: user.fire_chicken_insert_around_cursor("Some(", ")")
 okay: user.fire_chicken_insert_around_cursor("Ok(", ")")
 error: user.fire_chicken_insert_around_cursor("Err(", ")")
 dine: 'dyn '
+you size: 'usize'

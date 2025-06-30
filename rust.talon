@@ -29,7 +29,7 @@ command line arguments: user.fire_chicken_insert_around_cursor("let ", ": Vec<St
 
 testy:
 	user.fire_chicken_insert_around_cursor("#[test]\nfn ", "()")
-newt: user.fire_chicken_insert_around_cursor("::new(", ")")
+newton: user.fire_chicken_insert_around_cursor("::new(", ")")
 arc clone: user.fire_chicken_insert_around_cursor("Arc::clone(", ")")
 arc mutex: user.fire_chicken_insert_around_cursor("Arc::new(Mutex::new(", "))")
 something: user.fire_chicken_insert_around_cursor("Some(", ")")

@@ -72,17 +72,6 @@ swirl: "@"
 use:
 	insert('()')
 	edit.left()
-using:
-	insert('(  )')
-	edit.left()
-	repeat(1)
-useless:
-	insert(' ()')
-	edit.left()
-uses:
-	insert(' (  )')
-	edit.left()
-	repeat(1)
 slice:
 	insert('[]')
 	edit.left()

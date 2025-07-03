@@ -72,6 +72,7 @@ swirl: "@"
 use:
 	insert('()')
 	edit.left()
+oval: insert('()')
 slice:
 	insert('[]')
 	edit.left()

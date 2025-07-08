@@ -26,7 +26,6 @@ stretch:
 	key(shift-up)
 	key(shift-home)
 	key(backspace)
-#On windows, clearing presses backspace
 sweep: edit.delete()
 sweep <number_small>:
 	edit.delete()
@@ -40,7 +39,6 @@ fail <number_small>:
 	edit.undo()
 	repeat(number_small - 1)
 
-semi: key(;)
 slump:
 	edit.line_end()
 	key(;)
@@ -58,7 +56,7 @@ dance:
 	key(tab)
 
 who: edit.right()
-pass:
+stray:
 	edit.right()
 	edit.right()
 sue: edit.word_right()
@@ -74,7 +72,7 @@ wolf:
 	edit.left()
 	edit.left()
 sly: edit.word_left()
-broom|boom|bloom:
+drill:
 	edit.extend_word_left()
 	user.generic_programming_wait_word_movement_delay()
 	edit.delete()

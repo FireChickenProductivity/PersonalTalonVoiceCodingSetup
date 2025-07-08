@@ -1,9 +1,11 @@
 code.language: c
+code.language: cpp
 -
 
 namespace stand: "using namespace std;\n"
 
 heading: '#include "'
+helmet: user.fire_chicken_insert_around_cursor('#include <', '>')
 
 output: " << "
 line put: insert(' << "\\n";')

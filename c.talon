@@ -1,4 +1,5 @@
 code.language: c
+code.language: cpp
 -
 tag(): user.c_style_programming
 

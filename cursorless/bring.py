@@ -18,9 +18,8 @@ class Actions:
     
     def fire_chicken_cursorless_return(target: Any):
         ''''''
-        actions.user.code_state_return()
+        actions.user.actions.user.insert_snippet_by_name("returnStatement")
         actions.user.fire_chicken_cursorless_bring(target)
-        actions.user.fire_chicken_insert_statement_ending()
     
     def fire_chicken_cursorless_call(target: Any):
         ''''''

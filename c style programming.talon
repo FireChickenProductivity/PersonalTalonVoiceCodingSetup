@@ -37,5 +37,9 @@ stowing:
 
 build for each: user.c_style_programming_make_for_each_loop()
 
+#types
+desert: 'void '
+bushy: 'int '
+
 settings():
     user.fire_chicken_statement_ending = ';'

@@ -89,3 +89,8 @@ length <user.cursorless_target>:
     insert(".size()")
 
 refer: " = &"
+
+output operator override header: user.insert_snippet("std::ostream &operator<<(std::ostream &os, const $1 &$0);")
+output operator override body: user.insert_snippet("std::ostream &operator<<(std::ostream &os, const $1 &$2)\n{\n	os << $0;\n	return os;\n}")
+read: user.insert_snippet("const $1 &$0")
+static cast: user.insert_snippet("static_cast<$1>($0)")

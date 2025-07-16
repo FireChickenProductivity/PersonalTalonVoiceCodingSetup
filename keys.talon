@@ -32,7 +32,7 @@ sweep <number_small>:
 	repeat(number_small - 1)
 clearing: edit.delete_line()
 swing: key(tab)
-switch: user.fire_chicken_switch_to_last_application()
+switch: user.switcher_focus_last()
 
 fail: edit.undo()
 fail <number_small>:

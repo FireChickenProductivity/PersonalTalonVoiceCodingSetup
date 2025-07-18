@@ -23,6 +23,18 @@ typedef: 'typedef '
 null pointer: 'nullptr'
 lion: " << '\\n';"
 ending: " << std::endl;"
+abstract|virtual: 
+    insert("virtual ")
+    user.chicken_notes_display_brief_by_name("C plus plus virtual")
+shorty:
+    insert("short ")
+    user.chicken_notes_display_brief_by_name("C plus plus short")
+taller:
+    insert("long ")
+    user.chicken_notes_display_brief_by_name("C plus plus long")
+bushy:
+    insert("int ")
+    user.chicken_notes_display_brief_by_name("C plus plus int")
 
 ^header guard <user.text>$: 
     name = text + ' h'

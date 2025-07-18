@@ -21,6 +21,8 @@ main function: "int main(int argc, char* argv[])"
 stand: "std::"
 typedef: 'typedef '
 null pointer: 'nullptr'
+lion: " << '\\n';"
+ending: " << std::endl;"
 
 ^header guard <user.text>$: 
     name = text + ' h'

@@ -1,8 +1,8 @@
 tag: user.cursorless
 -
 
-^<user.cursorless_target>$:
-    user.fire_chicken_cursorless_bring(cursorless_target)
+#^<user.cursorless_target>$:
+    #user.fire_chicken_cursorless_bring(cursorless_target)
 
 store <user.cursorless_target>: 
     user.generic_programming_start_new_line_if_current_line_not_empty()

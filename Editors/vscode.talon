@@ -40,7 +40,7 @@ code pass:
 
 running: key(ctrl-f5)
 
-sail | next: user.vscode("jumpToNextSnippetPlaceholder")
+sail | next: user.move_cursor_to_next_snippet_stop()
 
 settings():
     user.context_sensitive_dictation = 1

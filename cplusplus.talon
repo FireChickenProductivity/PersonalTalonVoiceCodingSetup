@@ -55,7 +55,7 @@ public:
 bowl: "bool"
 bowler: "bool "
 strung: "std::string "
-size type: "size_t "
+(size type | mass): "size_t "
 
 classy <user.text>$: 
     insert('class ')
@@ -72,6 +72,13 @@ const: "const "
 stirred <user.word>:
     insert('std::')
     insert(word)
+sector:
+    user.fire_chicken_insert_around_cursor('std::vector<', '>')
+vector:
+    user.fire_chicken_insert_around_cursor('vector<', '>')
+
+emplace back: user.fire_chicken_insert_around_cursor(".emplace_back(", ")")
+
 
 stir ref: "const std::string &"
 
@@ -108,3 +115,10 @@ output operator override header: user.insert_snippet("std::ostream &operator<<(s
 output operator override body: user.insert_snippet("std::ostream &operator<<(std::ostream &os, const $1 &$2)\n{\n	os << $0;\n	return os;\n}")
 read: user.insert_snippet("const $1 &$0")
 static cast: user.insert_snippet("static_cast<$1>($0)")
+
+return true:
+    user.insert_snippet_by_name("returnStatement")
+    insert("true")
+return false:
+    user.insert_snippet_by_name("returnStatement")
+    insert("false")

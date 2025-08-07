@@ -73,7 +73,6 @@ def code_generic_subscript_update():
 @javascript_context.action_class("user")
 class JavascriptActions:
 	def fire_chicken_methods_update():
-		print('was here')
 		if actions.user.fire_chicken_methods_should_update('javascript'):
 			global methods
 			methods = Methods(

@@ -1,0 +1,15 @@
+list: user.fire_chicken_programming_methods
+-
+list add: LIST_ADD
+list pop: LIST_POP
+list change: LIST_CHANGE
+list remove: LIST_REMOVE
+list get: LIST_GET
+list new: LIST_NEW
+
+map add: MAP_ADD
+map change: MAP_CHANGE
+map remove: MAP_REMOVE
+map get: MAP_GET
+map has: MAP_CONTAINS
+map new: MAP_NEW

@@ -59,6 +59,7 @@ R square: ' ] '
 bracing: ' { '
 left brace: ' {'
 R brace: ' } '
+taco: user.fire_chicken_insert_around_cursor("{", "}")
 #fish was conflicting with fifth, so I am using clown (a type of fish) instead
 clown: '<'
 fishing|clowning: ' < '

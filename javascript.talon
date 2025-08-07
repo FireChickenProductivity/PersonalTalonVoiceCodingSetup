@@ -4,6 +4,9 @@ code.language: html
 tag(): user.c_style_programming
 tag(): user.fire_chicken_fast_functions
 
+settings:
+    user.fire_chicken_statement_ending = ';'
+
 dot length: '.length'
 dot name: '.name'
 
@@ -24,19 +27,15 @@ compose <user.text>$:
 compose <user.text> over:
     user.fire_chicken_insert_react_component(text)
 
-allow <user.prose>$:
-    insert('let ')
-    user.fire_chicken_insert_formatted_text(prose, 'camel')
-allow <user.prose> over:
-    insert('let ')
-    user.fire_chicken_insert_formatted_text(prose, 'camel')
+allow <user.text>$:
+    user.fire_chicken_insert_javascript_variable('let', text, 'camel')
+allow <user.text> over:
+    user.fire_chicken_insert_javascript_variable('let', text, 'camel')
 
-constant <user.prose>$:
-    insert('const ')
-    user.fire_chicken_insert_formatted_text(prose, 'camel')
-constant <user.prose> over:
-    insert('const ')
-    user.fire_chicken_insert_formatted_text(prose, 'camel')
+constant <user.text>$:
+    user.fire_chicken_insert_javascript_variable('const', text, 'camel')
+constant <user.text> over:
+    user.fire_chicken_insert_javascript_variable('const', text, 'camel')
 
 build for let:
     user.generic_programming_build_for('for (let ', '; ', '; ', ')')

@@ -120,6 +120,9 @@ class Actions:
     def fire_chicken_insert_statement_ending():
         ''''''
         actions.insert(actions.user.fire_chicken_get_statement_ending())
+    def fire_chicken_insert_statement_ending_after_cursor():
+        ''''''
+        actions.user.fire_chicken_insert_after(actions.user.fire_chicken_get_statement_ending())
 
 def get_list_divided_by_continuous_regions_of_length(list: List, length: int):
     result = [[]]

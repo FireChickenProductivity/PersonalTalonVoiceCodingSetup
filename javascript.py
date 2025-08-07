@@ -24,6 +24,12 @@ class Actions:
         actions.insert(text)
         for i in range(2): actions.edit.left()
 
+    def fire_chicken_insert_javascript_variable(prefix: str, name: str, formatter: str):
+        '''Defines a javascript variable'''
+        actions.insert(prefix + " ")
+        actions.user.fire_chicken_insert_formatted_text(name, formatter)
+        actions.user.fire_chicken_insert_around_cursor(" = ", ";")
+
 context.lists['user.fire_chicken_fast_functions'] = {
     'prompting' : 'prompt',
     'pieces' : '.forEach',

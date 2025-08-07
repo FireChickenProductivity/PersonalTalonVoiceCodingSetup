@@ -4,7 +4,6 @@ coalmine|heel:
 	key(:)
 	key(enter)
 
-
 embrace:
 	edit.line_end()
 	insert(" {")

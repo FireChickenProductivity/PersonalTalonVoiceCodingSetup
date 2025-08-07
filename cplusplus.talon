@@ -78,7 +78,7 @@ vector:
     user.fire_chicken_insert_around_cursor('vector<', '>')
 
 emplace back: user.fire_chicken_insert_around_cursor(".emplace_back(", ")")
-
+no option: 'std::nullopt'
 
 stir ref: "const std::string &"
 

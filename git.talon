@@ -59,3 +59,7 @@ commit <user.text>$:
     user.fire_chicken_auto_generated_command_action_insert_formatted_text(user.text_1, 'capitalized lower', ' ')
 
 git push changes: 'git push'
+
+git revert commit: 'git reset --hard HEAD~1'
+
+git push remote 'git push --set-upstream origin '

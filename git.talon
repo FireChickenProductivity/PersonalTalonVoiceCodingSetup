@@ -62,4 +62,4 @@ git push changes: 'git push'
 
 git revert commit: 'git reset --hard HEAD~1'
 
-git push remote 'git push --set-upstream origin '
+git push remote: 'git push --set-upstream origin '

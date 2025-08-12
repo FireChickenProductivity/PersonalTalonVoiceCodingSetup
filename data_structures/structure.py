@@ -21,6 +21,11 @@ class Methods(TypedDict, total=False):
 	MAP_CONTAINS: Operator
 	MAP_NEW: Operator
 
+	SET_ADD: Operator
+	SET_REMOVE: Operator
+	SET_CONTAINS: Operator
+	SET_NEW: Operator
+
 methods: Optional[Methods] = None
 
 module = Module()
@@ -91,6 +96,11 @@ class JavascriptActions:
 				MAP_CONTAINS = 'has',
 				MAP_NEW = lambda: actions.user.fire_chicken_insert_around_cursor('new Map(', ')'),
 
+				SET_ADD = 'add',
+				SET_REMOVE = 'delete',
+				SET_CONTAINS = 'has',
+				SET_NEW = lambda: actions.user.fire_chicken_insert_around_cursor('new Set(', ')'),
+
 			)
 
 python_context = Context()
@@ -117,4 +127,38 @@ class PythonActions:
 				MAP_REMOVE = 'pop',
 				MAP_GET = code_generic_subscript,
 				MAP_NEW = lambda: actions.user.fire_chicken_insert_around_cursor('{', '}'),
+
+				SET_ADD = 'add',
+				SET_REMOVE = 'remove',
+				SET_NEW = lambda: actions.user.fire_chicken_insert_around_cursor('set(', ')'),
+			)
+
+cpp_context = Context()
+cpp_context.matches = r'''
+code.language: cpp
+code.language: c
+'''
+@cpp_context.action_class("user")
+class CppActions:
+	def fire_chicken_methods_update():
+		language = 'c++'
+		if actions.user.fire_chicken_methods_should_update(language):
+			global methods
+			methods = Methods(
+				LANGUAGE = language,
+				LIST_ADD = 'emplace_back',
+				LIST_POP = 'pop_back',
+				LIST_CHANGE = lambda: actions.user.snippet_insert(".at($1) = $0"),
+				LIST_REMOVE = 'erase',
+				LIST_GET = 'at',
+
+				MAP_ADD = 'emplace',
+				MAP_CHANGE = 'emplace',
+				MAP_REMOVE = 'erase',
+				MAP_GET = 'at',
+				MAP_CONTAINS = lambda: actions.user.fire_chicken_insert_around_cursor('.count(', ') != 0'),
+
+				SET_ADD = 'insert',
+				SET_REMOVE = 'erase',
+				SET_CONTAINS = lambda: actions.user.fire_chicken_insert_around_cursor('.count(', ') != 0'),
 			)

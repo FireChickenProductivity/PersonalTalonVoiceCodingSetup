@@ -13,3 +13,8 @@ map remove: MAP_REMOVE
 map get: MAP_GET
 map has: MAP_CONTAINS
 map new: MAP_NEW
+
+set add: SET_ADD
+set remove: SET_REMOVE
+set has: SET_CONTAINS
+set new: SET_NEW

@@ -16,6 +16,8 @@ changeling <user.text>$:
 	insert('let mut ')
 	user.fire_chicken_insert_with_snake_case(text)
 	user.fire_chicken_insert_around_cursor(" = ", ";")
+constant:
+	user.insert_snippet("const $1: $2 = $0;")
 
 scope: "::"
 stand: "std::"
@@ -26,7 +28,7 @@ pub: "pub "
 collect: ".collect()"
 iter: ".iter()"
 command line arguments: user.fire_chicken_insert_around_cursor("let ", ": Vec<String> = env::args().collect();")
-
+help
 testy:
 	user.fire_chicken_insert_around_cursor("#[test]\nfn ", "()")
 newton: user.fire_chicken_insert_around_cursor("::new(", ")")

@@ -4,7 +4,7 @@ code.language: cpp
 
 namespace stand: "using namespace std;\n"
 
-heading: '#include "'
+heading: user.fire_chicken_insert_around_cursor('#include "', '.h')
 helmet: user.fire_chicken_insert_around_cursor('#include <', '>')
 
 output: " << "

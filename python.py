@@ -6,6 +6,8 @@ context.matches = r'''
 code.language: python
 '''
 
+module.list("fire_chicken_numpy_functions", desc="Numpy functions")
+
 LINE_STARTING_STATEMENTS = set(['while', 'while :', 'for', 'for ', 'if', 'if :', 'def', 'def :', 'def ', 'return ', 'return', 'else:', 'elif :'])
 
 @context.action_class('user')

@@ -207,6 +207,8 @@ equality:
  
 plot: 'plt.'
 numpy|nope: 'np.'
+numb {user.fire_chicken_numpy_functions}:
+    user.fire_chicken_insert_around_cursor("np.{fire_chicken_numpy_functions}(", ")")
 
 testing <user.text>$:   
     insert('def test_')

@@ -1,0 +1,24 @@
+list: user.fire_chicken_numpy_functions
+-
+
+a range: arange
+arg max: argmax
+arg min: argmin
+array
+array equal: array_equal
+exp
+exponent: exp
+exponentiate: exp
+h stack: hstack
+max
+mean
+min
+ones
+square
+square root: sqrt
+squirt: sqrt
+standard deviation: std
+STD: std
+sum
+vee stack: vstack
+zeros

@@ -145,3 +145,7 @@ testing:
 assert true: user.fire_chicken_call_function_inside("assertTrue")
 assert false: user.fire_chicken_call_function_inside("assertFalse")
 assert equals: user.fire_chicken_call_function_inside("assertEquals")
+
+(eye oh | io) exception: 'IOException'
+gin [type] {user.java_generic_data_structure}:
+    user.insert_snippet(java_generic_data_structure + "<$1> $0")

@@ -11,6 +11,8 @@ system out: 'System.out.'
 system in: 'System.in'
 Math: 'Math'
 
+spacing: ' + " " + '
+
 console print line:
     user.java_programming_system_out_method('println')
 console print:

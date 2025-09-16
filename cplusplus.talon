@@ -16,7 +16,6 @@ scope|scoping: "::"
 adress|reference: " &"
 dereference: "*"
 pointer: " *"
-const|state const: "const "
 main function: "int main(int argc, char* argv[])"
 stand: "std::"
 typedef: 'typedef '

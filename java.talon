@@ -151,3 +151,7 @@ assert equals: user.fire_chicken_call_function_inside("assertEquals")
 (eye oh | io) exception: 'IOException'
 gin [type] {user.java_generic_data_structure}:
     user.insert_snippet(java_generic_data_structure + "<$1> $0")
+
+{user.java_generic_data_structure} of [{user.code_formatter}] <user.text>:
+    formatted_text = user.formatted_text(text, code_formatter or "PUBLIC_CAMEL_CASE")
+    insert("{java_generic_data_structure}<{formatted_text}> ")

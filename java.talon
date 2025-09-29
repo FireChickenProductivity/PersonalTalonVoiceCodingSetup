@@ -69,18 +69,12 @@ state (implements|imp|imply): ' implements '
 state extends: ' extends '
 
 #Short for declare
-Claire {user.code_type} <user.prose>$:
-    insert(user.code_type + ' ')
-    user.fire_chicken_insert_formatted_text(prose, 'camel')
-    user.generic_programming_insert_assignment()
-    insert(';')
-    edit.left()
-Claire {user.code_type} <user.prose> over:
-    insert(user.code_type + ' ')
-    user.fire_chicken_insert_formatted_text(prose, 'camel')
-    user.generic_programming_insert_assignment()
-    insert(';')
-    edit.left()
+<user.java_programming_type> Claire <user.text>$:
+    insert(user.java_programming_type + ' ')
+    user.java_programming_insert_assignment(text)
+<user.java_programming_type> Claire <user.text> over:
+    insert(user.java_programming_type + ' ')
+    user.java_programming_insert_assignment(text)
 
 param {user.code_type} <user.prose>$:
     user.generic_programming_insert_comma_separator()

@@ -1,5 +1,6 @@
 from talon import actions, Module, Context
 from .styles import * 
+from contextlib import suppress
 
 module = Module()
 
@@ -32,6 +33,13 @@ def java_programming_function_access_modifier(m) -> str:
     else:
         return m.java_programming_access_modifier
 
+@module.capture(rule = "{user.code_type}|<user.text>")
+def java_programming_type(m) -> str:
+    """Java built in or user type"""
+    with suppress(Exception):
+        return m.code_type
+    return actions.user.fire_chicken_convert_text_to_pascal_case(m.text)
+
 
 @module.action_class
 class Actions:
@@ -61,6 +69,12 @@ class Actions:
         '''Inserts text indicating that the class implements the specified interface'''
         actions.insert(' implements ')
         actions.user.fire_chicken_insert_formatted_text(interface_name, 'hammer')
+    def java_programming_insert_assignment(variable_name: str):
+        """Inserts a java variable assignment"""
+        actions.user.fire_chicken_insert_formatted_text(variable_name, 'camel')
+        actions.user.generic_programming_insert_assignment()
+        actions.user.fire_chicken_insert_after(";")
+        
 
 def get_data_type_without_generic_specifics(name):
     if '<' not in name:

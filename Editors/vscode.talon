@@ -29,6 +29,9 @@ editor: user.vscode("workbench.action.focusActiveEditorGroup")
     key(enter)
     user.vscode("workbench.action.focusActiveEditorGroup")
 
+restart <number_small> terminals:
+    user.fire_chicken_repeat_stop_terminals(number_small)
+
 code pass:
     edit.select_all()
     edit.copy()

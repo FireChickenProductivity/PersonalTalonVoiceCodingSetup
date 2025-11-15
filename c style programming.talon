@@ -41,5 +41,7 @@ build for each: user.c_style_programming_make_for_each_loop()
 desert: 'void '
 bushy: 'int '
 
+present: user.fire_chicken_insert_around_cursor(" = ", ";")
+
 settings():
     user.fire_chicken_statement_ending = ';'

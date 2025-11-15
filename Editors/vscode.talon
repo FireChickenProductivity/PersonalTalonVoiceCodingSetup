@@ -44,6 +44,15 @@ code pass:
 running: key(ctrl-f5)
 
 sail | next: user.move_cursor_to_next_snippet_stop()
+stale {user.snippet}:
+    user.move_cursor_to_next_snippet_stop()
+    user.insert_snippet_by_name_with_stop_at_end(snippet)
+surd <user.word>:
+    user.move_cursor_to_next_snippet_stop()
+    insert(word)
+mast <user.cursorless_target>:
+    user.move_cursor_to_next_snippet_stop()
+    user.fire_chicken_cursorless_bring(cursorless_target)
 
 settings():
     user.context_sensitive_dictation = 1

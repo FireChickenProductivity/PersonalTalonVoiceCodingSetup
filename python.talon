@@ -299,6 +299,8 @@ empty set: 'set()'
 file path: '__file__'
 path abs: user.fire_chicken_insert_around_cursor('os.path.abspath(', ')')
 
+slotting: user.fire_chicken_insert_around_cursor("__slots__ = ('", "')")
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

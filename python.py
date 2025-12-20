@@ -57,6 +57,15 @@ def compute_current_line_from_preceding_text(text: str):
 
 @module.action_class
 class Actions:
+    def fire_chicken_programming_open_python_file(mode: str):
+        """Codes the opening of a python file with the specific mode"""
+        actions.user.insert_snippet(rf"""with open($1, "{mode}") as f:
+    $0""")
+    def fire_chicken_programming_read_python_file_lines():
+        """Codes reading lines from a file in python"""
+        actions.user.insert_snippet(r"""with open($1, "r") as f:
+    for line in f.readlines():
+        $0""")
     def fire_chicken_programming_define_python_class(classname: str):
         ''''''
         actions.insert('class ')

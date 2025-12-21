@@ -26,7 +26,7 @@ state user: 'user.'
     user.talon_python_programming_start_tag_definition(talon_programming_module_name)
 
 settings get: 
-    user.fire_chicken_call_function_inside_with_name_formatted('actions.settings.get', 'snake')
+    user.fire_chicken_call_function_inside_with_name_formatted('settings.get', 'snake')
 
 action <user.talon_programming_standard_actions>:
     insert('actions.')

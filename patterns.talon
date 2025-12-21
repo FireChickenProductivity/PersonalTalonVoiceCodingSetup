@@ -8,3 +8,4 @@ pattern:
 pat <user.cursorless_target>:
 	text = user.cursorless_get_text(cursorless_target)
 	user.fire_chicken_programming_save_from(text)
+#[keyboard("chicken"), keyboard("what"), "]

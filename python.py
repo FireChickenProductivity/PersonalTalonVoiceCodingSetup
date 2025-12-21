@@ -62,11 +62,11 @@ class Actions:
         actions.edit.select_line()
         selected_text: str = actions.edit.selected_text()
         actions.edit.line_insert_down()
-        first_non_alpha_index = 0
-        while selected_text[first_non_alpha_index].isalpha() or \
-            selected_text[first_non_alpha_index] == "_":
-            first_non_alpha_index += 1
-        actions.insert(selected_text[first_non_alpha_index:])
+        post_variable_index = 0
+        while selected_text[post_variable_index].isalnum() or \
+            selected_text[post_variable_index] == "_":
+            post_variable_index += 1
+        actions.insert(selected_text[post_variable_index:])
         actions.edit.line_start()
 
     def fire_chicken_programming_open_python_file(mode: str):

@@ -90,6 +90,18 @@ decrement: " -= 1"
 return false: insert('return False')
 return true: insert('return True')
 
+tower <user.word>:
+    insert(word)
+    insert(' = ')
+    user.fire_chicken_insert_with_pascal_case(word)
+    user.fire_chicken_insert_around_cursor("(", ")")
+
+blatant <user.text>$:
+    user.fire_chicken_insert_formatted_text(text, 'snake')
+    insert(' = ')
+    user.fire_chicken_insert_with_pascal_case(user.text)
+    user.fire_chicken_insert_around_cursor("(", ")")
+
 device <user.text>:
     insert(' = ')
     user.fire_chicken_auto_generated_command_action_insert_formatted_text(user.text_1, 'capitalized', '')

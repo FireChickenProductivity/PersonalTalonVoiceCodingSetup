@@ -66,8 +66,10 @@ class Actions:
         while selected_text[post_variable_index].isalnum() or \
             selected_text[post_variable_index] == "_":
             post_variable_index += 1
-        actions.insert(selected_text[post_variable_index:])
-        actions.edit.line_start()
+        initialization = selected_text[post_variable_index:]
+        actions.insert(initialization)
+        for _ in range(len(initialization)):
+            actions.edit.left()
 
     def fire_chicken_programming_open_python_file(mode: str):
         """Codes the opening of a python file with the specific mode"""

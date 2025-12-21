@@ -21,5 +21,13 @@ class Actions:
 
 	def fire_chicken_programming_find_pattern(text: str) -> str:
 		"""Finds the most prominent pattern in the text"""
-		pass
-		
+		best_pattern = ""
+		best_coverage = 0
+		for i in range(len(text)):
+			for j in range(i+1, len(text)):
+				sequence = text[i:j]
+				coverage = text.count(sequence)
+				num_occurrences = 0
+				if num_occurrences > 1 and coverage > best_coverage:
+					best_pattern = sequence
+		return best_pattern

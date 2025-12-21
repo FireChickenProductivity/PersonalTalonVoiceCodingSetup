@@ -1,4 +1,4 @@
-from talon import Module, actions
+from talon import Module, actions, app
 
 mod = Module()
 
@@ -23,7 +23,7 @@ class Actions:
 	def fire_chicken_programming_save_from(text: str):
 		"""Save the programming pattern in the text"""
 		pattern = actions.user.fire_chicken_programming_find_pattern(text)
-		print('pattern', pattern)
+		app.notify(pattern)
 		actions.user.fire_chicken_programming_save_pattern(pattern)
 
 	def fire_chicken_programming_find_pattern(text: str) -> str:

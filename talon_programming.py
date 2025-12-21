@@ -8,6 +8,17 @@ module = Module()
 module.tag('fire_chicken_talon_python_programming', desc = 'Activate talon python commands')
 @module.action_class
 class Actions:
+    def fire_chicken_talent_programming_start_action_file():
+        """Inserts an action file template"""
+        actions.user.insert_snippet(r"""from talon import Module, actions
+
+mod = Module()
+
+@mod.action_class
+class Actions:
+    def $1($2):
+        $3""")
+
     def talon_programming_insert_keypress(keys: str):
         '''Inserts the talon command needed to make the keypress'''
         actions.insert('key')

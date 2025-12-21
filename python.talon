@@ -90,6 +90,10 @@ decrement: " -= 1"
 return false: insert('return False')
 return true: insert('return True')
 
+echo <user.text>:
+    snake_case_variable = user.fire_chicken_format_text(text, "snake")
+    user.fire_chicken_programming_copy_initialization(snake_case_variable)
+
 tower <user.word>:
     insert(word)
     insert(' = ')

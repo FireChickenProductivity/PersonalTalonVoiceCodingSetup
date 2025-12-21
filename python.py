@@ -57,8 +57,8 @@ def compute_current_line_from_preceding_text(text: str):
 
 @module.action_class
 class Actions:
-    def fire_chicken_programming_copy_initialization(variable_name: str):
-        """Copies the initialization on the current line but replaces the variable name"""
+    def fire_chicken_programming_copy_initialization():
+        """Copies the initialization on the current line and puts the cursor at the start of the line"""
         actions.edit.select_line()
         selected_text: str = actions.edit.selected_text()
         actions.edit.right()
@@ -67,7 +67,8 @@ class Actions:
         while selected_text[first_non_alpha_index].isalpha() or \
             selected_text[first_non_alpha_index] == "_":
             first_non_alpha_index += 1
-        actions.insert(variable_name + selected_text[first_non_alpha_index:])
+        actions.insert(selected_text[first_non_alpha_index:])
+        actions.edit.line_start()
 
     def fire_chicken_programming_open_python_file(mode: str):
         """Codes the opening of a python file with the specific mode"""

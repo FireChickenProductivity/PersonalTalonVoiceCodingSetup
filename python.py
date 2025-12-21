@@ -61,8 +61,7 @@ class Actions:
         """Copies the initialization on the current line and puts the cursor at the start of the line"""
         actions.edit.select_line()
         selected_text: str = actions.edit.selected_text()
-        actions.edit.right()
-        actions.key('enter')
+        actions.edit.line_insert_down()
         first_non_alpha_index = 0
         while selected_text[first_non_alpha_index].isalpha() or \
             selected_text[first_non_alpha_index] == "_":

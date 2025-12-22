@@ -28,7 +28,7 @@ state user: 'user.'
 settings get: 
     user.fire_chicken_call_function_inside_with_name_formatted('settings.get', 'snake')
 
-action <user.talon_programming_standard_actions>:
+act <user.talon_programming_standard_actions>:
     insert('actions.')
     insert(talon_programming_standard_actions)
     insert('()')

@@ -11,3 +11,6 @@ back {user.snippet}:
 start {user.snippet}:
     key(end enter)
     user.insert_snippet_by_name_with_stop_at_end(snippet)
+
+max equals: user.generic_programming_max_equals()
+min equals: user.generic_programming_min_equals()

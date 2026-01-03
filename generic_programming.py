@@ -293,6 +293,34 @@ class Actions:
         actions.key('escape')
         actions.edit.left()
 
+    def generic_programming_get_previous_paint() -> str:
+        """Copy the text to the left after the first white space from the right"""
+        line_start: str = actions.user.generic_programming_get_line_start().strip()
+        if line_start:
+            i = len(line_start) - 1
+            while i > 0 and (not line_start[i].isspace()):
+                i -= 1
+        return line_start[i:]
+
+    def generic_programming_call_equals(function_name: str, add_argument: bool=True):
+        """Assign the variable to a function applied to the variable"""
+        previous_paint: str = actions.user.generic_programming_get_previous_paint()
+        if previous_paint:
+            start = f" = {function_name}({previous_paint}"
+            if add_argument:
+                start += ", "
+            actions.insert(start + ")")
+            if add_argument:
+                actions.edit.left()
+
+    def generic_programming_max_equals():
+        """Assign the previous paint variable to the max applied to the variable and something else"""
+        actions.user.generic_programming_call_equals("max")
+
+    def generic_programming_min_equals():
+        """Assign the previous paint variable to the min applied to the variable and something else"""
+        actions.user.generic_programming_call_equals("min")
+
 def construct_standard_programming_containers():
     containers = []
     containers.append(TextContainer('<', '>', invalid_left_boundary = ' ', invalid_right_boundary = ' '))

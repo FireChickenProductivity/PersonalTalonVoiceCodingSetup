@@ -334,8 +334,6 @@ class Actions:
                 break
         if not difference_end:
             return 
-        print("original", source[different_start:difference_end])
-        print("replacement", prefix[different_start:])
         return source.replace(source[different_start:difference_end], prefix[different_start:])
     
     def generic_programming_insert_analogous_from_prior_line():

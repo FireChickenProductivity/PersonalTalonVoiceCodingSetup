@@ -321,6 +321,36 @@ class Actions:
         """Assign the previous paint variable to the min applied to the variable and something else"""
         actions.user.generic_programming_call_equals("min")
 
+    def generic_programming_compute_analogous(source: str, prefix: str) -> str:
+        """Compute analogous to source but using the given prefix assuming the difference is an identifier"""
+        different_start = 0
+        while different_start < len(prefix) and source[different_start] == prefix[different_start]:
+            different_start += 1
+        difference_end = None
+        for i in range(different_start, len(source)):
+            char = source[i]
+            if not (char.isalpha() or char.isdigit() or char == "_"):
+                difference_end = i
+                break
+        if not difference_end:
+            return 
+        print("original", source[different_start:difference_end])
+        print("replacement", prefix[different_start:])
+        return source.replace(source[different_start:difference_end], prefix[different_start:])
+    
+    def generic_programming_insert_analogous_from_prior_line():
+        """Insert analogous completion based on the prior line"""
+        actions.edit.extend_line_start()
+        actions.edit.extend_up()
+        actions.edit.extend_line_start()
+        text = actions.edit.selected_text()
+        actions.edit.right()
+        lines = text.split("\n")
+        second_line = lines[1].lstrip()
+        first_line = lines[0].lstrip()
+        analogy = actions.user.generic_programming_compute_analogous(first_line, second_line)
+        actions.insert(analogy[len(second_line):])
+
 def construct_standard_programming_containers():
     containers = []
     containers.append(TextContainer('<', '>', invalid_left_boundary = ' ', invalid_right_boundary = ' '))

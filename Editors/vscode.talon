@@ -59,3 +59,5 @@ settings():
     user.fire_chicken_context_sensitive_dictation_use_basic_action_recorder_for_context = 1
     user.fire_chicken_context_sensitive_dictation_select_word_delay = 100
     user.fire_chicken_context_sensitive_dictation_ending_delay = 50
+    user.correction_chicken_correction_hunt_distance = 2
+    user.selected_text_timeout = 100

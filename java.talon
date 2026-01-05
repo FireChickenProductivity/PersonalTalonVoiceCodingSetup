@@ -149,3 +149,8 @@ gin [type] {user.java_generic_data_structure}:
 #{user.java_generic_data_structure} of [{user.code_formatter}] <user.text>:
 #    formatted_text = user.formatted_text(text, code_formatter or "PUBLIC_CAMEL_CASE")
 #    insert("{java_generic_data_structure}<{formatted_text}> ")
+
+Isaac <user.cursorless_target>:
+    insert(" = new ")
+    user.fire_chicken_cursorless_bring(cursorless_target)
+    user.fire_chicken_insert_around_cursor("(", ");")

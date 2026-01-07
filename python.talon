@@ -322,6 +322,8 @@ file directory: insert("os.path.dirname(__file__)")
 
 slotting: user.fire_chicken_insert_around_cursor("__slots__ = ('", "')")
 
+data class import: insert("from dataclasses import dataclass")
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

@@ -20,9 +20,6 @@ bracelet:
 clasp:
 	key('space')
 	key('{')
-leap|leal:
-	edit.line_end()
-	key(enter)
 beep|feel:
 	user.generic_programming_create_line_below()
 	edit.delete()

@@ -46,7 +46,7 @@ swine: ';'
 calming: ' , '
 calmer: ', '
 implies: ' => ' 
-larrow: ' -> '
+dart: ' -> '
 #grouping symbols
 group: '('
 grouping: ' ( '
@@ -70,9 +70,6 @@ diamond: '<>'
 shoe: '_'
 swirl: "@"
 
-use:
-	insert('()')
-	edit.left()
 oval: insert('()')
 slice:
 	insert('[]')

@@ -9,6 +9,7 @@ and tag: user.terminal_chicken
 app: Visual Studio Code
 and tag: user.terminal_chicken
 app: VMware Fusion
+app: Windows App
 -
 g c c: 'gcc *.c'
 move: 'cd '
@@ -99,3 +100,4 @@ lookup experiment:
     insert('nslookup www.diagrams.net\n')
 
 
+ollama: 'ollama '

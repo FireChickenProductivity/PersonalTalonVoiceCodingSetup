@@ -1,4 +1,5 @@
 from talon import Module, actions
+
 from typing import Any
 
 def is_target_not_single_character(target):

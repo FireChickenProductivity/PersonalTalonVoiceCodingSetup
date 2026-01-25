@@ -1,5 +1,7 @@
 from talon import Module, actions, Context
 
+import re
+
 module = Module()
 context = Context()
 context.matches = r'''
@@ -189,6 +191,42 @@ class Actions:
                     actions.edit.line_insert_down()
             actions.edit.extend_line_start()
             actions.insert(indentation_text)
+
+    def fire_chicken_python_add_slots(class_text: str) -> str:
+        """Adds slots to the specified python class"""
+        attribute_assignments = re.findall(r'self.(\w+)\s*=\s*', class_text)
+        variable_names = set(attribute_assignments)
+        if not variable_names:
+            return 
+        slot_variables = [f"'{v}'" for v in variable_names]
+        if len(slot_variables) > 1:
+            slot_text = f"__slots__ = ({', '.join(slot_variables)})"
+        else:
+            slot_text = slot_text = f"__slots__ = ({slot_variables[0]},)"
+        lines = class_text.split("\n")
+        indentation_text: str | None = None
+        for line in lines:
+            if len(line) >= 1 and line[0].isspace():
+                leading_spaces = []
+                for c in line:
+                    if c.isspace():
+                        leading_spaces.append(c)
+                    else:
+                        break
+                indentation_text = "".join(leading_spaces)
+                break
+        if indentation_text is None:
+            return 
+        first_function_index = -1
+        for i, line in enumerate(lines):
+            if line.lstrip().startswith("def"):
+                first_function_index = i
+                break
+        if first_function_index < 0:
+            return 
+        lines.insert(first_function_index, indentation_text + slot_text)
+        return "\n".join(lines)
+        
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

@@ -154,3 +154,10 @@ Isaac <user.cursorless_target>:
     insert(" = new ")
     user.fire_chicken_cursorless_bring(cursorless_target)
     user.fire_chicken_insert_around_cursor("(", ");")
+
+Jared <user.code_type>: 
+    insert("JavaRDD<{code_type}> ")
+Jared {user.java_boxed_type}: 
+    insert("JavaRDD<{java_boxed_type}> ")
+Jared:
+    user.insert_snippet("JavaRDD<$1> $0")

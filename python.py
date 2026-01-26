@@ -194,7 +194,8 @@ class Actions:
 
     def fire_chicken_python_add_slots(class_text: str) -> str:
         """Adds slots to the specified python class"""
-        attribute_assignments = re.findall(r'self.(\w+)\s*=\s*', class_text)
+        attribute_assignments = re.findall(r'self.(\w+)\s*=\s*', class_text) + \
+            re.findall(r'self.(\w+)\s*:', class_text)
         variable_names = set(attribute_assignments)
         if not variable_names:
             return 

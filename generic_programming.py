@@ -66,9 +66,7 @@ mod.setting(
 def copy_selection_text(selection_function):
     with clip.revert():
         selection_function()
-        actions.edit.copy()
-        actions.sleep(f'{settings.get(clipboard_operation_delay)}ms')
-        result = clip.text()
+        result = actions.edit.selected_text()
         return result
 
 def cleanup_temporary_selection_space():

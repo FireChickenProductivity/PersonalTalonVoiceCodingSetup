@@ -12,7 +12,8 @@ app: VMware Fusion
 app: Windows App
 -
 g c c: 'gcc *.c'
-move: 'cd '
+down: 'cd '
+view: user.fire_chicken_insert_around_cursor("cd ", ";ls")
 show: 'ls '
 a out: './a.out'
 gedit: 'gedit '

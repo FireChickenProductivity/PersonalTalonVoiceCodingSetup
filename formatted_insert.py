@@ -1,4 +1,4 @@
-from talon import Module, actions
+from talon import Module, actions, settings
 
 def camel_case_conversion_function(index, word):
     if index == 0:
@@ -96,7 +96,11 @@ class Actions:
     def fire_chicken_insert_with_camel_case(text: str):
         '''Insert the specified text with camel case'''
         actions.user.fire_chicken_insert_formatted_text(text, 'camel')
-
+    def fire_chicken_get_default_formatter() -> str:
+        '''Returns the default formatter'''
+        if formatter := settings.get("user.fire_chicken_default_variable_format"):
+            return formatter
+        return "camel"
 
 def move_left_for_each_character(text: str):
     for i in range(len(text)):

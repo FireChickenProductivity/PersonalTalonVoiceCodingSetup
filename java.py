@@ -40,6 +40,7 @@ def java_programming_type(m) -> str:
         return m.code_type
     return actions.user.fire_chicken_convert_text_to_pascal_case(m.text)
 
+java_variable_prefix_keywords = set(["public", "private", "static", "abstract", "protected", "transient", "final"])
 
 @module.action_class
 class Actions:
@@ -74,7 +75,42 @@ class Actions:
         actions.user.fire_chicken_insert_formatted_text(variable_name, 'camel')
         actions.user.generic_programming_insert_assignment()
         actions.user.fire_chicken_insert_after(";")
-        
+    def java_programming_complete_assignment():
+        """Completes an in progress java assignment"""
+        before_text = actions.user.generic_programming_get_line_start()
+        after_text = actions.user.generic_programming_get_line_ending()
+        if not before_text:
+            return 
+        parts = before_text.split(" ")
+        declaration_index = 0
+        while parts[declaration_index] in java_variable_prefix_keywords:
+            declaration_index += 1
+        declaration_type = parts[declaration_index]
+        if declaration_type == "final":
+            declaration_type = parts[1]
+        had_diamond = False
+        if "<" in declaration_type:
+            limit_index = declaration_type.index("<")
+            declaration_type = declaration_type[:limit_index]
+            had_diamond = True
+        if declaration_type == "List":
+            declaration_type = "ArrayList"
+        if had_diamond:
+            declaration_type += "<>"
+        result = []
+        if "=" not in before_text:
+            result.append(" = ")
+        if "new " not in before_text:
+            result.append("new ")
+        result.append(declaration_type)
+        result.append("(")
+        tail = [")"]
+        if ";" not in after_text:
+            tail.append(";")
+        actions.user.fire_chicken_insert_around_cursor(
+            "".join(result),
+            "".join(tail)
+        )
 
 def get_data_type_without_generic_specifics(name):
     if '<' not in name:

@@ -33,6 +33,10 @@ main method:
 
 build new: user.java_programming_build_new()
 
+fin:
+    user.generic_programming_start_new_line_if_current_line_not_empty()
+    insert("final ")
+
 <user.java_programming_function_access_modifier>:
     insert(java_programming_function_access_modifier)
 <user.java_programming_function_access_modifier> <user.c_style_programming_type>:

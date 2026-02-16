@@ -319,6 +319,7 @@ empty set: 'set()'
 file path: '__file__'
 path abs: user.fire_chicken_insert_around_cursor('os.path.abspath(', ')')
 file directory: insert("os.path.dirname(__file__)")
+path directory: user.fire_chicken_insert_around_cursor('os.path.dirname(', ')')
 
 slotting: user.fire_chicken_insert_around_cursor("__slots__ = ('", "')")
 

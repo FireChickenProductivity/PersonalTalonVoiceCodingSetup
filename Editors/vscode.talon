@@ -54,10 +54,14 @@ mast <user.cursorless_target>:
     user.move_cursor_to_next_snippet_stop()
     user.fire_chicken_cursorless_bring(cursorless_target)
 
+# currently only works on mac
+copy relative path: 
+    key(cmd-k)
+    key(cmd-alt-shift-c)
+
 settings():
     user.context_sensitive_dictation = 1
     user.fire_chicken_context_sensitive_dictation_use_basic_action_recorder_for_context = 1
     user.fire_chicken_context_sensitive_dictation_select_word_delay = 100
     user.fire_chicken_context_sensitive_dictation_ending_delay = 50
-    user.correction_chicken_correction_hunt_distance = 2
     user.selected_text_timeout = 100

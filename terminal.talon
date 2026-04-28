@@ -10,6 +10,8 @@ app: Visual Studio Code
 and tag: user.terminal_chicken
 app: VMware Fusion
 app: Windows App
+app: vscode
+and win.title: /focus:\[Terminal\]/
 -
 g c c: 'gcc *.c'
 down: 'cd '
@@ -100,5 +102,5 @@ lookup experiment:
     sleep(5)
     insert('nslookup www.diagrams.net\n')
 
-
+jeep: 'jps'
 ollama: 'ollama '

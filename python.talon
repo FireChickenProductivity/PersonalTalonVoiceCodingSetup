@@ -21,7 +21,7 @@ op length: 'len('
 
 file read lines: user.fire_chicken_programming_read_python_file_lines()
 file read: user.fire_chicken_programming_open_python_file("r")
-file write: user.fire_chicken_programming_open_python_file("w")
+file write | file writing: user.fire_chicken_programming_open_python_file("w")
 file append: user.fire_chicken_programming_open_python_file("a")
 
 from:

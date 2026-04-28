@@ -167,3 +167,5 @@ Jared {user.java_boxed_type}:
     insert("JavaRDD<{java_boxed_type}> ")
 Jared:
     user.insert_snippet("JavaRDD<$1> $0")
+
+as list: user.fire_chicken_insert_around_cursor("Arrays.asList(", ")")

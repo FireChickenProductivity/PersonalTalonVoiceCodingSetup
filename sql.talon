@@ -5,6 +5,7 @@ snip table:
     user.chicken_notes_display_by_name("sql table creation")
     user.insert_snippet("CREATE TABLE $1 (\n    $0\n)")
 snip insert:
+    user.chicken_notes_display_by_name("sql insert")
     user.insert_snippet("INSERT INTO $1 ($2) VALUES ($0)")
 varchar: 
     insert(' VARCHAR')

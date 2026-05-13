@@ -25,3 +25,7 @@ values:
     insert(' VALUES ')
     user.fire_chicken_insert_around_cursor('(', ')')
 delete from: 'DELETE FROM '
+ascending: ASC
+descending: ASC
+order by: "ORDER BY "
+like: " LIKE "

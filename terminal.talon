@@ -104,3 +104,4 @@ lookup experiment:
 
 jeep: 'jps'
 ollama: 'ollama '
+ollama run quin: 'ollama run qwen3.5:4b'

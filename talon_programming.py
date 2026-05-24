@@ -52,7 +52,19 @@ class Actions:
                 prior_lines = prior_text.split("\n")
                 return_cursor_from_above(prior_lines)
 
-        # if a module has not been defined, define one
+        # if a module has not been defined, define one. Otherwise move after the module definition and keep track of the module name
+        module_name: str
+        if "= Module()" not in total_text:
+            module_name = "mod"
+            # move to the end of the file
+            actions.edit.file_end()
+            actions.edit.line_end()
+            actions.edit.extend_line_start()
+            actions.insert("mod = Module()")
+            actions.edit.line_end()
+        else:
+            pass
+        
 
         # if an action class does not exist, create one
         # if one exists, define the action at the nearest one

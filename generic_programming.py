@@ -116,7 +116,7 @@ class Actions:
     def generic_programming_compute_proceeding_text() -> str:
         """Returns the preceding text in the current file"""
         actions.insert(" ")
-        text = copy_selection_text(actions.edit.extend_file_start)[1:]
+        text = copy_selection_text(actions.edit.extend_file_start)[:-1]
         actions.edit.right()
         actions.edit.delete()
         return text

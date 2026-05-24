@@ -43,3 +43,4 @@ control <user.talon_programming_control_function>:
     edit.left()
 
 action file: user.fire_chicken_talent_programming_start_action_file()
+acting: user.fire_chicken_talon_programming_define_action()

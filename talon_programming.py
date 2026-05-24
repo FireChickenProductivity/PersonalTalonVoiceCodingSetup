@@ -19,6 +19,44 @@ class Actions:
     def $1($2):
         $3""")
 
+    def fire_chicken_talon_programming_define_action():
+        """Defines an action"""
+        # get the text above and below
+        prior_text = actions.user.generic_programming_compute_proceeding_text()
+        following_text = actions.user.generic_programming_compute_following_text()
+        total_text: str = prior_text + following_text
+        # if Module has not been imported, import it
+            # if missing talon import do that
+        if "from talon import" not in total_text:
+            actions.edit.file_start()
+            import_text = "from talon import Module"
+            actions.insert(import_text)
+            for _ in range(2):
+                actions.edit.line_insert_down()
+            prior_text = import_text + prior_text + "\n\n"
+            actions.edit.file_start()
+            prior_lines = prior_text.split("\n")
+            return_cursor_from_above(prior_lines)
+        else:
+            # otherwise check if Module is imported at any of the imports
+            imports = [l for l in total_text.split("\n") if l.startswith("from talon import ")]
+            if not any(["Module" in l for l in imports]):
+                first_import_index = total_text.find("from talon import ")
+                part_before_import = total_text[:first_import_index]
+                lines_from_the_top = part_before_import.count("\n")
+                actions.edit.file_start()
+                for _ in range(lines_from_the_top): actions.edit.down()
+                actions.edit.line_end()
+                actions.insert(", Module")
+                actions.edit.file_start()
+                prior_lines = prior_text.split("\n")
+                return_cursor_from_above(prior_lines)
+
+        # if a module has not been defined, define one
+
+        # if an action class does not exist, create one
+        # if one exists, define the action at the nearest one
+
     def talon_programming_insert_keypress(keys: str):
         '''Inserts the talon command needed to make the keypress'''
         actions.insert('key')
@@ -100,3 +138,19 @@ def talon_programming_standard_actions(m) -> str:
 @module.capture(rule = 'mouse pos')
 def talon_programming_control_function(m) -> str:
     return str('_'.join(m))
+
+def return_cursor_from_above(lines: list[str]):
+    """Moves the cursor to the original position from at the top of the lines"""
+    for _ in range(len(lines) - 1):
+        actions.edit.down()
+    actions.edit.line_start()
+    for _ in range(len(lines[-1])):
+        actions.edit.right()
+
+def return_cursor_from_below(lines: list[str]):
+    """Moves the cursor to the original position from at the bottom of the lines"""
+    for _ in range(len(lines) - 1):
+        actions.edit.up()
+    actions.edit.line_end()
+    for _ in range(len(lines[-1])):
+        actions.edit.left()

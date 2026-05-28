@@ -325,6 +325,28 @@ slotting: user.fire_chicken_insert_around_cursor("__slots__ = ('", "')")
 
 data class import: insert("from dataclasses import dataclass")
 
+data class <user.text>$:
+    insert("@dataclass\nclass ")
+    user.fire_chicken_insert_formatted_text(text, 'pascal')
+    insert(":\n")
+
+(turn | return) guard: 
+    user.generic_programming_start_new_line_if_current_line_not_empty()
+    user.insert_snippet("if $0:\n\treturn ")
+raise guard: 
+    user.generic_programming_start_new_line_if_current_line_not_empty()
+    user.insert_snippet("if $1:\n\traise $0")
+error guard: 
+    user.generic_programming_start_new_line_if_current_line_not_empty()
+    user.insert_snippet("if $1:\n\traise ValueError($0)")
+
+nothing: " is None"
+something: " is not None"
+
+resin:
+    user.generic_programming_start_new_line_if_current_line_not_empty()
+    user.insert_snippet("result$0\n\nreturn result")
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

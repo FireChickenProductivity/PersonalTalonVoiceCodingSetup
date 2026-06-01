@@ -22,3 +22,5 @@ dear <user.text>:
     edit.line_insert_down()
     format = user.fire_chicken_get_default_formatter()
     user.fire_chicken_insert_formatted_text(text, format)
+
+nums: 'nums'

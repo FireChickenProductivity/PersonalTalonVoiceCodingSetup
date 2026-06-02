@@ -12,3 +12,7 @@ cross <user.cursorless_target>:
 	insert(":")
 	edit.line_start()
 	user.fire_chicken_insert_around_cursor("for ", " in ")
+
+transform <user.cursorless_target>:
+	target_text = user.cursorless_get_text(cursorless_target)
+	user.fire_chicken_python_insert_transformation(target_text)

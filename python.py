@@ -227,7 +227,12 @@ class Actions:
             return 
         lines.insert(first_function_index, indentation_text + slot_text)
         return "\n".join(lines)
-        
+
+    def fire_chicken_python_insert_transformation(variable: str):
+        """Inserts a transformation on a collection"""
+        first_letter = variable[0].lower()
+        actions.user.fire_chicken_insert_around_cursor("[", f"{first_letter} for {first_letter} in {variable}")
+        actions.edit.extend_right()
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

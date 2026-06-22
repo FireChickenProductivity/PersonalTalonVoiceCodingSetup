@@ -44,3 +44,16 @@ control <user.talon_programming_control_function>:
 
 action file: user.fire_chicken_talent_programming_start_action_file()
 acting: user.fire_chicken_talon_programming_define_action()
+
+gooey: 'egui.'
+label: user.fire_chicken_insert_around_cursor("ui.label(", ")")
+button: user.fire_chicken_insert_around_cursor("if ui.button(", ").clicked():")
+horizontal: 
+    insert("async with ui.horizontal():\n")
+horizontal wrapped: 'async with ui.horizontal_wrapped():\n'
+separator: 'ui.separator()'
+with layout: user.fire_chicken_insert_around_cursor("async with ui.with_layout(egui.Layout.", "):")
+alignment: 'egui.Align.'
+add space: 'ui.add_space('
+coloring: 'egui.Color32.'
+text line: user.fire_chicken_insert_around_cursor("ui.add(egui.TextEdit.singleline(", "))")

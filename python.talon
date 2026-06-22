@@ -347,6 +347,8 @@ resin:
     user.generic_programming_start_new_line_if_current_line_not_empty()
     user.insert_snippet("result$0\n\nreturn result")
 
+object directory | object dir: '__dir__('
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

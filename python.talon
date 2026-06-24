@@ -323,6 +323,7 @@ path directory: user.fire_chicken_insert_around_cursor('os.path.dirname(', ')')
 
 slotting: user.fire_chicken_insert_around_cursor("__slots__ = ('", "')")
 
+enum import: insert("from enum import Enum, auto")
 data class import: insert("from dataclasses import dataclass")
 
 data class <user.text>$:
@@ -348,6 +349,22 @@ resin:
     user.insert_snippet("result$0\n\nreturn result")
 
 object directory | object dir: '__dir__('
+
+<user.code_type> funk <user.text>$:
+    user.fire_chicken_python_insert_function_with_type_declaration(false, code_type, text)
+type funk <user.text>$:
+    user.fire_chicken_python_insert_function_with_type_declaration(false, "", text)
+type funk:
+    user.fire_chicken_python_insert_function_with_type_declaration(false, "", "")
+
+<user.code_type> monk <user.text>$:
+    user.fire_chicken_python_insert_function_with_type_declaration(true, code_type, text)
+<user.code_type> monk:
+    user.fire_chicken_python_insert_function_with_type_declaration(true, code_type, "")
+type monk <user.text>$:
+    user.fire_chicken_python_insert_function_with_type_declaration(true, "", text)
+type monk:
+    user.fire_chicken_python_insert_function_with_type_declaration(true, "", "")
 
 settings():
     user.fire_chicken_default_method_format = 'snake'

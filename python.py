@@ -234,6 +234,19 @@ class Actions:
         actions.user.fire_chicken_insert_around_cursor("[", f"{first_letter} for {first_letter} in {variable}")
         actions.edit.extend_right()
 
+    def fire_chicken_python_insert_function_with_type_declaration(is_method: bool, code_type: str="", name: str=""):
+        """Inserts a function with given type declaration"""
+        snippet_text = rf"""def $1($2) -> $3:
+    $0"""
+        if is_method:
+            snippet_text = snippet_text.replace("$2", "self, $2")
+        if name:
+            formatted_name = actions.user.fire_chicken_format_text(name, "snake")
+            snippet_text = snippet_text.replace("$1", formatted_name)
+        if code_type:
+            snippet_text = snippet_text.replace("$3", code_type)
+        actions.user.insert_snippet(snippet_text)
+
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)
 

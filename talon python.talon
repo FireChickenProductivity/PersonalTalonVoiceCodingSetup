@@ -57,3 +57,6 @@ alignment: 'egui.Align.'
 add space: 'ui.add_space('
 coloring: 'egui.Color32.'
 text line: user.fire_chicken_insert_around_cursor("ui.add(egui.TextEdit.singleline(", "))")
+text multi [line]: user.fire_chicken_insert_around_cursor("ui.add(egui.TextEdit.multiline(", "))")
+selectable label: user.fire_chicken_insert_around_cursor("if ui.selectable_label(", ").clicked():")
+vertical: insert("async with ui.vertical():\n")

@@ -60,3 +60,5 @@ text line: user.fire_chicken_insert_around_cursor("ui.add(egui.TextEdit.singleli
 text multi [line]: user.fire_chicken_insert_around_cursor("ui.add(egui.TextEdit.multiline(", "))")
 selectable label: user.fire_chicken_insert_around_cursor("if ui.selectable_label(", ").clicked():")
 vertical: insert("async with ui.vertical():\n")
+with group: 'async with ui.group():\n'
+combo box: insert('combo_box = egui.ComboBox("", "").selected_text(selected_text)\nasync with (combo_box.show()) as combo_box:\nif combo_box.shown:\ncombo_ui = combo_box.ui')

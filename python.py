@@ -262,13 +262,24 @@ class Actions:
             return 
         start = match.start()
         if_statement_text = before_text[start:]
-        return 
+        lines = if_statement_text.split("\n")[1:]
+        modified_lines = []
+        for line in modified_lines:
+            # 
+            lines.append(line)
+
+        new_text = "\n".join(lines)
 
         # remove variable assignment right hand sides and function call arguments
         actions.key('enter')
         actions.edit.delete()
         actions.insert("else:\n")
-        actions.user.paste(if_statement_text)
+        actions.user.paste(new_text.lstrip())
+        if len(lines) > 1:
+            for i in range(len(lines) - 1):
+                actions.edit.up()
+            actions.edit.line_end()
+                
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

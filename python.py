@@ -247,6 +247,17 @@ class Actions:
             snippet_text = snippet_text.replace("$3", code_type)
         actions.user.insert_snippet(snippet_text)
 
+    def python_programming_insert_analogous_branch():
+        """Identifies the previous branch, starts the next branch and copies the lines to the cursor with the variable assignment values and function call arguments removed and then moves the cursor back to the start of the branch"""
+        before_text = actions.user.generic_programming_compute_proceeding_text()
+        # identify text from the end to the first if statement branch
+        if_statement_text: str
+        # remove variable assignment right hand sides and function call arguments
+        actions.key('enter')
+        actions.edit.delete()
+        actions.insert("else:\n")
+        actions.user.paste(if_statement_text)
+
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)
 

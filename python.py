@@ -252,6 +252,18 @@ class Actions:
         before_text = actions.user.generic_programming_compute_proceeding_text()
         # identify text from the end to the first if statement branch
         if_statement_text: str
+        if_statement_start_expression_text = r"^\s*if\s+.*:$"
+        if_statement_start_expression = re.compile(if_statement_start_expression_text, re.MULTILINE)
+        matches = if_statement_start_expression.finditer(before_text)
+        match = None
+        for m in matches:
+            match = m
+        if match is None:
+            return 
+        start = match.start()
+        if_statement_text = before_text[start:]
+        return 
+
         # remove variable assignment right hand sides and function call arguments
         actions.key('enter')
         actions.edit.delete()

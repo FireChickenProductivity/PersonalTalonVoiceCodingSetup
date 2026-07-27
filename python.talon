@@ -366,6 +366,8 @@ type monk <user.text>$:
 type monk:
     user.fire_chicken_python_insert_function_with_type_declaration(true, "", "")
 
+hydra: user.python_programming_insert_analogous_branch()
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

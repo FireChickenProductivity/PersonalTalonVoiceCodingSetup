@@ -12,3 +12,6 @@ sleet:
 replete:
 	user.code_operator("ASSIGNMENT")
 	user.fire_chicken_get_code_completion_using_file(300, 10)
+
+autocomplete on: user.fire_chicken_set_auto_run_completion(true)
+autocomplete off: user.fire_chicken_set_auto_run_completion(false)

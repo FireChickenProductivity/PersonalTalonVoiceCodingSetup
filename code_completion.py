@@ -1,13 +1,18 @@
-from talon import Module, actions, ui
+from talon import Module, actions, ui, speech_system, cron
 
 from contextlib import suppress
 
 mod = Module()
 
+auto_run_completion: bool = False
+old_text_before: str = ""
+old_text_after: str = ""
+
 @mod.action_class
 class Actions:
 	def fire_chicken_get_code_completion_using_file(max_context: int, amount_to_generate: int):
 		"""Get code completion using file text"""
+		global old_text_after, old_text_before
 		actions.user.ollama_file_rpc_clear_completion_options()
 		model = "codegemma:2b-code"
 		text_obtained_through_accessibility = get_file_text_through_accessibility()
@@ -16,6 +21,8 @@ class Actions:
 		else:
 			text_before = actions.user.generic_programming_compute_proceeding_text()
 			text_after = actions.user.generic_programming_compute_following_text()
+		if old_text_after == text_after and old_text_before == text_before:
+			return 
 		if len(text_before) > max_context:
 			text_before = text_before[len(text_before) - max_context:]
 		text_after = text_after[:max_context]
@@ -25,6 +32,8 @@ class Actions:
 			text_after,
 			amount_to_generate
 		)
+		old_text_after = text_after
+		old_text_before = text_before
 
 	def fire_chicken_use_code_completion_option(option: int):
 		"""Paste the specified code completion option"""
@@ -41,6 +50,11 @@ class Actions:
 			actions.user.paste(line.strip())
 			actions.user.ollama_file_rpc_clear_completion_options()
 			actions.user.fire_chicken_get_code_completion_using_file(300, 128)
+
+	def fire_chicken_set_auto_run_completion(value: bool):
+		""""""
+		global auto_run_completion
+		auto_run_completion = value
 
 def get_file_text_through_accessibility() -> tuple[str, str] | None:
 	try:
@@ -59,5 +73,15 @@ def get_file_text_through_accessibility() -> tuple[str, str] | None:
 					if start != end:
 						return "", ""
 					return total_text[:start], total_text[start:]
-	return None
 
+request_job = None
+def request_completion(args):
+	global request_job
+	if not auto_run_completion:
+		return 
+	if request_job is not None:
+		cron.cancel(request_job)
+	request_job = cron.after('2s', lambda: actions.user.fire_chicken_get_code_completion_using_file(300, 300))
+	
+
+speech_system.register("post:phrase", request_completion)

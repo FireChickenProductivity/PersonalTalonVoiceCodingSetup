@@ -1,6 +1,7 @@
 from talon import Module, actions, Context
 
 import re
+from typing import Iterable
 
 module = Module()
 context = Context()
@@ -262,15 +263,18 @@ class Actions:
             return 
         start = match.start()
         if_statement_text = before_text[start:]
-        lines = if_statement_text.split("\n")[1:]
+        lines = if_statement_text.lstrip().split("\n")[1:]
         modified_lines = []
         for line in lines:
-            # 
             if is_assignment(line):
                 equals_index = line.find("=")
                 new_line = line[:equals_index + 1]
                 if equals_index < len(line) - 1 and line[equals_index + 1] == ' ':
                     new_line += ' '
+                modified_lines.append(new_line)
+            elif is_function_call(line):
+                parenthetical_index = line.find("(")
+                new_line = line[:parenthetical_index+1] + ")"
                 modified_lines.append(new_line)
             else:
                 modified_lines.append(line)
@@ -283,24 +287,30 @@ class Actions:
         actions.insert("else:\n")
         actions.user.paste(new_text.lstrip())
         if len(modified_lines) > 1:
-            for i in range(len(modified_lines) - 1):
+            for _ in range(len(modified_lines) - 1):
                 actions.edit.up()
             actions.edit.line_end()
                 
 
 def is_assignment(line: str) -> bool:
-    print('line', line)
-    equals_index = line.find('=')
-    if equals_index == -1:
+    return has_symbol_before_competitors(line, "=", ('"', "'", '('))
+
+def is_function_call(line: str) -> bool:
+    return has_symbol_before_competitors(line, "(", ('=', '"', "'")) and line.strip().endswith(")")
+
+def has_symbol_before_competitors(line: str, target_symbol: str, competitors: Iterable[str]) -> bool:
+    target_index = line.find(target_symbol)
+    if target_index == -1:
         return False
-    competing_index = equals_index
-    competing_symbols = ('"', "'", '(')
-    for symbol in competing_symbols:
+    
+    min_competing_index = target_index
+    for symbol in competitors:
         index = line.find(symbol)
         if index != -1:
-            competing_index = min(competing_index, index)
-    print('equals_index <= competing_index', equals_index <= competing_index, equals_index, competing_index)
-    return equals_index <= competing_index
+            min_competing_index = min(min_competing_index, index)
+            
+    return target_index <= min_competing_index
+
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

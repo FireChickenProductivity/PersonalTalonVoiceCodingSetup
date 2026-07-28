@@ -264,22 +264,43 @@ class Actions:
         if_statement_text = before_text[start:]
         lines = if_statement_text.split("\n")[1:]
         modified_lines = []
-        for line in modified_lines:
+        for line in lines:
             # 
-            lines.append(line)
+            if is_assignment(line):
+                equals_index = line.find("=")
+                new_line = line[:equals_index + 1]
+                if equals_index < len(line) - 1 and line[equals_index + 1] == ' ':
+                    new_line += ' '
+                modified_lines.append(new_line)
+            else:
+                modified_lines.append(line)
 
-        new_text = "\n".join(lines)
+        new_text = "\n".join(modified_lines)
 
         # remove variable assignment right hand sides and function call arguments
         actions.key('enter')
         actions.edit.delete()
         actions.insert("else:\n")
         actions.user.paste(new_text.lstrip())
-        if len(lines) > 1:
-            for i in range(len(lines) - 1):
+        if len(modified_lines) > 1:
+            for i in range(len(modified_lines) - 1):
                 actions.edit.up()
             actions.edit.line_end()
                 
+
+def is_assignment(line: str) -> bool:
+    print('line', line)
+    equals_index = line.find('=')
+    if equals_index == -1:
+        return False
+    competing_index = equals_index
+    competing_symbols = ('"', "'", '(')
+    for symbol in competing_symbols:
+        index = line.find(symbol)
+        if index != -1:
+            competing_index = min(competing_index, index)
+    print('equals_index <= competing_index', equals_index <= competing_index, equals_index, competing_index)
+    return equals_index <= competing_index
 
 def self_reference_argument(argument):
     actions.user.fire_chicken_programming_self_reference_argument_given_strategy_to_find_its_variable(argument, get_argument_variable)

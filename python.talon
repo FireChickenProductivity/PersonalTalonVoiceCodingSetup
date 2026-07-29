@@ -368,6 +368,18 @@ type monk:
 
 hydra: user.python_programming_insert_analogous_branch()
 
+Leonard:
+    name = user.python_programming_get_bottommost_list_assignment()
+    insert(name)
+penny:
+    name = user.python_programming_get_bottommost_list_assignment()
+    start_text = "{name}.append("
+    user.fire_chicken_insert_around_cursor(start_text, ")")
+nickel:
+    name = user.python_programming_get_bottommost_list_assignment()
+    start_text = "{name}["
+    user.fire_chicken_insert_around_cursor(start_text, "]")
+
 settings():
     user.fire_chicken_default_method_format = 'snake'
     user.fire_chicken_default_variable_format = 'snake'

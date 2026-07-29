@@ -290,7 +290,19 @@ class Actions:
             for _ in range(len(modified_lines) - 1):
                 actions.edit.up()
             actions.edit.line_end()
-                
+
+    def python_programming_get_bottommost_list_assignment() -> str:
+        """"""
+        preceding_text: str = actions.user.generic_programming_compute_proceeding_text()
+        return find_bottommost_list_assignment(preceding_text)
+    
+def find_bottommost_list_assignment(code: str) -> str:
+    pattern = r'^(\w+)\s*=\s*\['
+    matches = [match.group(1) for match in re.finditer(pattern, code, re.MULTILINE)]
+    if not matches:
+        raise ValueError("could not find list assignment inside code")
+    return matches[-1]
+
 
 def is_assignment(line: str) -> bool:
     return has_symbol_before_competitors(line, "=", ('"', "'", '('))

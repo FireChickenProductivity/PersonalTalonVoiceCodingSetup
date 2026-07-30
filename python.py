@@ -297,7 +297,7 @@ class Actions:
         return find_bottommost_list_assignment(preceding_text)
     
 def find_bottommost_list_assignment(code: str) -> str:
-    pattern = r'^(\w+)\s*=\s*\['
+    pattern = r'^\s*(\w+)\s*=\s*\['
     matches = [match.group(1) for match in re.finditer(pattern, code, re.MULTILINE)]
     if not matches:
         raise ValueError("could not find list assignment inside code")

@@ -58,7 +58,7 @@ def request_completion(args):
 		return 
 	if request_job is not None:
 		cron.cancel(request_job)
-	request_job = cron.after('2s', lambda: actions.user.fire_chicken_get_code_completion_using_file(300, 300))
+	request_job = cron.after('2s', lambda: actions.user.fire_chicken_get_code_completion_using_file(300, 10))
 	
 
 speech_system.register("post:phrase", request_completion)

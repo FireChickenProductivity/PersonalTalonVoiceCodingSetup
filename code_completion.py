@@ -15,12 +15,7 @@ class Actions:
 		global old_text_after, old_text_before
 		actions.user.ollama_file_rpc_clear_completion_options()
 		model = "codegemma:2b-code"
-		text_obtained_through_accessibility = get_file_text_through_accessibility()
-		if text_obtained_through_accessibility is not None:
-			text_before, text_after = text_obtained_through_accessibility
-		else:
-			text_before = actions.user.generic_programming_compute_proceeding_text()
-			text_after = actions.user.generic_programming_compute_following_text()
+		text_before, text_after = actions.user.fire_chicken_get_file_text()
 		if old_text_after == text_after and old_text_before == text_before:
 			return 
 		if len(text_before) > max_context:
@@ -55,24 +50,6 @@ class Actions:
 		""""""
 		global auto_run_completion
 		auto_run_completion = value
-
-def get_file_text_through_accessibility() -> tuple[str, str] | None:
-	try:
-		win = ui.active_window()
-	except Exception as ex:
-		return None
-	for item in win.children.find():
-		if role := getattr(item, "AXRole", None):
-			if role == "AXTextArea":
-				if getattr(item, "AXFocused"):
-					total_text = getattr(item, "AXValue", "")
-					selected_range = getattr(item, "AXSelectedTextRange", None)
-					if selected_range is None or not total_text:
-						return None
-					start, end = selected_range.left, selected_range.right
-					if start != end:
-						return "", ""
-					return total_text[:start], total_text[start:]
 
 request_job = None
 def request_completion(args):

@@ -44,7 +44,27 @@ class Actions:
 			line = text.split("\n")[0]
 			actions.user.paste(line.strip())
 			actions.user.ollama_file_rpc_clear_completion_options()
-			actions.user.fire_chicken_get_code_completion_using_file(300, 128)
+
+	def fire_chicken_use_code_completion_option_token(option: int):
+		""""""
+		text = actions.user.ollama_file_rpc_get_completion_options()[option-1].strip()
+		token: str
+		if len(text) >= 3 and text[0] == " " and text[2] == " " and text[1] != " ":
+			token = text[:3]
+		elif text[0].isspace():
+			leading_space_characters_ending_index = len(text) - len(text.lstrip())
+			token = text[:leading_space_characters_ending_index]
+		elif text[0].isalpha():
+			ending_index = 0
+			for i in range(1, len(text)):
+				ending_index += 1
+				if not text[i].isalnum() and text[i] !="_":
+					break
+			token = text[:ending_index]
+		else:
+			token = text[0]
+		actions.user.paste("".join(token))
+		actions.user.ollama_file_rpc_clear_completion_options()
 
 	def fire_chicken_set_auto_run_completion(value: bool):
 		""""""

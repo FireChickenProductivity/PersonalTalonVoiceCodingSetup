@@ -1,4 +1,4 @@
-from talon import Module, actions, ui, speech_system, cron
+from talon import Module, actions, ui, speech_system, cron, Context
 
 from contextlib import suppress
 
@@ -51,10 +51,25 @@ class Actions:
 		global auto_run_completion
 		auto_run_completion = value
 
+	def fire_chicken_should_run_autocomplete() -> bool:
+		""""""
+		return False
+
+context_vscode_editor = Context()
+context_vscode_editor.matches = r"""
+app: vscode
+and win.title: /focus:\[Text Editor\]/
+"""
+@context_vscode_editor.action_class("user")
+class VscodeEditorActions:
+	def fire_chicken_should_run_autocomplete() -> bool:
+		""""""
+		return True
+
 request_job = None
 def request_completion(args):
 	global request_job
-	if not auto_run_completion:
+	if not auto_run_completion or not actions.user.fire_chicken_should_run_autocomplete():
 		return 
 	if request_job is not None:
 		cron.cancel(request_job)

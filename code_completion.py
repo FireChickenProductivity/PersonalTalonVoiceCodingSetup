@@ -47,7 +47,7 @@ class Actions:
 
 	def fire_chicken_use_code_completion_option_token(option: int):
 		""""""
-		text = actions.user.ollama_file_rpc_get_completion_options()[option-1].strip()
+		text = actions.user.ollama_file_rpc_get_completion_options()[option-1]
 		token: str
 		if len(text) >= 3 and text[0] == " " and text[2] == " " and text[1] != " ":
 			token = text[:3]

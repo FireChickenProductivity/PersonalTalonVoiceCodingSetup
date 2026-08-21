@@ -66,5 +66,8 @@ collapsing|collapse: user.insert_snippet("async with ui.collapsing($1) as ${{2:c
 
 windows context: 'windows_context = Context()\nwindows_context.matches = "os: windows"'
 mac context: 'mac_context = Context()\nmac_context.matches = "os: mac"'
+windows user context class: 'windows_context = Context()\nwindows_context.matches = "os: windows"\n@windows_context.action_class("user")\nclass WindowsActions:\n\t'
+mac user context class: skip()
+mac user context class: 'mac_context = Context()\nmac_context.matches = "os: mac"\n@mac_context.action_class("user")\nclass MacActions:\n\t'
 
 gater|get adder: user.fire_chicken_insert_around_cursor("getattr(", ")")

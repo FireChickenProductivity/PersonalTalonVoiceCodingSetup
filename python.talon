@@ -324,6 +324,7 @@ path directory: user.fire_chicken_insert_around_cursor('os.path.dirname(', ')')
 slotting: user.fire_chicken_insert_around_cursor("__slots__ = ('", "')")
 
 enum import: insert("from enum import Enum, auto")
+enum class: user.fire_chicken_insert_around_cursor("class ", "(Enum):")
 data class import: insert("from dataclasses import dataclass")
 
 data class <user.text>$:

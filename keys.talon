@@ -10,7 +10,7 @@ punch: '. '
 pounce:
 	edit.line_end()
 	insert('. ')
-spear|spare: key(enter)
+spear|spare|enter: key(enter)
 lance: key(shift-enter)
 wash: key(delete)
 wash <number_small>:

@@ -63,6 +63,9 @@ vertical: insert("async with ui.vertical():\n")
 with group: 'async with ui.group():\n'
 combo box: insert('combo_box = egui.ComboBox("", "").selected_text(selected_text)\nasync with (combo_box.show()) as combo_box:\nif combo_box.shown:\ncombo_ui = combo_box.ui')
 collapsing|collapse: user.insert_snippet("async with ui.collapsing($1) as ${{2:collapsing_ui}}:\n\t$0")
+ui method: user.fire_chicken_insert_around_cursor("async def ", "(self, ui: egui.ui) -> None:")
+wrapper: 'ui_wrapper'
+title: user.fire_chicken_insert_around_cursor("ui_wrapper.title(", ")")
 
 windows context: 'windows_context = Context()\nwindows_context.matches = "os: windows"'
 mac context: 'mac_context = Context()\nmac_context.matches = "os: mac"'
